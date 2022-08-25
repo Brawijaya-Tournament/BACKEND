@@ -37,8 +37,10 @@ Route::post('/register', [RegisterController::class, 'store']);
 Route::get('/mobilelegends', [MobileLegendsController::class, 'create'])->middleware('auth');
 Route::post('/mobilelegends', [MobileLegendsController::class, 'store']);
 
-Route::get('/pubg', [PubgController::class, 'create'])->middleware('auth');
-Route::post('/pubg', [PubgController::class, 'store']);
+Route::get('/pubg-team', [PubgController::class, 'createTeam'])->middleware('auth');
+Route::post('/pubg-team', [PubgController::class, 'storeTeam']);
+Route::get('/pubg-solo', [PubgController::class, 'createSolo'])->middleware('auth');
+Route::post('/pubg-solo', [PubgController::class, 'storeSolo']);
 
 Route::get('/solo-vocal', [SoloVocalController::class, 'create'])->middleware('auth');
 Route::post('/solo-vocal', [SoloVocalController::class, 'store']);
@@ -55,5 +57,7 @@ Route::post('/futsal', [FutsalController::class, 'store']);
 Route::get('/basket', [BasketController::class, 'create'])->middleware('auth');
 Route::post('/basket', [BasketController::class, 'store']);
 
-Route::get('/bulutangkis', [BulutangkisController::class, 'create'])->middleware('auth');
-Route::post('/bulutangkis', [BulutangkisController::class, 'store']);
+Route::get('/bulutangkis-ganda', [BulutangkisController::class, 'createGanda'])->middleware('auth');
+Route::post('/bulutangkis-ganda', [BulutangkisController::class, 'storeGanda']);
+Route::get('/bulutangkis-tunggal', [BulutangkisController::class, 'createTunggal'])->middleware('auth');
+Route::post('/bulutangkis-tunggal', [BulutangkisController::class, 'storeTunggal']);
