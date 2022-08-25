@@ -10,6 +10,12 @@ class MobileLegendsController extends Controller
 {
     public function create()
     {
+        $isRegister = User::where('id', '=', auth()->user()->id)->first();
+
+        if($isRegister->nama_team != null){
+            return redirect('/dashboard')->with('message', 'Anda sudah melakukan registrasi!');
+        }
+
         return view('user.mobilelegends.create');
     }
 
@@ -147,7 +153,7 @@ class MobileLegendsController extends Controller
             $player5['id_game'] = $request->id_game5;
             $player5['gender'] = $request->gender5;
             Player::create($player5);
-            
+
             return redirect()->route("dashboard")->with('message', 'Data berhasil ditambahkan');
         } catch (\Throwable $th) {
             return redirect()->back()->with('message', 'Data gagal ditambahkan');

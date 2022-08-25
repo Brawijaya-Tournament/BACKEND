@@ -10,6 +10,12 @@ class FotografiController extends Controller
 {
     public function create()
     {
+        $isRegister = User::where('id', '=', auth()->user()->id)->first();
+
+        if($isRegister->nama_team != null){
+            return redirect('/dashboard')->with('message', 'Anda sudah melakukan registrasi!');
+        }
+
         return view('user.fotografi.create');
     }
 
@@ -47,7 +53,7 @@ class FotografiController extends Controller
             $player1['hp'] = $request->hp1;
             $player1['gender'] = $request->gender1;
             Player::create($player1);
-            
+
             return redirect()->route("dashboard")->with('message', 'Data berhasil ditambahkan');
         } catch (\Throwable $th) {
             return redirect()->back()->with('message', 'Data gagal ditambahkan');

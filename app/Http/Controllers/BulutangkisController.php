@@ -10,6 +10,12 @@ class BulutangkisController extends Controller
 {
     public function createGanda()
     {
+        $isRegister = User::where('id', '=', auth()->user()->id)->first();
+
+        if($isRegister->nama_team != null){
+            return redirect('/dashboard')->with('message', 'Anda sudah melakukan registrasi!');
+        }
+
         return view('user.bulutangkis.create');
     }
 
@@ -75,6 +81,12 @@ class BulutangkisController extends Controller
 
     public function createTunggal()
     {
+        $isRegister = User::where('id', '=', auth()->user()->id)->first();
+
+        if($isRegister->nama_team != null){
+            return redirect('/dashboard')->with('message', 'Anda sudah melakukan registrasi!');
+        }
+
         return view('user.bulutangkis.create');
     }
 

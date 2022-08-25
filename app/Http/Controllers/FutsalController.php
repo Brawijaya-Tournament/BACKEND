@@ -10,6 +10,12 @@ class FutsalController extends Controller
 {
     public function create()
     {
+        $isRegister = User::where('id', '=', auth()->user()->id)->first();
+
+        if($isRegister->nama_team != null){
+            return redirect('/dashboard')->with('message', 'Anda sudah melakukan registrasi!');
+        }
+
         return view('user.futsal.create');
     }
 
