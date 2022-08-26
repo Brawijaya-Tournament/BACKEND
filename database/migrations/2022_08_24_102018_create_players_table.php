@@ -16,7 +16,7 @@ class CreatePlayersTable extends Migration
         Schema::create('players', function (Blueprint $table) {
             $table->id();
             $table->string('nama');
-            $table->string('nim');
+            $table->string('nim')->unique();
             $table->foreignId('id_leader')->nullable();
             $table->string('fakultas');
             $table->string('angkatan');

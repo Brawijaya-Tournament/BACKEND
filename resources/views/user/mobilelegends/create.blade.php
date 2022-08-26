@@ -7,7 +7,7 @@
 <div class="row">
 <div class="card col-6">
     <div class="card-body">
-        <form action="/ml" method="post">
+        <form action="/mobilelegends" method="post">
             @csrf
             {{-- <div class="form-group">
                 <label class="col-md-12">Nama Team</label>
