@@ -114,7 +114,8 @@
                         Daftar
                     </h1>
                     <!-- form -->
-                    <form class="space-y-2 md:space-y-6" action="#">
+                    <form class="space-y-2 md:space-y-6" action="/register" method="post">
+                        @csrf
                         <div class="px-5 lg:px-12 lg:w-full">
                             <label for="nama" class="space-x-9 w-11/12 block mb-2 text-base font-medium text-primary2 leading-5 font-poppins">Nama</label>
                             <input type="nama" name="nama" id="nama" placeholder="Masukkan nama" class="bg-secondary2 border border-primary2 text-base font-normal text-primary3 leading-5 font-poppins placeholder-primary3 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5" required="">
@@ -129,7 +130,7 @@
                         </div>
                         <div class="px-5 lg:px-12 lg:w-full">
                             <label for="confirm-password" class="block mb-2 text-base font-medium text-primary2 leading-5 font-poppins">Konfirmasi Kata Sandi</label>
-                            <input type="confirm-password" name="confirm-password" id="confirm-password" placeholder="Masukkan kata sandi" class="bg-secondary2 border border-primary2 text-base font-normal text-primary3 leading-5 font-poppins placeholder-primary3 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5" required="">
+                            <input type="confirm-password" name="confirm_password" id="confirm-password" placeholder="Masukkan kata sandi" class="bg-secondary2 border border-primary2 text-base font-normal text-primary3 leading-5 font-poppins placeholder-primary3 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5" required="">
                         </div>
                         <div class="flex items-start px-5 lg:px-12 lg:w-full">
                             <label class="inline-flex items-center">
@@ -139,7 +140,7 @@
                         </div>
                         <button type="submit" class="mx-5 w-10/12 lg:mx-12 lg:w-9/12 text-secondary2 bg-primary2 hover:bg-secondary3 hover:text-primary3 font-poppins focus:ring-4 focus:outline-none focus:ring-primary-300 font-bold rounded-xl text-lg leading-5 py-2.5 text-center">Buat Akun</button>
                         <p class="font-poppins text-sm font-light leading-4 text-black text-center">
-                            Sudah punya akun? <a href="#" class="font-poppins font-bold text-black text-sm leading-4 hover:underline">Masuk</a> di sini.
+                            Sudah punya akun? <a href="/login" class="font-poppins font-bold text-black text-sm leading-4 hover:underline">Masuk</a> di sini.
                         </p>
                     </form>
                 </div>
