@@ -133,6 +133,11 @@
                                         class="{{ $value['icon'] }}"></i><span
                                         class="hide-menu">{{ $value['title'] }}</span></a>
                             </li>
+                            {{-- <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
+                                href="{{ route('admin.' . $value['link']) }}" aria-expanded="false"><i
+                                    class="{{ $value['icon'] }}"></i><span
+                                    class="hide-menu">{{ $value['title'] }}</span></a> --}}
+                        </li>
                         @endforeach
                         <li class="text-center p-40 upgrade-btn">
                             <a class="btn d-block w-100 btn-success text-white"
