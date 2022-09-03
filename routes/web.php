@@ -12,6 +12,8 @@ use App\Http\Controllers\PubgController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\SoloVocalController;
 use App\Http\Controllers\admin\TeamController as AdminTeamController;
+use App\Http\Controllers\admin\KlasemenController as AdminKlasemenController;
+use App\Http\Controllers\admin\PengumumanController as AdminPengumumanController;
 
 /*
 |--------------------------------------------------------------------------
@@ -74,5 +76,20 @@ Route::prefix($this->urlAdmin)->group(function () {
         Route::get('/delete/{user:id}', [AdminTeamController::class, 'delete'])->name('admin.team.delete');
         Route::delete('/delete/{user:id}', [AdminTeamController::class, 'destroy'])->name('admin.team.destroy');
         Route::get('/getuserdata', [AdminTeamController::class, 'datatables'])->name('admin.team.datatables');
+    });
+    Route::prefix('klasemen')->group(function () {
+        Route::get('/', [AdminKlasemenController::class, 'index'])->name('admin.klasemen');
+        Route::post('/create', [AdminKlasemenController::class, 'create'])->name('admin.klasemen.create');
+        Route::get('/edit/{klasemen:id', [AdminKlasemenController::class, 'edit'])->name('admin.klasemen.edit');
+        Route::put('/edit/{klasemen:id)', [AdminKlasemenController::class, 'update'])->name('admin.klasemen.store');
+        Route::get('/delete/{klasemen:id', [AdminKlasemenController::class, 'delete'])->name('admin.klasemen.delete');
+    });
+    Route::prefix('pengumuman')->group(function () {
+        Route::get('/', [AdminPengumumanController::class, 'index'])->name('admin.pengumuman');
+        Route::get('/create', [AdminPengumumanController::class, 'create'])->name('admin.pengumuman.create');
+        Route::post('/create', [AdminPengumumanController::class, 'post'])->name('admin.pengumuman.post');
+        Route::get('/edit/{pengumuman:id', [AdminPengumumanController::class, 'edit'])->name('admin.pengumuman.edit');
+        Route::post('/update/{pengumuman:id)', [AdminPengumumanController::class, 'update'])->name('admin.pengumuman.store');
+        Route::get('/delete/{pengumumans:id', [AdminPengumumanController::class, 'delete'])->name('admin.pengumuman.delete');
     });
 });
