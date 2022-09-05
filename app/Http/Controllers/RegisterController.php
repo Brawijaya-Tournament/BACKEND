@@ -10,7 +10,7 @@ class RegisterController extends Controller
 {
     public function index()
     {
-        return view('register');
+        return view('register.index');
     }
 
     public function store(Request $request)
@@ -18,18 +18,10 @@ class RegisterController extends Controller
         $validatedData = $request->validate([
             'nama' => 'required|max:255',
             'email' => 'required|email:dns|unique:users',
-            'password' => 'required|min:5|max:255',
-            'confirm_password' => 'required|min:5|max:255'
+            'password' => 'required|min:5|max:255'
         ]);
 
-        if($request->password != $request->confirm_password){
-            return back()->with('message', 'Konfirmasi password salah nih');
-        }
-        
-        $validatedData['nama'] = $request->nama;
         $validatedData['password'] = Hash::make($validatedData['password']);
-
-        // dd($validatedData);
 
         User::create($validatedData);
 

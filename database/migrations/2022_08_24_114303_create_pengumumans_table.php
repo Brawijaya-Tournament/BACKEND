@@ -18,6 +18,7 @@ class CreatePengumumansTable extends Migration
             $table->string('judul');
             $table->text('isi');
             $table->text('isi_preview');
+            $table->string('slug');
             $table->timestamps();
         });
     }

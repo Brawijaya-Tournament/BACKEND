@@ -9,9 +9,6 @@ class Cabor extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'nama',
-        'gambar',
-        'deskripsi',
-        'link',
+        'nama'
     ];
 }

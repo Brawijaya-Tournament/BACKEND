@@ -8,7 +8,28 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-body">
-                    ...
+                    <h4 class="card-title"><i class="m-r-5 font-18 mdi mdi-numeric-1-box-multiple-outline"></i>Tambah Klasemen
+                    </h4>
+                    <form method="POST" enctype="multipart/form-data">
+                        @csrf
+                        <div class="form-group">
+                            <label for="exampleFormControlInput">Nama Universitas</label>
+                            <input type="judul" name="nama_univ" class="form-control" id="nama_univ" placeholder="Nama Universitas">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleFormControlInput">Emas</label>
+                            <input type="text" name="emas" class="form-control" id="emas" placeholder="Emas">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleFormControlInput">Perak</label>
+                            <input type="text" name="perak" class="form-control" id="perak" placeholder="Perak">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleFormControlInput">Perunggu</label>
+                            <input type="text" name="perunggu" class="form-control" id="perunggu" placeholder="Perunggu">
+                        </div>
+                        <button type="submit" name = "simpan" class="btn btn-primary">Simpan</button>
+                    </form>
                 </div>
             </div>
         </div>
@@ -17,42 +38,4 @@
 
 @section('script')
     <script type="text/javascript" src="https://cdn.datatables.net/v/bs5/dt-1.12.1/datatables.min.js"></script>
-    <script>
-        $(document).ready(function() {
-            $('#myTable').DataTable({
-                processing: true,
-                serverSide: true,
-                pageLength: 5,
-                lengthMenu: [5, 10, 20, 50, 100, 200, 500],
-                ajax: '{!! route('admin.team.datatables') !!}',
-                columns: [{
-                        data: 'nama_team',
-                        name: 'users.nama_team'
-                    },
-                    {
-                        data: 'universitas',
-                        name: 'users.universitas'
-                    },
-                    {
-                        data: 'nama',
-                        name: 'nama'
-                    },
-                    {
-                        data: 'updated_at',
-                        name: 'users.updated_at'
-                    },
-                    {
-                        data: 'created_at',
-                        name: 'users.created_at'
-                    },
-                    {
-                        data: 'action',
-                        name: 'action',
-                        orderable: false,
-                        searchable: false
-                    },
-                ]
-            });
-        });
-    </script>
 @endsection

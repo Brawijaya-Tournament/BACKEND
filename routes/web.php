@@ -79,17 +79,19 @@ Route::prefix($this->urlAdmin)->group(function () {
     });
     Route::prefix('klasemen')->group(function () {
         Route::get('/', [AdminKlasemenController::class, 'index'])->name('admin.klasemen');
-        Route::post('/create', [AdminKlasemenController::class, 'create'])->name('admin.klasemen.create');
-        Route::get('/edit/{klasemen:id', [AdminKlasemenController::class, 'edit'])->name('admin.klasemen.edit');
-        Route::put('/edit/{klasemen:id)', [AdminKlasemenController::class, 'update'])->name('admin.klasemen.store');
-        Route::get('/delete/{klasemen:id', [AdminKlasemenController::class, 'delete'])->name('admin.klasemen.delete');
+        Route::get('/create', [AdminKlasemenController::class, 'create'])->name('admin.klasemen.create');
+        Route::post('/create', [AdminKlasemenController::class, 'post'])->name('admin.klasemen.post');
+        Route::get('/edit/{klasemen:id}', [AdminKlasemenController::class, 'edit'])->name('admin.klasemen.edit');
+        Route::put('/update/{klasemen:id}', [AdminKlasemenController::class, 'update'])->name('admin.klasemen.store');
+        Route::get('/delete/{klasemen:id}', [AdminKlasemenController::class, 'delete'])->name('admin.klasemen.delete');
     });
     Route::prefix('pengumuman')->group(function () {
         Route::get('/', [AdminPengumumanController::class, 'index'])->name('admin.pengumuman');
         Route::get('/create', [AdminPengumumanController::class, 'create'])->name('admin.pengumuman.create');
         Route::post('/create', [AdminPengumumanController::class, 'post'])->name('admin.pengumuman.post');
-        Route::get('/edit/{pengumuman:id', [AdminPengumumanController::class, 'edit'])->name('admin.pengumuman.edit');
-        Route::post('/update/{pengumuman:id)', [AdminPengumumanController::class, 'update'])->name('admin.pengumuman.store');
-        Route::get('/delete/{pengumumans:id', [AdminPengumumanController::class, 'delete'])->name('admin.pengumuman.delete');
+        Route::get('/read/{pengumuman:id}', [AdminPengumumanController::class, 'read'])->name('admin.pengumuman.read');
+        Route::get('/edit/{pengumuman:id}', [AdminPengumumanController::class, 'edit'])->name('admin.pengumuman.edit');
+        Route::put('/update/{pengumuman:id}', [AdminPengumumanController::class, 'update'])->name('admin.pengumuman.store');
+        Route::get('/delete/{pengumuman:id}', [AdminPengumumanController::class, 'delete'])->name('admin.pengumuman.delete');
     });
 });
