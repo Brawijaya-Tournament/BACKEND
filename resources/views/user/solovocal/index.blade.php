@@ -4,9 +4,9 @@
 
     <!-- section/konten beranda -->
     <section class="pt-44 bg-cover bg-no-repeat bg-center pb-40" style="background-image: url('img/KompetisiBultang.svg');">
-        <div class="container mx-auto">
-            <div class="flex flex-wrap">
-                <div class="flex justify-center w-full  px-4 lg:w-1/2 md:order-2">
+    <div class="container md:ml-20 ">
+            <div class="flex">
+                <div class="flex w-1/2 justify-center items-center self-end px-4 md:w-1/2 md:order-2">
                     <div class=" lg:mt-24 ">
                         <img src="img/MASKOT BT SOLO VOCAL.svg" alt="Logo BuluTangkis" class="max-w-full mx-auto">
                     </div>
@@ -22,7 +22,7 @@
                             <a href="#" class="font-poppins font-bold text-lg leading-5 text-primary2  hover:shadow-lg hover:bg-secondary3 transition duration-300 ease-in-out">Daftar Sekarang</a>
                         </div>
                         <div class=" bg-transparent border border-secondary2 rounded-xl py-3 px-8 text-center">
-                            <a href="#" class="font-poppins font-bold text-lg leading-5 text-secondary2  hover:shadow-lg hover:bg-primary3 transition duration-300 ease-in-out">Download Rulebook</a>
+                            <a href="https://docs.google.com/file/d/15IPVb0fBQ-C3nP2690nDUPMgeYpWNIs3/edit?usp=docslist_api&filetype=msword" class="font-poppins font-bold text-lg leading-5 text-secondary2  hover:shadow-lg hover:bg-primary3 transition duration-300 ease-in-out">Download Rulebook</a>
                         </div>
                     </div>
                 </div>

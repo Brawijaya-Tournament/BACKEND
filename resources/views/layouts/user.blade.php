@@ -23,7 +23,7 @@
     <nav class="bg-primary2 sticky top-0 px-10 sm:px-4 py-2.5 shadow-lg">
         <div class="container flex flex-wrap justify-between items-center mx-auto">
             <!-- logo -->
-            <a href="#" class="flex items-center ml-10">
+            <a href="/" class="flex items-center ml-10">
                 <img src="img/logoNavbar.svg" class="mr-3 h-16 sm:h-9" alt="Brawijaya Tournament Logo">
             </a>
             <!-- button daftar dan masuk -->
@@ -133,7 +133,7 @@
                         <a href="/" class="text-primary2 font-poppins font-normal text-sm leading-4">Beranda</a>
                     </p>
                     <p class="mb-1">
-                        <a href="#!" class="text-primary2 font-poppins font-normal text-sm leading-4">Kompetisi</a>
+                        <a href="/" class="text-primary2 font-poppins font-normal text-sm leading-4">Kompetisi</a>
                     </p>
                     <p class="mb-1">
                         <a href="/klasemen" class="text-primary2 font-poppins font-normal text-sm leading-4">Klasemen</a>
@@ -146,28 +146,28 @@
                 <div class="">
                     <h6 class="uppercase font-bold mb-4 flex text-base font-poppins lediang-5 justify-center md:justify-start">Kompetisi</h6>
                     <p class="mb-1">
-                        <a href="#!" class="text-primary2 font-poppins font-normal text-sm leading-4">Bulu Tangkis</a>
+                        <a href="/bulutangkis" class="text-primary2 font-poppins font-normal text-sm leading-4">Bulu Tangkis</a>
                     </p>
                     <p class="mb-1">
-                        <a href="#!" class="text-primary2 font-poppins font-normal text-sm leading-4">Basket</a>
+                        <a href="/basket" class="text-primary2 font-poppins font-normal text-sm leading-4">Basket</a>
                     </p>
                     <p class="mb-1">
-                        <a href="#!" class="text-primary2 font-poppins font-normal text-sm leading-4">Futsal</a>
+                        <a href="/futsal" class="text-primary2 font-poppins font-normal text-sm leading-4">Futsal</a>
                     </p>
                     <p class="mb-1">
-                        <a href="#!" class="text-primary2 font-poppins font-normal text-sm leading-4">Fotografi</a>
+                        <a href="/fotografi" class="text-primary2 font-poppins font-normal text-sm leading-4">Fotografi</a>
                     </p>
                     <p class="mb-1">
-                        <a href="#!" class="text-primary2 font-poppins font-normal text-sm leading-4">Solo Vocal</a>
+                        <a href="/solo-vocal" class="text-primary2 font-poppins font-normal text-sm leading-4">Solo Vocal</a>
                     </p>
                     <p class="mb-1">
-                        <a href="#!" class="text-primary2 font-poppins font-normal text-sm leading-4">Modern Dance</a>
+                        <a href="/modern-dance" class="text-primary2 font-poppins font-normal text-sm leading-4">Modern Dance</a>
                     </p>
                     <p class="mb-1">
-                        <a href="#!" class="text-primary2 font-poppins font-normal text-sm leading-4">Mobile Legends</a>
+                        <a href="/mobilelegends" class="text-primary2 font-poppins font-normal text-sm leading-4">Mobile Legends</a>
                     </p>
                     <p>
-                        <a href="#!" class="text-primary2 font-poppins font-normal text-sm leading-4">PUBG Mobile</a>
+                        <a href="/pubg" class="text-primary2 font-poppins font-normal text-sm leading-4">PUBG Mobile</a>
                     </p>
                 </div>
                 <!-- grid 4 -->
@@ -194,7 +194,7 @@
         <!-- copyright -->
         <div class="text-center p-6 bg-primary2">
             <span class="font-poppins text-sm leading-4 font-normal text-secondary2">© 2022</span>
-            <a class="text-secondary2 font-bold font-poppins text-sm leading-4" href="#">Brawijaya Tournament</a>
+            <a class="text-secondary2 font-bold font-poppins text-sm leading-4" href="/">Brawijaya Tournament</a>
             <span class="font-poppins text-sm leading-4 font-normal text-secondary2">All rights reserved</span>
         </div>
     </footer>

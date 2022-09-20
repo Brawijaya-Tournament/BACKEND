@@ -3,9 +3,9 @@
 @section('container') 
     <!-- section/konten beranda -->
     <section class="pt-44 bg-cover bg-no-repeat bg-center pb-40" style="background-image: url('img/KompetisiBultang.svg');">
-        <div class="container mx-auto">
-            <div class="flex flex-wrap">
-                <div class="flex justify-center w-full  px-4 lg:w-1/2 md:order-2">
+    <div class="container md:ml-20 ">
+            <div class="flex">
+                <div class="flex w-1/2 justify-center items-center self-end px-4 md:w-1/2 md:order-2">
                     <div class=" lg:mt-24 ">
                         <img src="img/MASKOT BT FUTSAL.svg" alt="Logo BuluTangkis" class="max-w-full mx-auto">
                     </div>
