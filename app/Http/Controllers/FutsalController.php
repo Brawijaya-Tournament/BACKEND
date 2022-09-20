@@ -8,6 +8,10 @@ use App\Models\User;
 
 class FutsalController extends Controller
 {
+    public function index()
+    {
+        return view('user.futsal.index');
+    }
     public function create()
     {
         $isRegister = User::where('id', '=', auth()->user()->id)->first();

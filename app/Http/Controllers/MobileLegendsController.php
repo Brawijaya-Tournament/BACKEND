@@ -8,6 +8,10 @@ use App\Models\User;
 
 class MobileLegendsController extends Controller
 {
+    public function index()
+    {
+        return view('user.mobilelegends.index');
+    }
     public function create()
     {
         $isRegister = User::where('id', '=', auth()->user()->id)->first();

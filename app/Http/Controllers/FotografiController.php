@@ -8,6 +8,10 @@ use App\Models\User;
 
 class FotografiController extends Controller
 {
+    public function index()
+    {
+        return view('user.fotografi.index');
+    }
     public function create()
     {
         $isRegister = User::where('id', '=', auth()->user()->id)->first();

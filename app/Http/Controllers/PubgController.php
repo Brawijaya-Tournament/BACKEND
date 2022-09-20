@@ -8,6 +8,10 @@ use App\Models\User;
 
 class PubgController extends Controller
 {
+    public function index()
+    {
+        return view('user.pubg.index');
+    }
     public function createTeam()
     {
         $isRegister = User::where('id', '=', auth()->user()->id)->first();

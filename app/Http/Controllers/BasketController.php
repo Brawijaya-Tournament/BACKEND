@@ -8,6 +8,11 @@ use App\Models\User;
 
 class BasketController extends Controller
 {
+    public function index()
+    {
+        return view('user.basket.index');
+    }
+
     public function create()
     {
         $isRegister = User::where('id', '=', auth()->user()->id)->first();

@@ -8,6 +8,10 @@ use App\Models\User;
 
 class BulutangkisController extends Controller
 {
+    public function index()
+    {
+        return view('user.bulutangkis.index');
+    }
     public function createGanda()
     {
         $isRegister = User::where('id', '=', auth()->user()->id)->first();

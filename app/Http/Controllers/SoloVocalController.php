@@ -8,6 +8,10 @@ use App\Models\User;
 
 class SoloVocalController extends Controller
 {
+    public function index()
+    {
+        return view('user.solovocal.index');
+    }
     public function createSolo()
     {
         $isRegister = User::where('id', '=', auth()->user()->id)->first();
