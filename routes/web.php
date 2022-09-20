@@ -14,6 +14,9 @@ use App\Http\Controllers\SoloVocalController;
 use App\Http\Controllers\admin\TeamController as AdminTeamController;
 use App\Http\Controllers\admin\KlasemenController as AdminKlasemenController;
 use App\Http\Controllers\admin\PengumumanController as AdminPengumumanController;
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\FaqController;
+use App\Http\Controllers\KlasemenController;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,12 +35,17 @@ Route::get('/', function () {
     return view('index');
 })->name('dashboard');
 
+Route::get('/klasemen', [KlasemenController::class, 'index']);
+Route::get('/faq', [FaqController::class, 'index']);
+
 Route::get('/login', [LoginController::class, 'index'])->name('login')->middleware('guest');
 Route::post('/login', [LoginController::class, 'authenticate']);
 Route::post('/logout', [LoginController::class, 'logout'])->middleware('auth')->name('logout');
 
 Route::get('/register', [RegisterController::class, 'index'])->middleware('guest');
 Route::post('/register', [RegisterController::class, 'store']);
+
+Route::get('/dashboard', [DashboardController::class, 'index']);
 
 Route::get('/mobilelegends', [MobileLegendsController::class, 'index']);
 Route::get('/mobilelegends-register', [MobileLegendsController::class, 'create']);

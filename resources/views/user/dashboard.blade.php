@@ -21,13 +21,16 @@
     <nav class="bg-primary2 px-10 sm:px-4 py-2.5 shadow-lg ">
         <div class="container flex flex-wrap justify-between items-center mx-auto">
             <!-- logo -->
-            <a href="#" class="flex items-center ml-10">
+            <a href="/" class="flex items-center ml-10">
                 <img src="img/logoNavbar.svg" class="mr-3 h-16 sm:h-9" alt="Brawijaya Tournament Logo">
                 <img src="img/bt.svg" alt="" class="hidden mr-3 sm:flex md:h-10" srcset="">
             </a>
             <!-- button daftar dan masuk -->
             <div class="flex items-center space-x-2 md:order-2 mr-10">
-                <button type="button" class="font-poppins font-bold text-lg leading-5 rounded-xl text-secondary2 bg-primary2 border-2 border-secondary2 hover:bg-secondary3 hover:text-primary3 focus:ring-4 focus:outline-none focus:ring-blue-300 px-5 py-2.5 text-center mr-10 md:mr-0 hidden lg:block sm:mx-auto">Keluar</button>
+                <form action="/logout" method="post">
+                    @csrf
+                    <button type="submit" class="font-poppins font-bold text-lg leading-5 rounded-xl text-secondary2 bg-primary2 border-2 border-secondary2 hover:bg-secondary3 hover:text-primary3 focus:ring-4 focus:outline-none focus:ring-blue-300 px-5 py-2.5 text-center mr-10 md:mr-0 hidden lg:block sm:mx-auto">Keluar</button>
+                </form>
                 <button data-collapse-toggle="navbar-cta" type="button" class="mobile-menu-button inline-flex items-center p-2 text-sm text-secondary2 rounded-lg md:hidden focus:outline-none focus:ring-2" aria-controls="navbar-cta" aria-expanded="false">
                     <span class="sr-only">Open main menu</span>
                     <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
@@ -55,7 +58,7 @@
               <nav class="text-white ">
                 <div class="flex py-3  font-extrabold pl-3 pr-20   transition duration-200 hover:bg-blue-700 hover:text-white hover:border-l-2 hover:border-secondary1">
                     <img src="./img/IconHome.svg" alt="">
-                    <a href="#" class="block  px-4 rounded">DASHBOARD</a>
+                    <a href="/" class="block  px-4 rounded">DASHBOARD</a>
                 </div>
                 <div class="flex  py-3  font-extrabold pl-3 pr-20  transition duration-200 hover:bg-blue-700 hover:text-white hover:border-l-2 hover:border-secondary1">
                     <img src="./img/IconAnnouncement.svg" alt="">
@@ -66,9 +69,12 @@
                     <img src="./img/IconWarn.svg" alt="">
                     <a href="#" class="block  px-4 rounded">LAPOR KENDALA</a>
                 </div>
-                <button class="bg-secondary1 w-full rounded-md py-2 my-4 md:hidden ">
-                    <a href="#" class="block  px-4 rounded text-center font-semibold">KELUAR</a>
-                </button>
+                <form action="/logout" method="post">
+                    @csrf
+                    <button type="submit" class="bg-secondary1 w-full rounded-md py-2 my-4 md:hidden ">
+                        <a class="block  px-4 rounded text-center font-semibold">KELUAR</a>
+                    </button>
+                </form>
                
                 </nav>
             </div>

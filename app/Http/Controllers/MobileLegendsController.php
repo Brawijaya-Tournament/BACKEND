@@ -12,6 +12,7 @@ class MobileLegendsController extends Controller
     {
         return view('user.mobilelegends.index');
     }
+    
     public function create()
     {
         $isRegister = User::where('id', '=', auth()->user()->id)->first();
