@@ -24,9 +24,9 @@
                             <div class="form-group form-check">
 
                             </div>
-                            <a href="#!" class="font-poppins font-normal text-sm leading-4 text-primary2 hover:text-primary3 focus:text-primary3 active:text-primary2 duration-200 transition ease-in-out">
+                            {{-- <a href="#!" class="font-poppins font-normal text-sm leading-4 text-primary2 hover:text-primary3 focus:text-primary3 active:text-primary2 duration-200 transition ease-in-out">
                                 Lupa Kata Sandi ?
-                            </a>
+                            </a> --}}
                         </div>
                         <button type="submit"
                         class="inline-block mx-5 w-10/12 lg:mx-12 lg:w-9/12 px-12 py-3 bg-primary2 text-secondary2 font-poppins font-bold text-lg leading-5 rounded-xl shadow-md hover:bg-primary3 hover:shadow-lg focus:bg-primary3 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primary3 active:shadow-lg transition duration-150 ease-in-out"

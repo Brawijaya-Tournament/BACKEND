@@ -33,10 +33,10 @@ $this->urlAdmin = "adminbt";
 
 Route::get('/', function () {
     return view('index');
-})->name('dashboard');
+})->name('dashboard')->middleware('guest');
 
-Route::get('/klasemen', [KlasemenController::class, 'index']);
-Route::get('/faq', [FaqController::class, 'index']);
+Route::get('/klasemen', [KlasemenController::class, 'index'])->middleware('guest');
+Route::get('/faq', [FaqController::class, 'index'])->middleware('guest');
 
 Route::get('/login', [LoginController::class, 'index'])->name('login')->middleware('guest');
 Route::post('/login', [LoginController::class, 'authenticate']);
@@ -45,7 +45,7 @@ Route::post('/logout', [LoginController::class, 'logout'])->middleware('auth')->
 Route::get('/register', [RegisterController::class, 'index'])->middleware('guest');
 Route::post('/register', [RegisterController::class, 'store']);
 
-Route::get('/dashboard', [DashboardController::class, 'index']);
+Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('auth');
 
 Route::get('/mobilelegends', [MobileLegendsController::class, 'index']);
 Route::get('/mobilelegends-register', [MobileLegendsController::class, 'create']);

@@ -82,9 +82,9 @@
             <div class="w-full p-5">
                 <div class="flex items-center ">
                     <i class="fa-solid fa-angle-left text-white text-2xl"></i>
-                    <p class="text-white font-bold text-2xl px-3"> DASHBOARD</p>
+                    <p class="text-white font-bold text-2xl px-3"> COMING SOON!</p>
                 </div>
-                <div class="md:flex py-5 w-full">
+                {{-- <div class="md:flex py-5 w-full">
                     <div class="w-full my-5 lg:my-0 ">
                         <div class="rounded-3xl shadow-lg bg-white mx-3 h-96">
                           <img class=" rounded-t-lg w-60 h-44 block mx-auto" src="img/MASKOT BADMINTON.svg" alt=""/>
@@ -130,7 +130,7 @@
                       </div>
                     </div>
                   </div>
-                </div>
+                </div> --}}
                 
                 
             </div>
