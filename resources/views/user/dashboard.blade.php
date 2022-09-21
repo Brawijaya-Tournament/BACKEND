@@ -27,10 +27,7 @@
             </a>
             <!-- button daftar dan masuk -->
             <div class="flex items-center space-x-2 md:order-2 mr-10">
-                <form action="/logout" method="post">
-                    @csrf
-                    <button type="submit" class="font-poppins font-bold text-lg leading-5 rounded-xl text-secondary2 bg-primary2 border-2 border-secondary2 hover:bg-secondary3 hover:text-primary3 focus:ring-4 focus:outline-none focus:ring-blue-300 px-5 py-2.5 text-center mr-10 md:mr-0 hidden lg:block sm:mx-auto">Keluar</button>
-                </form>
+                <button type="button" class="font-poppins font-bold text-lg leading-5 rounded-xl text-secondary2 bg-primary2 border-2 border-secondary2 hover:bg-secondary3 hover:text-primary3 focus:ring-4 focus:outline-none focus:ring-blue-300 px-5 py-2.5 text-center mr-10 md:mr-0 hidden lg:block sm:mx-auto">Keluar</button>
                 <button data-collapse-toggle="navbar-cta" type="button" class="mobile-menu-button inline-flex items-center p-2 text-sm text-secondary2 rounded-lg md:hidden focus:outline-none focus:ring-2" aria-controls="navbar-cta" aria-expanded="false">
                     <span class="sr-only">Open main menu</span>
                     <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
@@ -58,7 +55,7 @@
               <nav class="text-white ">
                 <div class="flex py-3  font-extrabold pl-3 pr-20   transition duration-200 hover:bg-blue-700 hover:text-white hover:border-l-2 hover:border-secondary1">
                     <img src="./img/IconHome.svg" alt="">
-                    <a href="/" class="block  px-4 rounded">DASHBOARD</a>
+                    <a href="#" class="block  px-4 rounded">DASHBOARD</a>
                 </div>
                 <div class="flex  py-3  font-extrabold pl-3 pr-20  transition duration-200 hover:bg-blue-700 hover:text-white hover:border-l-2 hover:border-secondary1">
                     <img src="./img/IconAnnouncement.svg" alt="">
@@ -69,12 +66,9 @@
                     <img src="./img/IconWarn.svg" alt="">
                     <a href="#" class="block  px-4 rounded">LAPOR KENDALA</a>
                 </div>
-                <form action="/logout" method="post">
-                    @csrf
-                    <button type="submit" class="bg-secondary1 w-full rounded-md py-2 my-4 md:hidden ">
-                        <a class="block  px-4 rounded text-center font-semibold">KELUAR</a>
-                    </button>
-                </form>
+                <button class="bg-secondary1 w-full rounded-md py-2 my-4 md:hidden ">
+                    <a href="#" class="block  px-4 rounded text-center font-semibold">KELUAR</a>
+                </button>
                
                 </nav>
             </div>
@@ -82,14 +76,117 @@
             <div class="w-full p-5">
                 <div class="flex items-center ">
                     <i class="fa-solid fa-angle-left text-white text-2xl"></i>
-                    <p class="text-white font-bold text-2xl px-3"> COMING SOON!</p>
+                    <p class="text-white font-bold text-2xl px-3"> DASHBOARD</p>
                 </div>
-                {{-- <div class="md:flex py-5 w-full">
+                <div class="md:flex py-5 w-full">
                     <div class="w-full my-5 lg:my-0 ">
-                        <div class="rounded-3xl shadow-lg bg-white mx-3 h-96">
-                          <img class=" rounded-t-lg w-60 h-44 block mx-auto" src="img/MASKOT BADMINTON.svg" alt=""/>
+                        <div class="rounded-3xl shadow-lg bg-white mx-3 h-auto">
+                          <img class=" rounded-t-lg w-60 h-auto block mx-auto" src="img/MASKOT BADMINTON.svg" alt=""/>
                           <div class="p-6">
                             <h1 class="text-primary2 text-lg font-bold font-poppins uppercase leading-6 mb-6">BULUTANGKIS</h1>
+                            @if($user->id_cabor != null && $user->link_team == null && $user->id_cabor == 1)
+                            <p class="text-primary2 text-base leading-4 font-poppins font-normal mb-6">
+                              Telah mendaftar dan formulir belum dikirim.
+                            </p>
+                            <div class="flex justify-between items-center">
+                              <button type="button" class=" inline-block px-7 py-3 bg-primary2 text-secondary2 font-poppins font-bold text-lg leading-5 rounded-xl shadow-md hover:bg-secondary2 hover:text-primary2 hover:shadow-lg focus:bg-primary3 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primary2 active:shadow-lg transition duration-150 ease-in-out"><a href="/bulutangkis-tunggal/formulir">Lihat Formulir</a></button>
+                              <button type="button" class=" inline-block px-4 py-3 border-2 border-red2 text-red2 font-poppins font-bold text-lg leading-5 rounded-xl shadow-md hover:bg-red2 hover:text-natural7 hover:shadow-lg focus:bg-primary3 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-red3 active:shadow-lg transition duration-150 ease-in-out">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="w-4 h-4 fill-red2">
+                                  <path d="M135.2 17.69C140.6 6.848 151.7 0 163.8 0H284.2C296.3 0 307.4 6.848 312.8 17.69L320 32H416C433.7 32 448 46.33 448 64C448 81.67 433.7 96 416 96H32C14.33 96 0 81.67 0 64C0 46.33 14.33 32 32 32H128L135.2 17.69zM31.1 128H416V448C416 483.3 387.3 512 352 512H95.1C60.65 512 31.1 483.3 31.1 448V128zM111.1 208V432C111.1 440.8 119.2 448 127.1 448C136.8 448 143.1 440.8 143.1 432V208C143.1 199.2 136.8 192 127.1 192C119.2 192 111.1 199.2 111.1 208zM207.1 208V432C207.1 440.8 215.2 448 223.1 448C232.8 448 240 440.8 240 432V208C240 199.2 232.8 192 223.1 192C215.2 192 207.1 199.2 207.1 208zM304 208V432C304 440.8 311.2 448 320 448C328.8 448 336 440.8 336 432V208C336 199.2 328.8 192 320 192C311.2 192 304 199.2 304 208z"/>
+                                </svg>
+                              </button>
+                            </div>
+                            @endif
+                            @if($user->id_cabor != null && $user->link_team != null && $user->id_cabor == 1)
+                            <p class="text-primary2 py-5 text-lg text-center font-bold font-poppins leading-6">Terdaftar<p>
+                            @endif
+                            @if($user->id_cabor != null && $user->id_cabor != 1)
+                            <p class="text-primary2 py-5 text-lg text-center font-bold font-poppins leading-6">Telah Terdaftar Di Cabor Lain<p>
+                            @endif
+                            @if($user->id_cabor == null)
+                            <div class="flex justify-center mt-5">
+                                <button type="button" class=" inline-block px-7 py-3 bg-primary2 text-secondary2 font-poppins font-bold text-lg leading-5 rounded-xl shadow-md hover:bg-secondary2 hover:text-primary2 hover:shadow-lg focus:bg-primary3 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primary2 active:shadow-lg transition duration-150 ease-in-out"><a href="/bulutangkis-tunggal/register">Daftar Sekarang</a></button>
+                            </div>
+                            @endif
+                          </div>
+                        </div>
+                      </div>
+                      <!-- end card -->
+                      <!-- card -->
+                  <div class="w-full my-5 lg:my-0">
+                    <div class="rounded-3xl shadow-lg bg-white mx-3 h-auto">
+                      <img class=" rounded-t-lg w-60 h-auto block mx-auto" src="img/MASKOT BT BASKET.svg" alt=""/>
+                      <div class="p-6">
+                        <h1 class="text-primary2 text-lg font-bold font-poppins uppercase leading-6 mb-5">BASKET</h1>
+                        @if($user->id_cabor != null && $user->link_team == null && $user->id_cabor == 2)
+                        <p class="text-primary2 text-base leading-4 font-poppins font-normal mb-6">
+                            Telah mendaftar dan formulir belum dikirim.
+                          </p>
+                          <div class="flex justify-between items-center">
+                            <button type="button" class=" inline-block px-7 py-3 bg-primary2 text-secondary2 font-poppins font-bold text-lg leading-5 rounded-xl shadow-md hover:bg-secondary2 hover:text-primary2 hover:shadow-lg focus:bg-primary3 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primary2 active:shadow-lg transition duration-150 ease-in-out">Lihat Formulir</button>
+                            <button type="button" class=" inline-block px-4 py-3 border-2 border-red2 text-red2 font-poppins font-bold text-lg leading-5 rounded-xl shadow-md hover:bg-red2 hover:text-natural7 hover:shadow-lg focus:bg-primary3 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-red3 active:shadow-lg transition duration-150 ease-in-out">
+                              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="w-4 h-4 fill-red2">
+                                <path d="M135.2 17.69C140.6 6.848 151.7 0 163.8 0H284.2C296.3 0 307.4 6.848 312.8 17.69L320 32H416C433.7 32 448 46.33 448 64C448 81.67 433.7 96 416 96H32C14.33 96 0 81.67 0 64C0 46.33 14.33 32 32 32H128L135.2 17.69zM31.1 128H416V448C416 483.3 387.3 512 352 512H95.1C60.65 512 31.1 483.3 31.1 448V128zM111.1 208V432C111.1 440.8 119.2 448 127.1 448C136.8 448 143.1 440.8 143.1 432V208C143.1 199.2 136.8 192 127.1 192C119.2 192 111.1 199.2 111.1 208zM207.1 208V432C207.1 440.8 215.2 448 223.1 448C232.8 448 240 440.8 240 432V208C240 199.2 232.8 192 223.1 192C215.2 192 207.1 199.2 207.1 208zM304 208V432C304 440.8 311.2 448 320 448C328.8 448 336 440.8 336 432V208C336 199.2 328.8 192 320 192C311.2 192 304 199.2 304 208z"/>
+                              </svg>
+                            </button>
+                          </div>
+                          @endif
+                          @if($user->id_cabor != null && $user->link_team != null && $user->id_cabor == 2)
+                          <p class="text-primary2 py-5 text-lg text-center font-bold font-poppins leading-6">Terdaftar<p>
+                          @endif
+                          @if($user->id_cabor != null && $user->id_cabor != 2)
+                          <p class="text-primary2 py-5 text-lg text-center font-bold font-poppins leading-6">Telah Terdaftar Di Cabor Lain<p>
+                          @endif
+                          @if($user->id_cabor == null)
+                          <div class="flex justify-center mt-5">
+                              <button type="button" class=" inline-block px-7 py-3 bg-primary2 text-secondary2 font-poppins font-bold text-lg leading-5 rounded-xl shadow-md hover:bg-secondary2 hover:text-primary2 hover:shadow-lg focus:bg-primary3 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primary2 active:shadow-lg transition duration-150 ease-in-out">Daftar Sekarang</button>
+                          </div>
+                          @endif
+                      </div>
+                    </div>
+                  </div>
+                  <!-- end card -->
+                <!-- card -->
+                <div class="w-full my-5 lg:my-0">
+                    <div class="rounded-3xl shadow-lg bg-white mx-3 h-auto">
+                      <img class=" rounded-t-lg w-60 h-auto block mx-auto" src="img/MASKOT BT FUTSAL.svg" alt=""/>
+                      <div class="p-6">
+                        <h1 class="text-primary2 text-lg font-bold font-poppins uppercase leading-6 mb-5">FUTSAL</h1>
+                        @if($user->id_cabor != null && $user->link_team == null && $user->id_cabor == 3)
+                        <p class="text-primary2 text-base leading-4 font-poppins font-normal mb-5">
+                            Telah mendaftar dan formulir belum dikirim.
+                          </p>
+                          <div class="flex justify-between items-center">
+                            <button type="button" class=" inline-block px-7 py-3 bg-primary2 text-secondary2 font-poppins font-bold text-lg leading-5 rounded-xl shadow-md hover:bg-secondary2 hover:text-primary2 hover:shadow-lg focus:bg-primary3 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primary2 active:shadow-lg transition duration-150 ease-in-out">Lihat Formulir</button>
+                            <button type="button" class=" inline-block px-4 py-3 border-2 border-red2 text-red2 font-poppins font-bold text-lg leading-5 rounded-xl shadow-md hover:bg-red2 hover:text-natural7 hover:shadow-lg focus:bg-primary3 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-red3 active:shadow-lg transition duration-150 ease-in-out">
+                              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="w-4 h-4 fill-red2">
+                                <path d="M135.2 17.69C140.6 6.848 151.7 0 163.8 0H284.2C296.3 0 307.4 6.848 312.8 17.69L320 32H416C433.7 32 448 46.33 448 64C448 81.67 433.7 96 416 96H32C14.33 96 0 81.67 0 64C0 46.33 14.33 32 32 32H128L135.2 17.69zM31.1 128H416V448C416 483.3 387.3 512 352 512H95.1C60.65 512 31.1 483.3 31.1 448V128zM111.1 208V432C111.1 440.8 119.2 448 127.1 448C136.8 448 143.1 440.8 143.1 432V208C143.1 199.2 136.8 192 127.1 192C119.2 192 111.1 199.2 111.1 208zM207.1 208V432C207.1 440.8 215.2 448 223.1 448C232.8 448 240 440.8 240 432V208C240 199.2 232.8 192 223.1 192C215.2 192 207.1 199.2 207.1 208zM304 208V432C304 440.8 311.2 448 320 448C328.8 448 336 440.8 336 432V208C336 199.2 328.8 192 320 192C311.2 192 304 199.2 304 208z"/>
+                              </svg>
+                            </button>
+                          </div>
+                          @endif
+                          @if($user->id_cabor != null && $user->link_team != null && $user->id_cabor == 3)
+                          <p class="text-primary2 py-5 text-lg text-center font-bold font-poppins leading-6">Terdaftar<p>
+                          @endif
+                          @if($user->id_cabor != null && $user->id_cabor != 3)
+                          <p class="text-primary2 py-5 text-lg text-center font-bold font-poppins leading-6">Telah Terdaftar Di Cabor Lain<p>
+                          @endif
+                          @if($user->id_cabor == null)
+                          <div class="flex justify-center mt-5">
+                              <button type="button" class=" inline-block px-7 py-3 bg-primary2 text-secondary2 font-poppins font-bold text-lg leading-5 rounded-xl shadow-md hover:bg-secondary2 hover:text-primary2 hover:shadow-lg focus:bg-primary3 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primary2 active:shadow-lg transition duration-150 ease-in-out">Daftar Sekarang</button>
+                          </div>
+                          @endif
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="md:flex py-5 w-full">
+                    <div class="w-full my-5 lg:my-0 ">
+                        <div class="rounded-3xl shadow-lg bg-white mx-3 h-auto">
+                          <img class=" rounded-t-lg w-60 h-auto block mx-auto" src="img/MASKOT PUBG.svg" alt=""/>
+                          <div class="p-6">
+                            <h1 class="text-primary2 text-lg font-bold font-poppins uppercase leading-6 mb-6">PUBG</h1>
+                            @if($user->id_cabor != null && $user->link_team == null && $user->id_cabor == 4)
                             <p class="text-primary2 text-base leading-4 font-poppins font-normal mb-6">
                               Telah mendaftar dan formulir belum dikirim.
                             </p>
@@ -101,36 +198,161 @@
                                 </svg>
                               </button>
                             </div>
+                            @endif
+                            @if($user->id_cabor != null && $user->link_team != null && $user->id_cabor == 4)
+                            <p class="text-primary2 py-5 text-lg text-center font-bold font-poppins leading-6">Terdaftar<p>
+                            @endif
+                            @if($user->id_cabor != null && $user->id_cabor != 4)
+                            <p class="text-primary2 py-5 text-lg text-center font-bold font-poppins leading-6">Telah Terdaftar Di Cabor Lain<p>
+                            @endif
+                            @if($user->id_cabor == null)
+                            <div class="flex justify-center mt-5">
+                                <button type="button" class=" inline-block px-7 py-3 bg-primary2 text-secondary2 font-poppins font-bold text-lg leading-5 rounded-xl shadow-md hover:bg-secondary2 hover:text-primary2 hover:shadow-lg focus:bg-primary3 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primary2 active:shadow-lg transition duration-150 ease-in-out">Daftar Sekarang</button>
+                            </div>
+                            @endif
                           </div>
                         </div>
                       </div>
                       <!-- end card -->
                       <!-- card -->
                   <div class="w-full my-5 lg:my-0">
-                    <div class="rounded-3xl shadow-lg bg-white mx-3 h-96">
-                      <img class=" rounded-t-lg w-44 h-44 block mx-auto" src="img/MASKOT BT BASKET.svg" alt=""/>
+                    <div class="rounded-3xl shadow-lg bg-white mx-3 h-auto">
+                      <img class=" rounded-t-lg w-60 h-auto block mx-auto" src="img/MASKOT BT ML.svg" alt=""/>
                       <div class="p-6">
-                        <h1 class="text-primary2 text-lg font-bold font-poppins uppercase leading-6 mb-20">BASKET</h1>
-                        <div class="text-center  mt-10">
-                          <p class="text-primary2 text-lg text-center font-bold font-poppins leading-6">Terdaftar<p>
-                        </div>
+                        <h1 class="text-primary2 text-lg font-bold font-poppins uppercase leading-6 mb-5">MOBILE LEGEND</h1>
+                        @if($user->id_cabor != null && $user->link_team == null && $user->id_cabor == 5)
+                        <p class="text-primary2 text-base leading-4 font-poppins font-normal mb-6">
+                            Telah mendaftar dan formulir belum dikirim.
+                          </p>
+                          <div class="flex justify-between items-center">
+                            <button type="button" class=" inline-block px-7 py-3 bg-primary2 text-secondary2 font-poppins font-bold text-lg leading-5 rounded-xl shadow-md hover:bg-secondary2 hover:text-primary2 hover:shadow-lg focus:bg-primary3 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primary2 active:shadow-lg transition duration-150 ease-in-out">Lihat Formulir</button>
+                            <button type="button" class=" inline-block px-4 py-3 border-2 border-red2 text-red2 font-poppins font-bold text-lg leading-5 rounded-xl shadow-md hover:bg-red2 hover:text-natural7 hover:shadow-lg focus:bg-primary3 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-red3 active:shadow-lg transition duration-150 ease-in-out">
+                              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="w-4 h-4 fill-red2">
+                                <path d="M135.2 17.69C140.6 6.848 151.7 0 163.8 0H284.2C296.3 0 307.4 6.848 312.8 17.69L320 32H416C433.7 32 448 46.33 448 64C448 81.67 433.7 96 416 96H32C14.33 96 0 81.67 0 64C0 46.33 14.33 32 32 32H128L135.2 17.69zM31.1 128H416V448C416 483.3 387.3 512 352 512H95.1C60.65 512 31.1 483.3 31.1 448V128zM111.1 208V432C111.1 440.8 119.2 448 127.1 448C136.8 448 143.1 440.8 143.1 432V208C143.1 199.2 136.8 192 127.1 192C119.2 192 111.1 199.2 111.1 208zM207.1 208V432C207.1 440.8 215.2 448 223.1 448C232.8 448 240 440.8 240 432V208C240 199.2 232.8 192 223.1 192C215.2 192 207.1 199.2 207.1 208zM304 208V432C304 440.8 311.2 448 320 448C328.8 448 336 440.8 336 432V208C336 199.2 328.8 192 320 192C311.2 192 304 199.2 304 208z"/>
+                              </svg>
+                            </button>
+                          </div>
+                          @endif
+                          @if($user->id_cabor != null && $user->link_team != null && $user->id_cabor == 5)
+                          <p class="text-primary2 py-5 text-lg text-center font-bold font-poppins leading-6">Terdaftar<p>
+                          @endif
+                          @if($user->id_cabor != null && $user->id_cabor != 5)
+                          <p class="text-primary2 py-5 text-lg text-center font-bold font-poppins leading-6">Telah Terdaftar Di Cabor Lain<p>
+                          @endif
+                          @if($user->id_cabor == null)
+                          <div class="flex justify-center mt-5">
+                              <button type="button" class=" inline-block px-7 py-3 bg-primary2 text-secondary2 font-poppins font-bold text-lg leading-5 rounded-xl shadow-md hover:bg-secondary2 hover:text-primary2 hover:shadow-lg focus:bg-primary3 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primary2 active:shadow-lg transition duration-150 ease-in-out"><a href="/mobilelegends/register">Daftar Sekarang</a></button>
+                          </div>
+                          @endif
                       </div>
                     </div>
                   </div>
                   <!-- end card -->
                 <!-- card -->
                 <div class="w-full my-5 lg:my-0">
-                    <div class="rounded-3xl shadow-lg bg-white mx-3 h-96">
-                      <img class=" rounded-t-lg w-44 h-44 block mx-auto" src="img/MASKOT BADMINTON.svg" alt=""/>
+                    <div class="rounded-3xl shadow-lg bg-white mx-3 h-auto">
+                      <img class=" rounded-t-lg w-60 h-auto block mx-auto" src="img/MASKOT BT FOTOGRAFI.svg" alt=""/>
                       <div class="p-6">
-                        <h1 class="text-primary2 text-lg font-bold font-poppins uppercase leading-6 mb-20">BULUTANGKIS</h1>
-                        <div class="flex justify-center mt-10">
-                          <button type="button" class=" inline-block px-7 py-3 bg-primary2 text-secondary2 font-poppins font-bold text-lg leading-5 rounded-xl shadow-md hover:bg-secondary2 hover:text-primary2 hover:shadow-lg focus:bg-primary3 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primary2 active:shadow-lg transition duration-150 ease-in-out">Daftar Sekarang</button>
-                        </div>
+                        <h1 class="text-primary2 text-lg font-bold font-poppins uppercase leading-6 mb-5">FOTOGRAFI</h1>
+                        @if($user->id_cabor != null && $user->link_team == null && $user->id_cabor == 6)
+                        <p class="text-primary2 text-base leading-4 font-poppins font-normal mb-5">
+                            Telah mendaftar dan formulir belum dikirim.
+                          </p>
+                          <div class="flex justify-between items-center">
+                            <button type="button" class=" inline-block px-7 py-3 bg-primary2 text-secondary2 font-poppins font-bold text-lg leading-5 rounded-xl shadow-md hover:bg-secondary2 hover:text-primary2 hover:shadow-lg focus:bg-primary3 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primary2 active:shadow-lg transition duration-150 ease-in-out">Lihat Formulir</button>
+                            <button type="button" class=" inline-block px-4 py-3 border-2 border-red2 text-red2 font-poppins font-bold text-lg leading-5 rounded-xl shadow-md hover:bg-red2 hover:text-natural7 hover:shadow-lg focus:bg-primary3 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-red3 active:shadow-lg transition duration-150 ease-in-out">
+                              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="w-4 h-4 fill-red2">
+                                <path d="M135.2 17.69C140.6 6.848 151.7 0 163.8 0H284.2C296.3 0 307.4 6.848 312.8 17.69L320 32H416C433.7 32 448 46.33 448 64C448 81.67 433.7 96 416 96H32C14.33 96 0 81.67 0 64C0 46.33 14.33 32 32 32H128L135.2 17.69zM31.1 128H416V448C416 483.3 387.3 512 352 512H95.1C60.65 512 31.1 483.3 31.1 448V128zM111.1 208V432C111.1 440.8 119.2 448 127.1 448C136.8 448 143.1 440.8 143.1 432V208C143.1 199.2 136.8 192 127.1 192C119.2 192 111.1 199.2 111.1 208zM207.1 208V432C207.1 440.8 215.2 448 223.1 448C232.8 448 240 440.8 240 432V208C240 199.2 232.8 192 223.1 192C215.2 192 207.1 199.2 207.1 208zM304 208V432C304 440.8 311.2 448 320 448C328.8 448 336 440.8 336 432V208C336 199.2 328.8 192 320 192C311.2 192 304 199.2 304 208z"/>
+                              </svg>
+                            </button>
+                          </div>
+                          @endif
+                          @if($user->id_cabor != null && $user->link_team != null && $user->id_cabor == 6)
+                          <p class="text-primary2 py-5 text-lg text-center font-bold font-poppins leading-6">Terdaftar<p>
+                          @endif
+                          @if($user->id_cabor != null && $user->id_cabor != 6)
+                          <p class="text-primary2 py-5 text-lg text-center font-bold font-poppins leading-6">Telah Terdaftar Di Cabor Lain<p>
+                          @endif
+                          @if($user->id_cabor == null)
+                          <div class="flex justify-center mt-5">
+                              <button type="button" class=" inline-block px-7 py-3 bg-primary2 text-secondary2 font-poppins font-bold text-lg leading-5 rounded-xl shadow-md hover:bg-secondary2 hover:text-primary2 hover:shadow-lg focus:bg-primary3 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primary2 active:shadow-lg transition duration-150 ease-in-out">Daftar Sekarang</button>
+                          </div>
+                          @endif
                       </div>
                     </div>
                   </div>
-                </div> --}}
+                </div>
+                <div class="md:flex py-5 w-2/3">
+                    <div class="w-full my-5 lg:my-0 ">
+                        <div class="rounded-3xl shadow-lg bg-white mx-3 h-auto">
+                          <img class=" rounded-t-lg w-60 h-auto block mx-auto" src="img/MASKOT BT SOLO VOCAL.svg" alt=""/>
+                          <div class="p-6">
+                            <h1 class="text-primary2 text-lg font-bold font-poppins uppercase leading-6 mb-6">SOLO VOCAL</h1>
+                            @if($user->id_cabor != null && $user->link_team == null && $user->id_cabor == 7)
+                            <p class="text-primary2 text-base leading-4 font-poppins font-normal mb-6">
+                              Telah mendaftar dan formulir belum dikirim.
+                            </p>
+                            <div class="flex justify-between items-center">
+                              <button type="button" class=" inline-block px-7 py-3 bg-primary2 text-secondary2 font-poppins font-bold text-lg leading-5 rounded-xl shadow-md hover:bg-secondary2 hover:text-primary2 hover:shadow-lg focus:bg-primary3 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primary2 active:shadow-lg transition duration-150 ease-in-out">Lihat Formulir</button>
+                              <button type="button" class=" inline-block px-4 py-3 border-2 border-red2 text-red2 font-poppins font-bold text-lg leading-5 rounded-xl shadow-md hover:bg-red2 hover:text-natural7 hover:shadow-lg focus:bg-primary3 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-red3 active:shadow-lg transition duration-150 ease-in-out">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="w-4 h-4 fill-red2">
+                                  <path d="M135.2 17.69C140.6 6.848 151.7 0 163.8 0H284.2C296.3 0 307.4 6.848 312.8 17.69L320 32H416C433.7 32 448 46.33 448 64C448 81.67 433.7 96 416 96H32C14.33 96 0 81.67 0 64C0 46.33 14.33 32 32 32H128L135.2 17.69zM31.1 128H416V448C416 483.3 387.3 512 352 512H95.1C60.65 512 31.1 483.3 31.1 448V128zM111.1 208V432C111.1 440.8 119.2 448 127.1 448C136.8 448 143.1 440.8 143.1 432V208C143.1 199.2 136.8 192 127.1 192C119.2 192 111.1 199.2 111.1 208zM207.1 208V432C207.1 440.8 215.2 448 223.1 448C232.8 448 240 440.8 240 432V208C240 199.2 232.8 192 223.1 192C215.2 192 207.1 199.2 207.1 208zM304 208V432C304 440.8 311.2 448 320 448C328.8 448 336 440.8 336 432V208C336 199.2 328.8 192 320 192C311.2 192 304 199.2 304 208z"/>
+                                </svg>
+                              </button>
+                            </div>
+                            @endif
+                            @if($user->id_cabor != null && $user->link_team != null && $user->id_cabor == 7)
+                            <p class="text-primary2 py-5 text-lg text-center font-bold font-poppins leading-6">Terdaftar<p>
+                            @endif
+                            @if($user->id_cabor != null && $user->id_cabor != 7)
+                            <p class="text-primary2 py-5 text-lg text-center font-bold font-poppins leading-6">Telah Terdaftar Di Cabor Lain<p>
+                            @endif
+                            @if($user->id_cabor == null)
+                            <div class="flex justify-center mt-5">
+                                <button type="button" class=" inline-block px-7 py-3 bg-primary2 text-secondary2 font-poppins font-bold text-lg leading-5 rounded-xl shadow-md hover:bg-secondary2 hover:text-primary2 hover:shadow-lg focus:bg-primary3 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primary2 active:shadow-lg transition duration-150 ease-in-out">Daftar Sekarang</button>
+                            </div>
+                            @endif
+                          </div>
+                        </div>
+                      </div>
+                      <!-- end card -->
+                      <!-- card -->
+                  <div class="w-full my-5 lg:my-0">
+                    <div class="rounded-3xl shadow-lg bg-white mx-3 h-auto">
+                      <img class=" rounded-t-lg w-60 h-auto block mx-auto" src="img/MASKOT BT MODERN DANCE.svg" alt=""/>
+                      <div class="p-6">
+                        <h1 class="text-primary2 text-lg font-bold font-poppins uppercase leading-6 mb-5">MODERN DANCE</h1>
+                        @if($user->id_cabor != null && $user->link_team == null && $user->id_cabor == 8)
+                        <p class="text-primary2 text-base leading-4 font-poppins font-normal mb-6">
+                            Telah mendaftar dan formulir belum dikirim.
+                          </p>
+                          <div class="flex justify-between items-center">
+                            <button type="button" class=" inline-block px-7 py-3 bg-primary2 text-secondary2 font-poppins font-bold text-lg leading-5 rounded-xl shadow-md hover:bg-secondary2 hover:text-primary2 hover:shadow-lg focus:bg-primary3 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primary2 active:shadow-lg transition duration-150 ease-in-out">Lihat Formulir</button>
+                            <button type="button" class=" inline-block px-4 py-3 border-2 border-red2 text-red2 font-poppins font-bold text-lg leading-5 rounded-xl shadow-md hover:bg-red2 hover:text-natural7 hover:shadow-lg focus:bg-primary3 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-red3 active:shadow-lg transition duration-150 ease-in-out">
+                              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="w-4 h-4 fill-red2">
+                                <path d="M135.2 17.69C140.6 6.848 151.7 0 163.8 0H284.2C296.3 0 307.4 6.848 312.8 17.69L320 32H416C433.7 32 448 46.33 448 64C448 81.67 433.7 96 416 96H32C14.33 96 0 81.67 0 64C0 46.33 14.33 32 32 32H128L135.2 17.69zM31.1 128H416V448C416 483.3 387.3 512 352 512H95.1C60.65 512 31.1 483.3 31.1 448V128zM111.1 208V432C111.1 440.8 119.2 448 127.1 448C136.8 448 143.1 440.8 143.1 432V208C143.1 199.2 136.8 192 127.1 192C119.2 192 111.1 199.2 111.1 208zM207.1 208V432C207.1 440.8 215.2 448 223.1 448C232.8 448 240 440.8 240 432V208C240 199.2 232.8 192 223.1 192C215.2 192 207.1 199.2 207.1 208zM304 208V432C304 440.8 311.2 448 320 448C328.8 448 336 440.8 336 432V208C336 199.2 328.8 192 320 192C311.2 192 304 199.2 304 208z"/>
+                              </svg>
+                            </button>
+                          </div>
+                          @endif
+                          @if($user->id_cabor != null && $user->link_team != null && $user->id_cabor == 8)
+                          <p class="text-primary2 py-5 text-lg text-center font-bold font-poppins leading-6">Terdaftar<p>
+                          @endif
+                          @if($user->id_cabor != null && $user->id_cabor != 8)
+                          <p class="text-primary2 py-5 text-lg text-center font-bold font-poppins leading-6">Telah Terdaftar Di Cabor Lain<p>
+                          @endif
+                          @if($user->id_cabor == null)
+                          <div class="flex justify-center mt-5">
+                              <button type="button" class=" inline-block px-7 py-3 bg-primary2 text-secondary2 font-poppins font-bold text-lg leading-5 rounded-xl shadow-md hover:bg-secondary2 hover:text-primary2 hover:shadow-lg focus:bg-primary3 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primary2 active:shadow-lg transition duration-150 ease-in-out">Daftar Sekarang</button>
+                          </div>
+                          @endif
+                      </div>
+                    </div>
+                  </div>
+                  <!-- end card -->
+                <!-- card -->
+           
+                </div>
                 
                 
             </div>

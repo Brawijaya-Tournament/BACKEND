@@ -96,26 +96,27 @@ class BulutangkisController extends Controller
 
     public function storeTunggal(Request $request)
     {
+        // dd($request);
         $request->validate([
-            'id_cabor' => 'required',
             'nama_team' => 'required',
             'universitas' => 'required',
-            'link_team' => 'required|regex:(drive.google.com)',
+            // 'link_team' => 'required|regex:(drive.google.com)',
 
             'nama1' => 'required',
-            'nim1' => 'required|unique:players',
+            'nim1' => 'required',
             'fakultas1' => 'required',
             'angkatan1' => 'required',
             'link_gdrive1' => 'required|regex:(drive.google.com)',
-            'email1' => 'required|unique:players|email',
+            'email1' => 'required|email',
             'hp1' => 'required',
             'gender1' => 'required',
         ]);
+        // dd($request);
         try {
-            $user['id_cabor'] = $request->id_cabor;
+            $user['id_cabor'] = 1;
             $user['nama_team'] = $request->nama_team;
             $user['universitas'] = $request->universitas;
-            $user['link_team'] = $request->link_team;
+            // $user['link_team'] = $request->link_team;
             User::where('id', auth()->user()->id)->update($user);
 
             $player1['nama'] = $request->nama1;
@@ -132,5 +133,20 @@ class BulutangkisController extends Controller
         } catch (\Throwable $th) {
             return redirect()->back()->with('message', 'Data gagal ditambahkan');
         }
+    }
+
+    public function formulirTunggal()
+    {
+        $user = auth()->user();
+        $anggotas = Player::where('id_leader', $user->id)->get();
+
+        // dd($anggotas);
+
+        $data = [
+            'user' => $user,
+            'anggotas' => $anggotas
+        ];
+
+        return view('user.bulutangkis.formulir', $data);
     }
 }
