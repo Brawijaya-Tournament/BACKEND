@@ -19,7 +19,7 @@
                     <p class="text-justify md:text-left font-poppins font-normal text-base text-white leading-6 mb-10">Fotografi adalah sebuah karya visual berbentuk foto tentang suatu tema tertentu yang informatif dan mengandung makna khusus. Lomba ini meliputi proses pengambilan foto, editing minimal, hingga presentasi tentang makna foto yang diambil.</p>
                     <div class="lg:flex lg:items-center lg:space-x-2 pb-10 md:pb-0">
                         <div class="mb-10 lg:mb-0 bg-secondary2 rounded-xl py-3 px-8 text-center">
-                            <a href="#" class="font-poppins font-bold text-lg leading-5 text-primary2  hover:shadow-lg hover:bg-secondary3 transition duration-300 ease-in-out">Daftar Sekarang</a>
+                            <a href="/login" class="font-poppins font-bold text-lg leading-5 text-primary2  hover:shadow-lg hover:bg-secondary3 transition duration-300 ease-in-out">Daftar Sekarang</a>
                         </div>
                         <div class=" bg-transparent border border-secondary2 rounded-xl py-3 px-8 text-center">
                             <a href="https://docs.google.com/file/d/1K7ADEllMXjh9LmoNmpCbvpzaY-N9EdiA/edit?usp=docslist_api&filetype=msword" class="font-poppins font-bold text-lg leading-5 text-secondary2  hover:shadow-lg hover:bg-primary3 transition duration-300 ease-in-out">Download Rulebook</a>
