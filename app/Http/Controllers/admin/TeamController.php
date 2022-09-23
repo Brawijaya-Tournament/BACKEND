@@ -12,7 +12,6 @@ use App\Models\User;
 
 class TeamController extends Controller
 {
-    //
     public function index()
     {
         return view('admin.team.index');

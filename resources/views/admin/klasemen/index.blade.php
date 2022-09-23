@@ -13,11 +13,14 @@
                     <h6 class="card-subtitle">
                         Klasemen
                     </h6>
-                    <a href="{{ url("adminbt/klasemen/create") }}">
+                    <div>
+                        <a href="{{ url("adminbt/klasemen/create") }}">
                         <button class="btn btn-primary"><i class="fa fa-plus"></i>  Tambah Klasemen</button>
                     </a>
                     <br>
                     <br>
+                    </div>
+                    
                     <div class="table-responsive">
                         <table class="table" id="myTable">
                             <thead>
