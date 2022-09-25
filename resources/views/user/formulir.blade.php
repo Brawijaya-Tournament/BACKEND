@@ -19,6 +19,12 @@
     <title>Brawijaya Tournament</title>
 </head>
 <body class="bg-primary1" x-data="{ 'showModal': false }" @keydown.escape="showModal = false" x-cloak>
+    {{-- @if(session()->has('message'))
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+      {{ session('message') }}
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    @endif --}}
     <!-- navbar -->
     <nav class="bg-primary2 px-10 sm:px-4 py-2.5 shadow-lg ">
         <div class="container flex flex-wrap justify-between items-center mx-auto">
@@ -146,23 +152,6 @@
                     <div class="flex items-center ">
                         <i class="fa-solid fa-angle-left text-white text-2xl"></i>
                         <p class="text-white font-bold text-2xl px-3"> BASKET</p>
-                    </div>
-                    <!-- table leader -->
-                    <div class="official pt-2">
-                        <p class="pt-4 font-bold pb-2 text-lg text-secondary2">OFFICIAL</p> 
-                        <hr class="mb-5">
-                        <table class="w-full border-2  border-secondary2">
-                            <tr class=" ">
-                                <td class="bg-secondary2 text-primary1 font-bold text-center py-2 text-lg">NO</td>
-                                <td class="bg-secondary2 border-none font-bold text-center py-2 text-lg">NAMA</td>
-                                <td class="bg-secondary2 text-primary1 font-bold text-center py-2 text-lg">DETAIL</td>
-                            </tr>
-                            <tr class="">
-                                <td class="text-center font-poppins text-lg text-white py-2">1</td>
-                                <td class=" border-2 border-secondary2 font-poppins text-lg text-white py-2">{{ $user->nama }}</td>
-                                <td class="text-center font-poppins text-primary1 py-2"><button class="bg-secondary2 text-sm px-4 font-bold rounded-md py-2" @click="showModal = true">Lihat</button></td>
-                            </tr>
-                        </table>
                     </div>
                     <!-- tabel player -->
                     <div class="official pt-5">

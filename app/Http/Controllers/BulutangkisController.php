@@ -126,7 +126,7 @@ class BulutangkisController extends Controller
             $player1['hp'] = $request->hp1;
             $player1['gender'] = $request->gender1;
             Player::create($player1);
-            return redirect()->route("dashboard")->with('message', 'Data berhasil ditambahkan');
+            return redirect()->route("bulutangkis.formulir")->with('message', 'Data berhasil ditambahkan');
         } catch (\Throwable $th) {
             return redirect()->back()->with('message', 'Data gagal ditambahkan');
         }

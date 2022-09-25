@@ -88,7 +88,7 @@ Route::get('/bulutangkis-ganda/register', [BulutangkisController::class, 'create
 Route::post('/bulutangkis-ganda/register', [BulutangkisController::class, 'storeGanda'])->middleware('auth');
 Route::get('/bulutangkis-tunggal/register', [BulutangkisController::class, 'createTunggal'])->middleware('auth');
 Route::post('/bulutangkis-tunggal/register', [BulutangkisController::class, 'storeTunggal'])->middleware('auth');
-Route::get('/bulutangkis/formulir', [BulutangkisController::class, 'formulir']);
+Route::get('/bulutangkis/formulir', [BulutangkisController::class, 'formulir'])->name('bulutangkis.formulir');
 Route::post('/bulutangkis/formulir', [BulutangkisController::class, 'storeFormulir']);
 
 Route::prefix($this->urlAdmin)->group(function () {
