@@ -50,6 +50,8 @@ Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard
 Route::get('/mobilelegends', [MobileLegendsController::class, 'index']);
 Route::get('/mobilelegends/register', [MobileLegendsController::class, 'create']);
 Route::post('/mobilelegends/register', [MobileLegendsController::class, 'store']);
+Route::get('/mobilelegends/formulir', [MobileLegendsController::class, 'formulir'])->middleware('auth')->name('mobilelegends.formulir');
+Route::post('/mobilelegends/formulir', [MobileLegendsController::class, 'storeFormulir'])->middleware('auth');
 
 Route::get('/pubg', [PubgController::class, 'index']);
 Route::get('/pubg-team/register', [PubgController::class, 'createTeam'])->middleware('auth');
@@ -72,18 +74,22 @@ Route::post('/fotografi/register', [FotografiController::class, 'store'])->middl
 Route::get('/futsal', [FutsalController::class, 'index']);
 Route::get('/futsal/register', [FutsalController::class, 'create'])->middleware('auth');
 Route::post('/futsal/register', [FutsalController::class, 'store'])->middleware('auth');
+Route::get('/futsal/formulir', [FutsalController::class, 'formulir'])->middleware('auth')->name('futsal.formulir');
+Route::post('/futsal/formulir', [FutsalController::class, 'storeFormulir'])->middleware('auth');
 
 Route::get('/basket', [BasketController::class, 'index']);
 Route::get('/basket/register', [BasketController::class, 'create'])->middleware('auth');
 Route::post('/basket/register', [BasketController::class, 'store'])->middleware('auth');
+Route::get('/basket/formulir', [BasketController::class, 'formulir'])->middleware('auth')->name('basket.formulir');
+Route::post('/basket/formulir', [BasketController::class, 'storeFormulir'])->middleware('auth');
 
 Route::get('/bulutangkis', [BulutangkisController::class, 'index']);
 Route::get('/bulutangkis-ganda/register', [BulutangkisController::class, 'createGanda'])->middleware('auth');
 Route::post('/bulutangkis-ganda/register', [BulutangkisController::class, 'storeGanda'])->middleware('auth');
 Route::get('/bulutangkis-tunggal/register', [BulutangkisController::class, 'createTunggal'])->middleware('auth');
 Route::post('/bulutangkis-tunggal/register', [BulutangkisController::class, 'storeTunggal'])->middleware('auth');
-Route::get('/bulutangkis-tunggal/formulir', [BulutangkisController::class, 'formulirTunggal']);
-Route::post('/bulutangkis-tunggal/formulir', [BulutangkisController::class, 'storeFormulirTunggal']);
+Route::get('/bulutangkis/formulir', [BulutangkisController::class, 'formulir']);
+Route::post('/bulutangkis/formulir', [BulutangkisController::class, 'storeFormulir']);
 
 Route::prefix($this->urlAdmin)->group(function () {
     Route::prefix('team')->group(function () {

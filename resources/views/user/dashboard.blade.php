@@ -55,7 +55,7 @@
               <nav class="text-white ">
                 <div class="flex py-3  font-extrabold pl-3 pr-20   transition duration-200 hover:bg-blue-700 hover:text-white hover:border-l-2 hover:border-secondary1">
                     <img src="./img/IconHome.svg" alt="">
-                    <a href="#" class="block  px-4 rounded">DASHBOARD</a>
+                    <a href="/dashboard" class="block  px-4 rounded">DASHBOARD</a>
                 </div>
                 <div class="flex  py-3  font-extrabold pl-3 pr-20  transition duration-200 hover:bg-blue-700 hover:text-white hover:border-l-2 hover:border-secondary1">
                     <img src="./img/IconAnnouncement.svg" alt="">
@@ -89,7 +89,7 @@
                               Telah mendaftar dan formulir belum dikirim.
                             </p>
                             <div class="flex justify-between items-center">
-                              <button type="button" class=" inline-block px-7 py-3 bg-primary2 text-secondary2 font-poppins font-bold text-lg leading-5 rounded-xl shadow-md hover:bg-secondary2 hover:text-primary2 hover:shadow-lg focus:bg-primary3 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primary2 active:shadow-lg transition duration-150 ease-in-out"><a href="/bulutangkis-tunggal/formulir">Lihat Formulir</a></button>
+                              <button type="button" class=" inline-block px-7 py-3 bg-primary2 text-secondary2 font-poppins font-bold text-lg leading-5 rounded-xl shadow-md hover:bg-secondary2 hover:text-primary2 hover:shadow-lg focus:bg-primary3 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primary2 active:shadow-lg transition duration-150 ease-in-out"><a href="/bulutangkis/formulir">Lihat Formulir</a></button>
                               <button type="button" class=" inline-block px-4 py-3 border-2 border-red2 text-red2 font-poppins font-bold text-lg leading-5 rounded-xl shadow-md hover:bg-red2 hover:text-natural7 hover:shadow-lg focus:bg-primary3 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-red3 active:shadow-lg transition duration-150 ease-in-out">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="w-4 h-4 fill-red2">
                                   <path d="M135.2 17.69C140.6 6.848 151.7 0 163.8 0H284.2C296.3 0 307.4 6.848 312.8 17.69L320 32H416C433.7 32 448 46.33 448 64C448 81.67 433.7 96 416 96H32C14.33 96 0 81.67 0 64C0 46.33 14.33 32 32 32H128L135.2 17.69zM31.1 128H416V448C416 483.3 387.3 512 352 512H95.1C60.65 512 31.1 483.3 31.1 448V128zM111.1 208V432C111.1 440.8 119.2 448 127.1 448C136.8 448 143.1 440.8 143.1 432V208C143.1 199.2 136.8 192 127.1 192C119.2 192 111.1 199.2 111.1 208zM207.1 208V432C207.1 440.8 215.2 448 223.1 448C232.8 448 240 440.8 240 432V208C240 199.2 232.8 192 223.1 192C215.2 192 207.1 199.2 207.1 208zM304 208V432C304 440.8 311.2 448 320 448C328.8 448 336 440.8 336 432V208C336 199.2 328.8 192 320 192C311.2 192 304 199.2 304 208z"/>
@@ -105,7 +105,8 @@
                             @endif
                             @if($user->id_cabor == null)
                             <div class="flex justify-center mt-5">
-                                <button type="button" class=" inline-block px-7 py-3 bg-primary2 text-secondary2 font-poppins font-bold text-lg leading-5 rounded-xl shadow-md hover:bg-secondary2 hover:text-primary2 hover:shadow-lg focus:bg-primary3 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primary2 active:shadow-lg transition duration-150 ease-in-out"><a href="/bulutangkis-tunggal/register">Daftar Sekarang</a></button>
+                                <button type="button" class=" inline-block px-7 py-3 bg-primary2 text-secondary2 font-poppins font-bold text-lg leading-5 rounded-xl shadow-md hover:bg-secondary2 hover:text-primary2 hover:shadow-lg focus:bg-primary3 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primary2 active:shadow-lg transition duration-150 ease-in-out"><a href="/bulutangkis-tunggal/register">Daftar Solo</a></button>
+                                <button type="button" class=" inline-block px-7 py-3 bg-primary2 text-secondary2 font-poppins font-bold text-lg leading-5 rounded-xl shadow-md hover:bg-secondary2 hover:text-primary2 hover:shadow-lg focus:bg-primary3 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primary2 active:shadow-lg transition duration-150 ease-in-out"><a href="/bulutangkis-ganda/register">Daftar Ganda</a></button>
                             </div>
                             @endif
                           </div>
@@ -123,7 +124,7 @@
                             Telah mendaftar dan formulir belum dikirim.
                           </p>
                           <div class="flex justify-between items-center">
-                            <button type="button" class=" inline-block px-7 py-3 bg-primary2 text-secondary2 font-poppins font-bold text-lg leading-5 rounded-xl shadow-md hover:bg-secondary2 hover:text-primary2 hover:shadow-lg focus:bg-primary3 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primary2 active:shadow-lg transition duration-150 ease-in-out">Lihat Formulir</button>
+                            <button type="button" class=" inline-block px-7 py-3 bg-primary2 text-secondary2 font-poppins font-bold text-lg leading-5 rounded-xl shadow-md hover:bg-secondary2 hover:text-primary2 hover:shadow-lg focus:bg-primary3 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primary2 active:shadow-lg transition duration-150 ease-in-out"><a href="/basket/formulir">Lihat Formulir</a></button>
                             <button type="button" class=" inline-block px-4 py-3 border-2 border-red2 text-red2 font-poppins font-bold text-lg leading-5 rounded-xl shadow-md hover:bg-red2 hover:text-natural7 hover:shadow-lg focus:bg-primary3 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-red3 active:shadow-lg transition duration-150 ease-in-out">
                               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="w-4 h-4 fill-red2">
                                 <path d="M135.2 17.69C140.6 6.848 151.7 0 163.8 0H284.2C296.3 0 307.4 6.848 312.8 17.69L320 32H416C433.7 32 448 46.33 448 64C448 81.67 433.7 96 416 96H32C14.33 96 0 81.67 0 64C0 46.33 14.33 32 32 32H128L135.2 17.69zM31.1 128H416V448C416 483.3 387.3 512 352 512H95.1C60.65 512 31.1 483.3 31.1 448V128zM111.1 208V432C111.1 440.8 119.2 448 127.1 448C136.8 448 143.1 440.8 143.1 432V208C143.1 199.2 136.8 192 127.1 192C119.2 192 111.1 199.2 111.1 208zM207.1 208V432C207.1 440.8 215.2 448 223.1 448C232.8 448 240 440.8 240 432V208C240 199.2 232.8 192 223.1 192C215.2 192 207.1 199.2 207.1 208zM304 208V432C304 440.8 311.2 448 320 448C328.8 448 336 440.8 336 432V208C336 199.2 328.8 192 320 192C311.2 192 304 199.2 304 208z"/>
@@ -139,7 +140,7 @@
                           @endif
                           @if($user->id_cabor == null)
                           <div class="flex justify-center mt-5">
-                              <button type="button" class=" inline-block px-7 py-3 bg-primary2 text-secondary2 font-poppins font-bold text-lg leading-5 rounded-xl shadow-md hover:bg-secondary2 hover:text-primary2 hover:shadow-lg focus:bg-primary3 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primary2 active:shadow-lg transition duration-150 ease-in-out">Daftar Sekarang</button>
+                              <button type="button" class=" inline-block px-7 py-3 bg-primary2 text-secondary2 font-poppins font-bold text-lg leading-5 rounded-xl shadow-md hover:bg-secondary2 hover:text-primary2 hover:shadow-lg focus:bg-primary3 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primary2 active:shadow-lg transition duration-150 ease-in-out"><a href="/basket/register">Daftar Sekarang</a></button>
                           </div>
                           @endif
                       </div>
@@ -157,7 +158,7 @@
                             Telah mendaftar dan formulir belum dikirim.
                           </p>
                           <div class="flex justify-between items-center">
-                            <button type="button" class=" inline-block px-7 py-3 bg-primary2 text-secondary2 font-poppins font-bold text-lg leading-5 rounded-xl shadow-md hover:bg-secondary2 hover:text-primary2 hover:shadow-lg focus:bg-primary3 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primary2 active:shadow-lg transition duration-150 ease-in-out">Lihat Formulir</button>
+                            <button type="button" class=" inline-block px-7 py-3 bg-primary2 text-secondary2 font-poppins font-bold text-lg leading-5 rounded-xl shadow-md hover:bg-secondary2 hover:text-primary2 hover:shadow-lg focus:bg-primary3 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primary2 active:shadow-lg transition duration-150 ease-in-out"><a href="/futsal/formulir">Lihat Formulir</a></button>
                             <button type="button" class=" inline-block px-4 py-3 border-2 border-red2 text-red2 font-poppins font-bold text-lg leading-5 rounded-xl shadow-md hover:bg-red2 hover:text-natural7 hover:shadow-lg focus:bg-primary3 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-red3 active:shadow-lg transition duration-150 ease-in-out">
                               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="w-4 h-4 fill-red2">
                                 <path d="M135.2 17.69C140.6 6.848 151.7 0 163.8 0H284.2C296.3 0 307.4 6.848 312.8 17.69L320 32H416C433.7 32 448 46.33 448 64C448 81.67 433.7 96 416 96H32C14.33 96 0 81.67 0 64C0 46.33 14.33 32 32 32H128L135.2 17.69zM31.1 128H416V448C416 483.3 387.3 512 352 512H95.1C60.65 512 31.1 483.3 31.1 448V128zM111.1 208V432C111.1 440.8 119.2 448 127.1 448C136.8 448 143.1 440.8 143.1 432V208C143.1 199.2 136.8 192 127.1 192C119.2 192 111.1 199.2 111.1 208zM207.1 208V432C207.1 440.8 215.2 448 223.1 448C232.8 448 240 440.8 240 432V208C240 199.2 232.8 192 223.1 192C215.2 192 207.1 199.2 207.1 208zM304 208V432C304 440.8 311.2 448 320 448C328.8 448 336 440.8 336 432V208C336 199.2 328.8 192 320 192C311.2 192 304 199.2 304 208z"/>
@@ -173,7 +174,7 @@
                           @endif
                           @if($user->id_cabor == null)
                           <div class="flex justify-center mt-5">
-                              <button type="button" class=" inline-block px-7 py-3 bg-primary2 text-secondary2 font-poppins font-bold text-lg leading-5 rounded-xl shadow-md hover:bg-secondary2 hover:text-primary2 hover:shadow-lg focus:bg-primary3 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primary2 active:shadow-lg transition duration-150 ease-in-out">Daftar Sekarang</button>
+                              <button type="button" class=" inline-block px-7 py-3 bg-primary2 text-secondary2 font-poppins font-bold text-lg leading-5 rounded-xl shadow-md hover:bg-secondary2 hover:text-primary2 hover:shadow-lg focus:bg-primary3 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primary2 active:shadow-lg transition duration-150 ease-in-out"><a href="/futsal/register">Daftar Sekarang</a></button>
                           </div>
                           @endif
                       </div>
@@ -219,13 +220,13 @@
                     <div class="rounded-3xl shadow-lg bg-white mx-3 h-auto">
                       <img class=" rounded-t-lg w-60 h-auto block mx-auto" src="img/MASKOT BT ML.svg" alt=""/>
                       <div class="p-6">
-                        <h1 class="text-primary2 text-lg font-bold font-poppins uppercase leading-6 mb-5">MOBILE LEGEND</h1>
+                        <h1 class="text-primary2 text-lg font-bold font-poppins uppercase leading-6 mb-5">MOBILE LEGENDS</h1>
                         @if($user->id_cabor != null && $user->link_team == null && $user->id_cabor == 5)
                         <p class="text-primary2 text-base leading-4 font-poppins font-normal mb-6">
                             Telah mendaftar dan formulir belum dikirim.
                           </p>
                           <div class="flex justify-between items-center">
-                            <button type="button" class=" inline-block px-7 py-3 bg-primary2 text-secondary2 font-poppins font-bold text-lg leading-5 rounded-xl shadow-md hover:bg-secondary2 hover:text-primary2 hover:shadow-lg focus:bg-primary3 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primary2 active:shadow-lg transition duration-150 ease-in-out">Lihat Formulir</button>
+                            <button type="button" class=" inline-block px-7 py-3 bg-primary2 text-secondary2 font-poppins font-bold text-lg leading-5 rounded-xl shadow-md hover:bg-secondary2 hover:text-primary2 hover:shadow-lg focus:bg-primary3 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primary2 active:shadow-lg transition duration-150 ease-in-out"><a href="/mobilelegends/formulir">Lihat Formulir</a></button>
                             <button type="button" class=" inline-block px-4 py-3 border-2 border-red2 text-red2 font-poppins font-bold text-lg leading-5 rounded-xl shadow-md hover:bg-red2 hover:text-natural7 hover:shadow-lg focus:bg-primary3 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-red3 active:shadow-lg transition duration-150 ease-in-out">
                               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="w-4 h-4 fill-red2">
                                 <path d="M135.2 17.69C140.6 6.848 151.7 0 163.8 0H284.2C296.3 0 307.4 6.848 312.8 17.69L320 32H416C433.7 32 448 46.33 448 64C448 81.67 433.7 96 416 96H32C14.33 96 0 81.67 0 64C0 46.33 14.33 32 32 32H128L135.2 17.69zM31.1 128H416V448C416 483.3 387.3 512 352 512H95.1C60.65 512 31.1 483.3 31.1 448V128zM111.1 208V432C111.1 440.8 119.2 448 127.1 448C136.8 448 143.1 440.8 143.1 432V208C143.1 199.2 136.8 192 127.1 192C119.2 192 111.1 199.2 111.1 208zM207.1 208V432C207.1 440.8 215.2 448 223.1 448C232.8 448 240 440.8 240 432V208C240 199.2 232.8 192 223.1 192C215.2 192 207.1 199.2 207.1 208zM304 208V432C304 440.8 311.2 448 320 448C328.8 448 336 440.8 336 432V208C336 199.2 328.8 192 320 192C311.2 192 304 199.2 304 208z"/>

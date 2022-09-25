@@ -7,23 +7,25 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital@0;1&display=swap" rel="stylesheet" />
-    <link href="dist/output.css" rel="stylesheet">
+    <link href="/dist/output.css" rel="stylesheet">
     <script src='https://kit.fontawesome.com/a076d05399.js'></script>
 	<link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
 	<script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
     <script src="https://kit.fontawesome.com/a951d809d8.js" crossorigin="anonymous"></script>
 	<link href="https://fonts.googleapis.com/css?family=Source+Code+Pro|Roboto&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/flowbite@1.5.2/dist/flowbite.js"></script>
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet" />
+	<script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
     <title>Brawijaya Tournament</title>
 </head>
-<body class="bg-primary1">
+<body class="bg-primary1" x-data="{ 'showModal': false }" @keydown.escape="showModal = false" x-cloak>
     <!-- navbar -->
     <nav class="bg-primary2 px-10 sm:px-4 py-2.5 shadow-lg ">
         <div class="container flex flex-wrap justify-between items-center mx-auto">
             <!-- logo -->
             <a href="#" class="flex items-center ml-10">
-                <img src="img/logoNavbar.svg" class="mr-3 h-16 sm:h-9" alt="Brawijaya Tournament Logo">
-                <img src="img/bt.svg" alt="" class="hidden mr-3 sm:flex md:h-10" srcset="">
+                <img src="/../img/logoNavbar.svg" class="mr-3 h-16 sm:h-9" alt="Brawijaya Tournament Logo">
+                <img src="/../img/bt.svg" alt="" class="hidden mr-3 sm:flex md:h-10" srcset="">
             </a>
             <!-- button daftar dan masuk -->
             <div class="flex items-center space-x-2 md:order-2 mr-10">
@@ -46,6 +48,46 @@
 
     <!-- section/konten -->
     <section class="bg-primary1">
+        <!-- MODAL DETAIL -->
+        <div class="overflow-auto" style="background-color: rgba(0,0,0,0.5)" x-show="showModal" :class="{ 'absolute inset-0 z-10 flex items-center justify-center': showModal }">
+        <div class="bg-secondary2 w-11/12 md:max-w-lg mx-auto rounded-lg shadow-lg py-4 text-left px-6" x-show="showModal" @click.away="showModal = false" x-transition:enter="ease-out duration-300" x-transition:enter-start="opacity-0 scale-90" x-transition:enter-end="opacity-100 scale-100" x-transition:leave="ease-in duration-300" x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-90">
+            <!--HEADER-->
+            <div class="flex justify-between items-center pb-3">
+                <div class="cursor-pointer z-50" @click="showModal = false">
+                    <svg class="fill-current text-black" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18">
+                        <path d="M14.53 4.53l-1.06-1.06L9 7.94 4.53 3.47 3.47 4.53 7.94 9l-4.47 4.47 1.06 1.06L9 10.06l4.47 4.47 1.06-1.06L10.06 9z"></path>
+                    </svg>
+                </div>
+            </div>
+            <!-- content -->
+            <div class="pb-10">
+                <table>
+                    <tr>
+                        <td class="font-bold">Nama : </td>
+                        <td>{{ $user->nama }}</td>
+                    </tr>
+                    <tr>
+                        <td class="font-bold">Email : </td>
+                        <td>{{ $user->email }}</td>
+                    </tr>
+                    <tr>
+                        <td class="font-bold">No Telepon/ No HP : </td>
+                        <td>{{ $user->hp }}</td>
+                    </tr>
+                    <tr>
+                        <td class="font-bold">Fakultas : </td>
+                        <td>{{ $user->fakultas }}</td>
+                    </tr>
+                    <tr>
+                        <td class="font-bold flex-wrap" >Berkas Individu : </td>
+                        <td>https://brawijayatournament.ub.ac.id/</td>
+                    </tr>
+                </table>      
+            </div>            
+        </div>
+        <!--/Dialog -->
+    </div>
+    <!-- /Overlay -->
         <div class="md:flex-row ">
             <!-- grid sidebar -->
             <div class="relative md:flex">
@@ -77,23 +119,27 @@
                  <!-- grid content tim -->
                  <div class="grid-1 md:order-last bg-primary2 py-5 ">
                     <div class="  bg-primary2     right-0  md:relative md:translate-x-0 ">
-                        <div class="w-64 p-5 text-primary1 inset-y-0 right-0 transform bg-secondary2 m-10 rounded-lg z-0">
-                            <p class="text-primary1 text-3xl font-bold">Nama Tim</p> 
-                            <p class="text-primary1 text-2xl font-light">Universitas Brawijaya</p>
-                        </div>
-                        <div class="m-10">
-                            <p class="text-lg text-secondary2  font-bold">UPLOAD BERKAS TIM</p> 
-                            <hr class="mt-2 text-secondary2">
-                            <p class="text-[20px] text-secondary2  py-4 font-bold">Surat Tugas dari Universitas*</p> 
-                            <button class="bg-secondary2 px-3 py-2 font-bold rounded-md">Upload Link</button>
-                            <p class="text-[20px] text-secondary2  py-4 font-bold">Bukti Transfer Biaya Pendaftaran*</p> 
-                            <button class="bg-secondary2 px-3 py-2 font-bold rounded-md">Upload Link</button>
-                            <p class="text-sm text-white pt-10">Catatan</p>
-                            <ul class="list-disc text-white text-sm mb-5">
-                                <li>Memasukkan Berkas yang dibutuhkan pada Google Drive dan upload link Google Drive yang berisi berkas tersebut pada tempat yang telah disediakan.</li>
-                            </ul>
-                        </div>
-                      </div>
+                        <form method="post" action="/bulutangkis/formulir" enctype="multipart/form-data">
+                            @csrf
+                            <div class="w-64 p-5 text-primary1 inset-y-0 right-0 transform bg-secondary2 m-10 rounded-lg z-0">
+                                <p class="text-primary1 text-3xl font-bold">Nama Tim</p> 
+                                <p class="text-primary1 text-2xl font-light">{{ $user->nama_team }}</p>
+                            </div>
+                            <div class="m-10">
+                                <p class="text-lg text-secondary2  font-bold">UPLOAD BERKAS TIM</p> 
+                                <hr class="mt-2 text-secondary2">
+                                <p class="text-[20px] text-secondary2  py-4 font-bold">Bukti Transfer Biaya Pendaftaran*</p> 
+                                <input
+                                    class="appearance-none block w-full bg-primary1 text-secondary2 border border-secondary2 rounded-lg py-3 px-4 mb-3 leading-5 focus:outline-none"
+                                    id="grid-first-name" value="" type="text" placeholder="Masukkan link" name="link_team">
+                                <p class="text-sm text-white pt-10">Catatan</p>
+                                <ul class="list-disc text-white text-sm mb-5">
+                                    <li>Memasukkan Berkas yang dibutuhkan pada Google Drive dan upload link Google Drive yang berisi berkas tersebut pada tempat yang telah disediakan.</li>
+                                </ul>
+                                <button type="submit" class="my-5 bg-secondary2 text-lg float-right px-10 font-bold rounded-md py-2">Kirim</button>
+                            </div>
+                        </form> 
+                    </div>
                 </div>
                 <!-- grid content peserta -->
                 <div class="grid-2 md:grid-3 col-span-2 p-10 mb-20">
@@ -113,8 +159,8 @@
                             </tr>
                             <tr class="">
                                 <td class="text-center font-poppins text-lg text-white py-2">1</td>
-                                <td class=" border-2 border-secondary2 font-poppins text-lg text-white py-2">Anda Bagas Aprianto</td>
-                                <td class="text-center font-poppins text-primary1 py-2"><button class="bg-secondary2 text-sm px-4 font-bold rounded-md py-2">Lihat</button></td>
+                                <td class=" border-2 border-secondary2 font-poppins text-lg text-white py-2">{{ $user->nama }}</td>
+                                <td class="text-center font-poppins text-primary1 py-2"><button class="bg-secondary2 text-sm px-4 font-bold rounded-md py-2" @click="showModal = true">Lihat</button></td>
                             </tr>
                         </table>
                     </div>
@@ -128,13 +174,14 @@
                                 <td class="bg-secondary2 border-none font-bold text-center py-2 text-lg">NAMA</td>
                                 <td class="bg-secondary2 text-primary1 font-bold text-center py-2 text-lg">DETAIL</td>
                             </tr>
+                            @foreach ($anggotas as $anggota)  
                             <tr class="">
-                                <td class="text-center font-poppins text-lg text-white py-2">1</td>
-                                <td class=" border-2 border-secondary2 font-poppins text-lg text-white py-2">Anda Bagas Aprianto</td>
+                                <td class="text-center font-poppins text-lg text-white py-2">{{ $loop->index + 1 }}</td>
+                                <td class=" border-2 border-secondary2 font-poppins text-lg text-white py-2">{{ $anggota->nama }}</td>
                                 <td class="text-center font-poppins text-primary1 py-2"><button class="bg-secondary2 text-sm px-4 font-bold rounded-md py-2">Lihat</button></td>
                             </tr>
+                            @endforeach
                         </table>
-                        <button class="my-5 bg-secondary2 text-lg float-right px-10 font-bold rounded-md py-2">Kirim</button>
                     </div>
                 </div>
             </div>

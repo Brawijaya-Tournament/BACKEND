@@ -55,7 +55,7 @@
               <nav class="text-white ">
                 <div class="flex py-3  font-extrabold pl-3 pr-20   transition duration-200 hover:bg-blue-700 hover:text-white hover:border-l-2 hover:border-secondary1">
                     <img src="/../img/IconHome.svg" alt="">
-                    <a href="#" class="block  px-4 rounded">DASHBOARD</a>
+                    <a href="/dashboard" class="block  px-4 rounded">DASHBOARD</a>
                 </div>
                 <div class="flex  py-3  font-extrabold pl-3 pr-20  transition duration-200 hover:bg-blue-700 hover:text-white hover:border-l-2 hover:border-secondary1">
                     <img src="/../img/IconAnnouncement.svg" alt="">

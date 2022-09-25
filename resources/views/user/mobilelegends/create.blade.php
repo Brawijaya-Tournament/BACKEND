@@ -8,10 +8,16 @@
                 <div class="grid-2 md:grid-3 col-span-2 p-10 mb-20">
                     <div class="flex items-center ">
                         <i class="fa-solid fa-angle-left text-white text-2xl"></i>
-                        <p class="text-white font-bold text-2xl px-3">PENDAFTARAN BASKET</p>
+                        <p class="text-white font-bold text-2xl px-3">PENDAFTARAN MOBILE LEGENDS</p>
                     </div>
+                    @if(session()->has('message'))
+                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                      {{ session('message') }}
+                      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                    @endif
                  <!-- form informasi tim -->
-                 <form method="post" action="/moilelegends/register" class="mb-5" enctype="multipart/form-data">
+                 <form method="post" action="/mobilelegends/register" class="mb-5" enctype="multipart/form-data">
                     @csrf
                     <div class="flex-auto justify-between">
                         <p class="pt-4 font-bold pb-2 text-lg text-secondary2">INFORMASI TIM</p>
@@ -41,33 +47,31 @@
                     </div>
                     <!-- form ifnromasi official  -->
                     <div class="official pt-5">
-                        <p class="pt-4 font-bold pb-2 text-lg text-secondary2">INFORMASI OFFICIAL</p>
+                        <p class="pt-4 font-bold pb-2 text-lg text-secondary2">INFORMASI PEMAIN (WAJIB ISI 5)</p>
                         <hr class="mb-5">
                         <!-- row1 -->
 
-                        @for($i = 1; $i <= 5; $i++)
+                        {{-- Looping tabel --}}
+                        @for($i = 1; $i <= 8; $i++)
                         <div class="md:flex justify-between">
                             <!-- nama -->
                             <div class="font-poppins text-secondary2 px-1 lg:px-2 lg:w-full ">
                                 <label
                                     class="space-x-9 w-11/12 block mb-2 text-base font-medium text-secondary2 leading-5 font-poppins"
                                     for="grid-first-name">
-                                    Nama
+                                    Nama {{ $i }}
                                 </label>
                                 <input
                                     class="appearance-none block w-full bg-primary1 text-secondary2 border border-secondary2 rounded-lg py-3 px-4 mb-3 leading-5 focus:outline-none"
-                                    id="grid-first-name" type="text" placeholder="Masukkan nama">
+                                    id="grid-first-name" type="text" placeholder="Masukkan nama" name="{{ "nama" . $i }}">
                             </div>
-                            <!-- fakultas -->
+                            <!-- No HandPhone -->
                             <div class="font-poppins text-secondary2 px-1 md:px-5 lg:px-2 lg:w-full">
-                                <label
-                                    class="space-x-9 w-11/12 block mb-2 text-base font-medium text-secondary2 leading-5 font-poppins"
-                                    for="grid-last-name">
-                                    Fakultas
-                                </label>
-                                <input type="text"
-                                    class="appearance-none block w-full bg-primary1 text-secondary2 border border-secondary2 rounded-lg py-3 px-4 mb-3 leading-5 focus:outline-none "
-                                    id="grid-last-name place" placeholder="Masukkan fakultas">
+                                <label class="pace-x-9 w-11/12 block mb-2 text-sm font-medium text-secondary2 dark:text-secondary2"
+                                    for="link_berkas">Nomor HandPhone</label>
+                                    <input type="text"
+                                    class="appearance-none  block w-full bg-primary1 text-secondary2 border border-secondary2 rounded-lg py-3 px-4 mb-3 leading-5 focus:outline-none"
+                                    id="grid-last-name place" placeholder="Masukkan nomor handphone" name="{{ "hp" . $i }}">
                             </div>
                         </div>
                         <!-- row2 -->
@@ -82,22 +86,22 @@
                                 <div class="relative">
                                     <select
                                         class="w-full mb-2 bg-primary1 border border-secondary2 text-secondary2 py-2.5 px-4 pr-8 rounded-lg leading-tight focus:outline-none focus:bg-primary1 focus:border-secondary2"
-                                        id="grid-state">
-                                        <option>Laki-laki</option>
-                                        <option>Perempuan</option>
+                                        id="grid-state" name="{{ "gender" . $i }}">
+                                        <option value="Laki-laki">Laki-laki</option>
+                                        <option value="Perempuan">Perempuan</option>
                                     </select>
                                 </div>
                             </div>
-                            <!-- angkatan -->
+                            <!-- fakultas -->
                             <div class="font-poppins text-secondary2 px-1 md:px-5 lg:px-2 lg:w-full">
                                 <label
                                     class="space-x-9 w-11/12 block mb-2 text-base font-medium text-secondary2 leading-5 font-poppins"
                                     for="grid-last-name">
-                                    Angkatan
+                                    Fakultas
                                 </label>
                                 <input type="text"
-                                    class="appearance-none  block w-full bg-primary1 text-secondary2 border border-secondary2 rounded-lg py-3 px-4 mb-3 leading-5 focus:outline-none"
-                                    id="grid-last-name place" placeholder="Masukkan angkatan">
+                                    class="appearance-none block w-full bg-primary1 text-secondary2 border border-secondary2 rounded-lg py-3 px-4 mb-3 leading-5 focus:outline-none "
+                                    id="grid-last-name place" placeholder="Masukkan fakultas" name="{{ "fakultas" . $i }}">
                             </div>
                         </div>
                         <div class="md:flex justify-between">
@@ -110,7 +114,31 @@
                                 </label>
                                 <input
                                     class="appearance-none block w-full bg-primary1 text-secondary2 border border-secondary2 rounded-lg py-3 px-4 mb-3 leading-5 focus:outline-none"
-                                    id="grid-first-name" type="text" placeholder="Masukkan email">
+                                    id="grid-first-name" type="text" placeholder="Masukkan email" name="{{ "email" . $i }}">
+                            </div>
+                            <!-- angkatan -->
+                            <div class="font-poppins text-secondary2 px-1 md:px-5 lg:px-2 lg:w-full">
+                                <label
+                                    class="space-x-9 w-11/12 block mb-2 text-base font-medium text-secondary2 leading-5 font-poppins"
+                                    for="grid-last-name">
+                                    Angkatan
+                                </label>
+                                <input type="text"
+                                    class="appearance-none  block w-full bg-primary1 text-secondary2 border border-secondary2 rounded-lg py-3 px-4 mb-3 leading-5 focus:outline-none"
+                                    id="grid-last-name place" placeholder="Masukkan angkatan" name="{{ "angkatan" . $i }}">
+                            </div>
+                        </div>
+                        <div class="md:flex justify-between">
+                            <!-- nim -->
+                            <div class="font-poppins text-secondary2 px-1 lg:px-2 lg:w-full ">
+                                <label
+                                    class="space-x-9 w-11/12 block mb-2 text-base font-medium text-secondary2 leading-5 font-poppins"
+                                    for="grid-first-name">
+                                    Nim
+                                </label>
+                                <input
+                                    class="appearance-none block w-full bg-primary1 text-secondary2 border border-secondary2 rounded-lg py-3 px-4 mb-3 leading-5 focus:outline-none"
+                                    id="grid-first-name" value="" type="text" placeholder="Masukkan Nim" name="{{ "nim" . $i }}">
                             </div>
                             <!-- berkas -->
                             <div class="font-poppins text-secondary2 px-1 md:px-5 lg:px-2 lg:w-full">
@@ -121,13 +149,35 @@
                                 </label>
                                 <input type="text"
                                     class="appearance-none block w-full bg-primary1 text-secondary2 border border-secondary2 rounded-lg py-3 px-4 mb-3 leading-5 focus:outline-none "
-                                    id="grid-last-name place" placeholder="Masukkan link gdrive">
+                                    id="grid-last-name place" placeholder="Masukkan link gdrive" name="{{ "link_gdrive" . $i }}">
+                            </div>
+                        </div>
+                        <div class="md:flex justify-between">
+                            <!-- id game -->
+                            <div class="font-poppins text-secondary2 px-1 lg:px-2 lg:w-full ">
+                                <label
+                                    class="space-x-9 w-11/12 block mb-2 text-base font-medium text-secondary2 leading-5 font-poppins"
+                                    for="grid-first-name">
+                                    ID Game
+                                </label>
+                                <input
+                                    class="appearance-none block w-full bg-primary1 text-secondary2 border border-secondary2 rounded-lg py-3 px-4 mb-3 leading-5 focus:outline-none"
+                                    id="grid-first-name" value="" type="text" placeholder="Masukkan ID Game" name="{{ "id_game" . $i }}">
+                            </div>
+                            <!-- nickname -->
+                            <div class="font-poppins text-secondary2 px-1 md:px-5 lg:px-2 lg:w-full">
+                                <label
+                                    class="space-x-9 w-11/12 block mb-2 text-base font-medium text-secondary2 leading-5 font-poppins"
+                                    for="grid-last-name">
+                                    Nickname
+                                </label>
+                                <input type="text"
+                                    class="appearance-none block w-full bg-primary1 text-secondary2 border border-secondary2 rounded-lg py-3 px-4 mb-3 leading-5 focus:outline-none "
+                                    id="grid-last-name place" placeholder="Masukkan nickname" name="{{ "nickname" . $i }}">
                             </div>
                         </div>
                         <br>
                         @endfor
-                        
-                        
                             <!-- Catatan -->
                             <div class="md:flex md:mt-auto py-4 text-white justify-center md:pl-12 pr-10 md:justify-between">
                                 <div class="w-full md:w-[50%] md:pr-10">

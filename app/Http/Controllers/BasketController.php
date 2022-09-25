@@ -27,61 +27,58 @@ class BasketController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'id_cabor' => 'required',
             'nama_team' => 'required',
             'universitas' => 'required',
-            'link_team' => 'required|regex:(drive.google.com)',
 
             'nama1' => 'required',
-            'nim1' => 'required|unique:players',
+            'nim1' => 'required',
             'fakultas1' => 'required',
             'angkatan1' => 'required',
             'link_gdrive1' => 'required|regex:(drive.google.com)',
-            'email1' => 'required|unique:players|email',
+            'email1' => 'required|email',
             'hp1' => 'required',
             'gender1' => 'required',
 
             'nama2' => 'required',
-            'nim2' => 'required|unique:players',
+            'nim2' => 'required',
             'fakultas2' => 'required',
             'angkatan2' => 'required',
             'link_gdrive2' => 'required|regex:(drive.google.com)',
-            'email2' => 'required|unique:players|email',
+            'email2' => 'required|email',
             'hp2' => 'required',
             'gender2' => 'required',
 
             'nama3' => 'required',
-            'nim3' => 'required|unique:players',
+            'nim3' => 'required',
             'fakultas3' => 'required',
             'angkatan3' => 'required',
             'link_gdrive3' => 'required|regex:(drive.google.com)',
-            'email3' => 'required|unique:players|email',
+            'email3' => 'required|email',
             'hp3' => 'required',
             'gender3' => 'required',
 
             'nama4' => 'required',
-            'nim4' => 'required|unique:players',
+            'nim4' => 'required',
             'fakultas4' => 'required',
             'angkatan4' => 'required',
             'link_gdrive4' => 'required|regex:(drive.google.com)',
-            'email4' => 'required|unique:players|email',
+            'email4' => 'required|email',
             'hp4' => 'required',
             'gender4' => 'required',
 
             'nama5' => 'required',
-            'nim5' => 'required|unique:players',
+            'nim5' => 'required',
             'fakultas5' => 'required',
             'angkatan5' => 'required',
             'link_gdrive5' => 'required|regex:(drive.google.com)',
-            'email5' => 'required|unique:players|email',
+            'email5' => 'required|email',
             'hp5' => 'required',
             'gender5' => 'required',
         ]);
         try {
-            $user['id_cabor'] = $request->id_cabor;
+            $user['id_cabor'] = 2;
             $user['nama_team'] = $request->nama_team;
             $user['universitas'] = $request->universitas;
-            $user['link_team'] = $request->link_team;
             User::where('id', auth()->user()->id)->update($user);
 
             $player1['nama'] = $request->nama1;
@@ -138,6 +135,126 @@ class BasketController extends Controller
             $player5['hp'] = $request->hp5;
             $player5['gender'] = $request->gender5;
             Player::create($player5);
+
+            if($request->nama6){
+                $player6['nama'] = $request->nama6;
+                $player6['nim']= $request->nim6;
+                $player6['id_leader'] = auth()->user()->id;
+                $player6['fakultas'] = $request->fakultas6;
+                $player6['angkatan'] = $request->angkatan6;
+                $player6['link_gdrive'] = $request->link_gdrive6;
+                $player6['email'] = $request->email6;
+                $player6['hp'] = $request->hp6;
+                $player6['gender'] = $request->gender6;
+                Player::create($player6);
+            }
+
+            if($request->nama7){
+                $player7['nama'] = $request->nama7;
+                $player7['nim']= $request->nim7;
+                $player7['id_leader'] = auth()->user()->id;
+                $player7['fakultas'] = $request->fakultas7;
+                $player7['angkatan'] = $request->angkatan7;
+                $player7['link_gdrive'] = $request->link_gdrive7;
+                $player7['email'] = $request->email7;
+                $player7['hp'] = $request->hp7;
+                $player7['gender'] = $request->gender7;
+                Player::create($player7);
+            }
+
+            if($request->nama8){
+                $player8['nama'] = $request->nama8;
+                $player8['nim']= $request->nim8;
+                $player8['id_leader'] = auth()->user()->id;
+                $player8['fakultas'] = $request->fakultas8;
+                $player8['angkatan'] = $request->angkatan8;
+                $player8['link_gdrive'] = $request->link_gdrive8;
+                $player8['email'] = $request->email8;
+                $player8['hp'] = $request->hp8;
+                $player8['gender'] = $request->gender8;
+                Player::create($player8);
+            }
+
+            if($request->nama9){
+                $player9['nama'] = $request->nama9;
+                $player9['nim']= $request->nim9;
+                $player9['id_leader'] = auth()->user()->id;
+                $player9['fakultas'] = $request->fakultas9;
+                $player9['angkatan'] = $request->angkatan9;
+                $player9['link_gdrive'] = $request->link_gdrive9;
+                $player9['email'] = $request->email9;
+                $player9['hp'] = $request->hp9;
+                $player9['gender'] = $request->gender9;
+                Player::create($player9);
+            }
+
+            if($request->nama10){
+                $player10['nama'] = $request->nama10;
+                $player10['nim']= $request->nim10;
+                $player10['id_leader'] = auth()->user()->id;
+                $player10['fakultas'] = $request->fakultas10;
+                $player10['angkatan'] = $request->angkatan10;
+                $player10['link_gdrive'] = $request->link_gdrive10;
+                $player10['email'] = $request->email10;
+                $player10['hp'] = $request->hp10;
+                $player10['gender'] = $request->gender10;
+                Player::create($player10);
+            }
+
+            if($request->nama11){
+                $player11['nama'] = $request->nama11;
+                $player11['nim']= $request->nim11;
+                $player11['id_leader'] = auth()->user()->id;
+                $player11['fakultas'] = $request->fakultas11;
+                $player11['angkatan'] = $request->angkatan11;
+                $player11['link_gdrive'] = $request->link_gdrive11;
+                $player11['email'] = $request->email11;
+                $player11['hp'] = $request->hp11;
+                $player11['gender'] = $request->gender11;
+                Player::create($player11);
+            }
+
+            if($request->nama12){
+                $player12['nama'] = $request->nama12;
+                $player12['nim']= $request->nim12;
+                $player12['id_leader'] = auth()->user()->id;
+                $player12['fakultas'] = $request->fakultas12;
+                $player12['angkatan'] = $request->angkatan12;
+                $player12['link_gdrive'] = $request->link_gdrive12;
+                $player12['email'] = $request->email12;
+                $player12['hp'] = $request->hp12;
+                $player12['gender'] = $request->gender12;
+                Player::create($player12);
+            }
+
+            return redirect()->route("dashboard")->with('message', 'Data berhasil ditambahkan');
+        } catch (\Throwable $th) {
+            return redirect()->back()->with('message', 'Data gagal ditambahkan');
+        }
+    }
+
+    public function formulir()
+    {
+        $user = auth()->user();
+        $anggotas = Player::where('id_leader', $user->id)->get();
+
+        $data = [
+            'user' => $user,
+            'anggotas' => $anggotas
+        ];
+
+        return view('user.formulir', $data);
+    }
+
+    public function storeFormulir(Request $request)
+    {
+        $request->validate([
+            'link_team' => 'required|regex:(drive.google.com)',
+        ]);
+        try {
+            $user['link_team'] = $request->link_team;
+
+            User::where('id', auth()->user()->id)->update($user);
 
             return redirect()->route("dashboard")->with('message', 'Data berhasil ditambahkan');
         } catch (\Throwable $th) {
