@@ -1,248 +1,213 @@
-@if ($message = Session::get('message'))
-<div class="w-full rounded-xl shadow-md  text-white text-center p-1 my-1 "
-    style="background: linear-gradient(to right,#147167,#3E8678,#FE6722,#F69534);">
-    {{ $message }}
-</div>
-@endif
-<div class="row">
-<div class="card col-6">
-    <div class="card-body">
-        <form action="/mobilelegends" method="post">
-            @csrf
-            {{-- <div class="form-group">
-                <label class="col-md-12">Nama Team</label>
-                <div class="col-md-12">
-                    <input type="text" placeholder="Brawijayan" name="nama_team"
-                        value="" class="form-control form-control-line">
-                </div>
-                @error('nama_team')
-                    <p class=" text-danger "> {{ $message }} </p>
-                @enderror
-            </div>
-            <div class="form-group">
-                <label class="col-md-12">Universitas</label>
-                <div class="col-md-12">
-                    <input type="text" placeholder="Brawijayan" name="universitas"
-                        value="" class="form-control form-control-line">
-                </div>
-                @error('universitas')
-                    <p class=" text-danger "> {{ $message }} </p>
-                @enderror
-            </div>
-            <div class="form-group">
-                <label class="col-md-12">link_team</label>
-                <div class="col-md-12">
-                    <input type="text" placeholder="Brawijayan" name="link_team"
-                        value="" class="form-control form-control-line">
-                </div>
-                @error('link_team')
-                    <p class=" text-danger "> {{ $message }} </p>
-                @enderror
-            </div> --}}
-            <div class="form-group">
-                <label class="col-md-12">nama1</label>
-                <div class="col-md-12">
-                    <input type="text" placeholder="Brawijayan" name="nama1"
-                        value="" class="form-control form-control-line">
-                </div>
-                @error('nama1')
-                    <p class=" text-danger "> {{ $message }} </p>
-                @enderror
-            </div>
-            <div class="form-group">
-                <label class="col-md-12">nim1</label>
-                <div class="col-md-12">
-                    <input type="text" placeholder="Brawijayan" name="nim1"
-                        value="" class="form-control form-control-line">
-                </div>
-                @error('nim1')
-                    <p class=" text-danger "> {{ $message }} </p>
-                @enderror
-            </div>
-            <div class="form-group">
-                <label class="col-md-12">fakultas1</label>
-                <div class="col-md-12">
-                    <input type="text" placeholder="Brawijayan" name="fakultas1"
-                        value="" class="form-control form-control-line">
-                </div>
-                @error('fakultas1')
-                    <p class=" text-danger "> {{ $message }} </p>
-                @enderror
-            </div>
-            <div class="form-group">
-                <label class="col-md-12">angkatan1</label>
-                <div class="col-md-12">
-                    <input type="text" placeholder="Brawijayan" name="angkatan1"
-                        value="" class="form-control form-control-line">
-                </div>
-                @error('angkatan1')
-                    <p class=" text-danger "> {{ $message }} </p>
-                @enderror
-            </div>
-            <div class="form-group">
-                <label class="col-md-12">link_gdrive1</label>
-                <div class="col-md-12">
-                    <input type="text" placeholder="Brawijayan" name="link_gdrive1"
-                        value="" class="form-control form-control-line">
-                </div>
-                @error('link_gdrive1')
-                    <p class=" text-danger "> {{ $message }} </p>
-                @enderror
-            </div>
-            <div class="form-group">
-                <label class="col-md-12">nickname1</label>
-                <div class="col-md-12">
-                    <input type="text" placeholder="Brawijayan" name="nickname1"
-                        value="" class="form-control form-control-line">
-                </div>
-                @error('nickname1')
-                    <p class=" text-danger "> {{ $message }} </p>
-                @enderror
-            </div>
-            <div class="form-group">
-                <label class="col-md-12">email1</label>
-                <div class="col-md-12">
-                    <input type="text" placeholder="Brawijayan" name="email1"
-                        value="" class="form-control form-control-line">
-                </div>
-                @error('email1')
-                    <p class=" text-danger "> {{ $message }} </p>
-                @enderror
-            </div>
-            <div class="form-group">
-                <label class="col-md-12">hp1</label>
-                <div class="col-md-12">
-                    <input type="text" placeholder="Brawijayan" name="hp1"
-                        value="" class="form-control form-control-line">
-                </div>
-                @error('hp1')
-                    <p class=" text-danger "> {{ $message }} </p>
-                @enderror
-            </div>
-            <div class="form-group">
-                <label class="col-md-12">id_game1</label>
-                <div class="col-md-12">
-                    <input type="text" placeholder="Brawijayan" name="id_game1"
-                        value="" class="form-control form-control-line">
-                </div>
-                @error('id_game1')
-                    <p class=" text-danger "> {{ $message }} </p>
-                @enderror
-            </div>
-            <div class="form-group">
-                <label class="col-md-12">gender1</label>
-                <div class="col-md-12">
-                    <input type="text" placeholder="Brawijayan" name="gender1"
-                        value="" class="form-control form-control-line">
-                </div>
-                @error('gender1')
-                    <p class=" text-danger "> {{ $message }} </p>
-                @enderror
-            </div>
+@extends('layouts.kompetisi')
 
+@section('container') 
+            <!-- main content -->
+            <div class="md:grid md:grid-cols-1 ">
+    
+                <!-- grid content peserta -->
+                <div class="grid-2 md:grid-3 col-span-2 p-10 mb-20">
+                    <div class="flex items-center ">
+                        <i class="fa-solid fa-angle-left text-white text-2xl"></i>
+                        <p class="text-white font-bold text-2xl px-3">PENDAFTARAN MOBILE LEGENDS</p>
+                    </div>
+                    @if(session()->has('message'))
+                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                      {{ session('message') }}
+                      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                    @endif
+                 <!-- form informasi tim -->
+                 <form method="post" action="/mobilelegends/register" class="mb-5" enctype="multipart/form-data">
+                    @csrf
+                    <div class="flex-auto justify-between">
+                        <p class="pt-4 font-bold pb-2 text-lg text-secondary2">INFORMASI TIM</p>
+                        <hr class="mb-5">
+                        <div class="md:flex justify-between">
+                            <div class="font-poppins text-secondary2 px-1 lg:px-2 lg:w-full ">
+                                <label
+                                    class="space-x-9 w-11/12 block mb-2 text-base font-medium text-secondary2 leading-5 font-poppins"
+                                    for="grid-first-name">
+                                    Nama Tim
+                                </label>
+                                <input
+                                    class="appearance-none block w-full bg-primary1 text-secondary2 border border-secondary2 rounded-lg py-3 px-4 mb-3 leading-5 focus:outline-none"
+                                    id="grid-first-name" type="text" placeholder="Masukkan nama tim" name="nama_team">
+                            </div>
+                            <div class="font-poppins text-secondary2 px-1 md:px-5 lg:px-2 lg:w-full">
+                                <label
+                                    class="space-x-9 w-full block mb-2 text-base font-medium text-secondary2 leading-5 font-poppins"
+                                    for="grid-last-name">
+                                    Asal Universitas
+                                </label>
+                                <input type="text"
+                                    class="appearance-none block w-full bg-primary1 text-secondary2 border border-secondary2 rounded-lg py-3 px-4 mb-3 leading-5 focus:outline-none "
+                                    id="grid-last-name place" placeholder="Masukkan asal universitas" name="universitas">
+                            </div>
+                        </div>
+                    </div>
+                    <!-- form ifnromasi official  -->
+                    <div class="official pt-5">
+                        <p class="pt-4 font-bold pb-2 text-lg text-secondary2">INFORMASI PEMAIN (WAJIB ISI 5)</p>
+                        <hr class="mb-5">
+                        <!-- row1 -->
 
-            <div class="form-group">
-                <label class="col-md-12">nama2</label>
-                <div class="col-md-22">
-                    <input type="text" placeholder="Brawijayan" name="nama2"
-                        value="" class="form-control form-control-line">
+                        {{-- Looping tabel --}}
+                        @for($i = 1; $i <= 8; $i++)
+                        <div class="md:flex justify-between">
+                            <!-- nama -->
+                            <div class="font-poppins text-secondary2 px-1 lg:px-2 lg:w-full ">
+                                <label
+                                    class="space-x-9 w-11/12 block mb-2 text-base font-medium text-secondary2 leading-5 font-poppins"
+                                    for="grid-first-name">
+                                    Nama {{ $i }}
+                                </label>
+                                <input
+                                    class="appearance-none block w-full bg-primary1 text-secondary2 border border-secondary2 rounded-lg py-3 px-4 mb-3 leading-5 focus:outline-none"
+                                    id="grid-first-name" type="text" placeholder="Masukkan nama" name="{{ "nama" . $i }}">
+                            </div>
+                            <!-- No HandPhone -->
+                            <div class="font-poppins text-secondary2 px-1 md:px-5 lg:px-2 lg:w-full">
+                                <label class="pace-x-9 w-11/12 block mb-2 text-sm font-medium text-secondary2 dark:text-secondary2"
+                                    for="link_berkas">Nomor HandPhone</label>
+                                    <input type="text"
+                                    class="appearance-none  block w-full bg-primary1 text-secondary2 border border-secondary2 rounded-lg py-3 px-4 mb-3 leading-5 focus:outline-none"
+                                    id="grid-last-name place" placeholder="Masukkan nomor handphone" name="{{ "hp" . $i }}">
+                            </div>
+                        </div>
+                        <!-- row2 -->
+                        <div class="md:flex justify-between">
+                            <!-- jenis kelamin -->
+                            <div class="font-poppins text-secondary2 px-1 lg:px-2 lg:w-full ">
+                                <label
+                                    class="space-x-9 w-11/12 block mb-2 text-base font-medium text-secondary2 leading-5 font-poppins"
+                                    for="grid-first-name">
+                                    Jenis Kelamin
+                                </label>
+                                <div class="relative">
+                                    <select
+                                        class="w-full mb-2 bg-primary1 border border-secondary2 text-secondary2 py-2.5 px-4 pr-8 rounded-lg leading-tight focus:outline-none focus:bg-primary1 focus:border-secondary2"
+                                        id="grid-state" name="{{ "gender" . $i }}">
+                                        <option value="Laki-laki">Laki-laki</option>
+                                        <option value="Perempuan">Perempuan</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <!-- fakultas -->
+                            <div class="font-poppins text-secondary2 px-1 md:px-5 lg:px-2 lg:w-full">
+                                <label
+                                    class="space-x-9 w-11/12 block mb-2 text-base font-medium text-secondary2 leading-5 font-poppins"
+                                    for="grid-last-name">
+                                    Fakultas
+                                </label>
+                                <input type="text"
+                                    class="appearance-none block w-full bg-primary1 text-secondary2 border border-secondary2 rounded-lg py-3 px-4 mb-3 leading-5 focus:outline-none "
+                                    id="grid-last-name place" placeholder="Masukkan fakultas" name="{{ "fakultas" . $i }}">
+                            </div>
+                        </div>
+                        <div class="md:flex justify-between">
+                            <!-- email -->
+                            <div class="font-poppins text-secondary2 px-1 lg:px-2 lg:w-full ">
+                                <label
+                                    class="space-x-9 w-11/12 block mb-2 text-base font-medium text-secondary2 leading-5 font-poppins"
+                                    for="grid-first-name">
+                                    Email
+                                </label>
+                                <input
+                                    class="appearance-none block w-full bg-primary1 text-secondary2 border border-secondary2 rounded-lg py-3 px-4 mb-3 leading-5 focus:outline-none"
+                                    id="grid-first-name" type="text" placeholder="Masukkan email" name="{{ "email" . $i }}">
+                            </div>
+                            <!-- angkatan -->
+                            <div class="font-poppins text-secondary2 px-1 md:px-5 lg:px-2 lg:w-full">
+                                <label
+                                    class="space-x-9 w-11/12 block mb-2 text-base font-medium text-secondary2 leading-5 font-poppins"
+                                    for="grid-last-name">
+                                    Angkatan
+                                </label>
+                                <input type="text"
+                                    class="appearance-none  block w-full bg-primary1 text-secondary2 border border-secondary2 rounded-lg py-3 px-4 mb-3 leading-5 focus:outline-none"
+                                    id="grid-last-name place" placeholder="Masukkan angkatan" name="{{ "angkatan" . $i }}">
+                            </div>
+                        </div>
+                        <div class="md:flex justify-between">
+                            <!-- nim -->
+                            <div class="font-poppins text-secondary2 px-1 lg:px-2 lg:w-full ">
+                                <label
+                                    class="space-x-9 w-11/12 block mb-2 text-base font-medium text-secondary2 leading-5 font-poppins"
+                                    for="grid-first-name">
+                                    Nim
+                                </label>
+                                <input
+                                    class="appearance-none block w-full bg-primary1 text-secondary2 border border-secondary2 rounded-lg py-3 px-4 mb-3 leading-5 focus:outline-none"
+                                    id="grid-first-name" value="" type="text" placeholder="Masukkan Nim" name="{{ "nim" . $i }}">
+                            </div>
+                            <!-- berkas -->
+                            <div class="font-poppins text-secondary2 px-1 md:px-5 lg:px-2 lg:w-full">
+                                <label
+                                    class="space-x-9 w-11/12 block mb-2 text-base font-medium text-secondary2 leading-5 font-poppins"
+                                    for="grid-last-name">
+                                    Upload Berkas Individu
+                                </label>
+                                <input type="text"
+                                    class="appearance-none block w-full bg-primary1 text-secondary2 border border-secondary2 rounded-lg py-3 px-4 mb-3 leading-5 focus:outline-none "
+                                    id="grid-last-name place" placeholder="Masukkan link gdrive" name="{{ "link_gdrive" . $i }}">
+                            </div>
+                        </div>
+                        <div class="md:flex justify-between">
+                            <!-- id game -->
+                            <div class="font-poppins text-secondary2 px-1 lg:px-2 lg:w-full ">
+                                <label
+                                    class="space-x-9 w-11/12 block mb-2 text-base font-medium text-secondary2 leading-5 font-poppins"
+                                    for="grid-first-name">
+                                    ID Game
+                                </label>
+                                <input
+                                    class="appearance-none block w-full bg-primary1 text-secondary2 border border-secondary2 rounded-lg py-3 px-4 mb-3 leading-5 focus:outline-none"
+                                    id="grid-first-name" value="" type="text" placeholder="Masukkan ID Game" name="{{ "id_game" . $i }}">
+                            </div>
+                            <!-- nickname -->
+                            <div class="font-poppins text-secondary2 px-1 md:px-5 lg:px-2 lg:w-full">
+                                <label
+                                    class="space-x-9 w-11/12 block mb-2 text-base font-medium text-secondary2 leading-5 font-poppins"
+                                    for="grid-last-name">
+                                    Nickname
+                                </label>
+                                <input type="text"
+                                    class="appearance-none block w-full bg-primary1 text-secondary2 border border-secondary2 rounded-lg py-3 px-4 mb-3 leading-5 focus:outline-none "
+                                    id="grid-last-name place" placeholder="Masukkan nickname" name="{{ "nickname" . $i }}">
+                            </div>
+                        </div>
+                        <br>
+                        @endfor
+                            <!-- Catatan -->
+                            <div class="md:flex md:mt-auto py-4 text-white justify-center md:pl-12 pr-10 md:justify-between">
+                                <div class="w-full md:w-[50%] md:pr-10">
+                                    <h3 class="font-bold">Catatan</h3>
+                                    <ol class="list-decimal md:pl-4 md:space-y-2 md:pr-10">
+                                        <li class="text-justify">
+                                            (*) Menjadikan satu berkas-berkas yang dibutuhkan (Scan KTM,
+                                            Sertifikat Vaksin minimal dosis 2, Surat Keterangan Sehat, dan
+                                            Foto Diri 3x4) dan memasukkannya dalam Google Drive serta
+                                            upload link Google Drive yang berisi folder berkas-berkas
+                                            tersebut pada tempat yang telah disediakan.
+                                        </li>
+                                        <li>Unduh Rulebook <strong>klik disini</strong>.</li>
+                                    </ol>
+                                </div>
+                                <div class="md:w-[45%] w-full py-5 md:py-0 flex md:justify-end items-center md:pl-40">
+                                    <button class="px-10 py-2 font-bold text-primary2 bg-secondary2 rounded-xl font-poppins" type="submit">
+                                        Simpan&Lanjut
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
                 </div>
-                @error('nama2')
-                    <p class=" text-danger "> {{ $message }} </p>
-                @enderror
-            </div>
-            <div class="form-group">
-                <label class="col-md-22">nim2</label>
-                <div class="col-md-22">
-                    <input type="text" placeholder="Brawijayan" name="nim2"
-                        value="" class="form-control form-control-line">
+
+                
+                
+
                 </div>
-                @error('nim2')
-                    <p class=" text-danger "> {{ $message }} </p>
-                @enderror
+                
             </div>
-            <div class="form-group">
-                <label class="col-md-22">fakultas2</label>
-                <div class="col-md-22">
-                    <input type="text" placeholder="Brawijayan" name="fakultas2"
-                        value="" class="form-control form-control-line">
-                </div>
-                @error('fakultas2')
-                    <p class=" text-danger "> {{ $message }} </p>
-                @enderror
-            </div>
-            <div class="form-group">
-                <label class="col-md-22">angkatan2</label>
-                <div class="col-md-22">
-                    <input type="text" placeholder="Brawijayan" name="angkatan2"
-                        value="" class="form-control form-control-line">
-                </div>
-                @error('angkatan2')
-                    <p class=" text-danger "> {{ $message }} </p>
-                @enderror
-            </div>
-            <div class="form-group">
-                <label class="col-md-22">link_gdrive2</label>
-                <div class="col-md-22">
-                    <input type="text" placeholder="Brawijayan" name="link_gdrive2"
-                        value="" class="form-control form-control-line">
-                </div>
-                @error('link_gdrive2')
-                    <p class=" text-danger "> {{ $message }} </p>
-                @enderror
-            </div>
-            <div class="form-group">
-                <label class="col-md-22">nickname2</label>
-                <div class="col-md-22">
-                    <input type="text" placeholder="Brawijayan" name="nickname2"
-                        value="" class="form-control form-control-line">
-                </div>
-                @error('nickname2')
-                    <p class=" text-danger "> {{ $message }} </p>
-                @enderror
-            </div>
-            <div class="form-group">
-                <label class="col-md-22">email2</label>
-                <div class="col-md-22">
-                    <input type="text" placeholder="Brawijayan" name="email2"
-                        value="" class="form-control form-control-line">
-                </div>
-                @error('email2')
-                    <p class=" text-danger "> {{ $message }} </p>
-                @enderror
-            </div>
-            <div class="form-group">
-                <label class="col-md-22">hp2</label>
-                <div class="col-md-22">
-                    <input type="text" placeholder="Brawijayan" name="hp2"
-                        value="" class="form-control form-control-line">
-                </div>
-                @error('hp2')
-                    <p class=" text-danger "> {{ $message }} </p>
-                @enderror
-            </div>
-            <div class="form-group">
-                <label class="col-md-22">id_game2</label>
-                <div class="col-md-22">
-                    <input type="text" placeholder="Brawijayan" name="id_game2"
-                        value="" class="form-control form-control-line">
-                </div>
-                @error('id_game2')
-                    <p class=" text-danger "> {{ $message }} </p>
-                @enderror
-            </div>
-            <div class="form-group">
-                <label class="col-md-12">gender2</label>
-                <div class="col-md-12">
-                    <input type="text" placeholder="Brawijayan" name="gender2"
-                        value="" class="form-control form-control-line">
-                </div>
-                @error('gender2')
-                    <p class=" text-danger "> {{ $message }} </p>
-                @enderror
-            </div>
-            <button type="submit" class="btn btn-primary ">Submit</button>
-        </form>
-    </div>
-</div>
-</div>
+        </div>
+    </section>
+@endsection

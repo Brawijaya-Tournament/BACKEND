@@ -14,6 +14,9 @@ use App\Http\Controllers\SoloVocalController;
 use App\Http\Controllers\admin\TeamController as AdminTeamController;
 use App\Http\Controllers\admin\KlasemenController as AdminKlasemenController;
 use App\Http\Controllers\admin\PengumumanController as AdminPengumumanController;
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\FaqController;
+use App\Http\Controllers\KlasemenController;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,7 +33,10 @@ $this->urlAdmin = "adminbt";
 
 Route::get('/', function () {
     return view('index');
-})->name('dashboard');
+})->name('dashboard')->middleware('guest');
+
+Route::get('/klasemen', [KlasemenController::class, 'index'])->middleware('guest');
+Route::get('/faq', [FaqController::class, 'index'])->middleware('guest');
 
 Route::get('/login', [LoginController::class, 'index'])->name('login')->middleware('guest');
 Route::post('/login', [LoginController::class, 'authenticate']);
@@ -39,33 +45,55 @@ Route::post('/logout', [LoginController::class, 'logout'])->middleware('auth')->
 Route::get('/register', [RegisterController::class, 'index'])->middleware('guest');
 Route::post('/register', [RegisterController::class, 'store']);
 
-Route::get('/mobilelegends', [MobileLegendsController::class, 'create']);
-Route::post('/mobilelegends', [MobileLegendsController::class, 'store']);
+Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard')->middleware('auth');
 
-Route::get('/pubg-team', [PubgController::class, 'createTeam'])->middleware('auth');
-Route::post('/pubg-team', [PubgController::class, 'storeTeam'])->middleware('auth');
-Route::get('/pubg-solo', [PubgController::class, 'createSolo'])->middleware('auth');
-Route::post('/pubg-solo', [PubgController::class, 'storeSolo'])->middleware('auth');
+Route::get('/mobilelegends', [MobileLegendsController::class, 'index']);
+Route::get('/mobilelegends/register', [MobileLegendsController::class, 'create']);
+Route::post('/mobilelegends/register', [MobileLegendsController::class, 'store']);
+Route::get('/mobilelegends/formulir', [MobileLegendsController::class, 'formulir'])->middleware('auth')->name('mobilelegends.formulir');
+Route::post('/mobilelegends/formulir', [MobileLegendsController::class, 'storeFormulir'])->middleware('auth');
 
-Route::get('/solo-vocal', [SoloVocalController::class, 'create'])->middleware('auth');
-Route::post('/solo-vocal', [SoloVocalController::class, 'store'])->middleware('auth');
+Route::get('/pubg', [PubgController::class, 'index']);
+Route::get('/pubg/register', [PubgController::class, 'create'])->middleware('auth');
+Route::post('/pubg/register', [PubgController::class, 'store'])->middleware('auth');
+Route::get('/pubg/formulir', [PubgController::class, 'formulir'])->middleware('auth')->name('pubg.formulir');
+Route::post('/pubg/formulir', [PubgController::class, 'storeFormulir'])->middleware('auth');
 
-Route::get('/modern-dance', [ModernDanceController::class, 'create'])->middleware('auth');
-Route::post('/modern-dance', [ModernDanceController::class, 'store'])->middleware('auth');
+Route::get('/solo-vocal', [SoloVocalController::class, 'index']);
+Route::get('/solo-vocal/register', [SoloVocalController::class, 'create'])->middleware('auth');
+Route::post('/solo-vocal/register', [SoloVocalController::class, 'store'])->middleware('auth');
+Route::get('/solo-vocal/formulir', [SoloVocalController::class, 'formulir'])->name('solo-vocal.formulir');
+Route::post('/solo-vocal/formulir', [SoloVocalController::class, 'storeFormulir']);
 
-Route::get('/fotografi', [FotografiController::class, 'create'])->middleware('auth');
-Route::post('/fotografi', [FotografiController::class, 'store'])->middleware('auth');
+Route::get('/modern-dance', [ModernDanceController::class, 'index']);
+Route::get('/modern-dance/register', [ModernDanceController::class, 'create'])->middleware('auth');
+Route::post('/modern-dance/register', [ModernDanceController::class, 'store'])->middleware('auth');
 
-Route::get('/futsal', [FutsalController::class, 'create'])->middleware('auth');
-Route::post('/futsal', [FutsalController::class, 'store'])->middleware('auth');
+Route::get('/fotografi', [FotografiController::class, 'index']);
+Route::get('/fotografi/register', [FotografiController::class, 'create'])->middleware('auth');
+Route::post('/fotografi/register', [FotografiController::class, 'store'])->middleware('auth');
+Route::get('/fotografi/formulir', [FotografiController::class, 'formulir'])->name('fotografi.formulir');
+Route::post('/fotografi/formulir', [FotografiController::class, 'storeFormulir']);
 
-Route::get('/basket', [BasketController::class, 'create'])->middleware('auth');
-Route::post('/basket', [BasketController::class, 'store'])->middleware('auth');
+Route::get('/futsal', [FutsalController::class, 'index']);
+Route::get('/futsal/register', [FutsalController::class, 'create'])->middleware('auth');
+Route::post('/futsal/register', [FutsalController::class, 'store'])->middleware('auth');
+Route::get('/futsal/formulir', [FutsalController::class, 'formulir'])->middleware('auth')->name('futsal.formulir');
+Route::post('/futsal/formulir', [FutsalController::class, 'storeFormulir'])->middleware('auth');
 
-Route::get('/bulutangkis-ganda', [BulutangkisController::class, 'createGanda'])->middleware('auth');
-Route::post('/bulutangkis-ganda', [BulutangkisController::class, 'storeGanda'])->middleware('auth');
-Route::get('/bulutangkis-tunggal', [BulutangkisController::class, 'createTunggal'])->middleware('auth');
-Route::post('/bulutangkis-tunggal', [BulutangkisController::class, 'storeTunggal'])->middleware('auth');
+Route::get('/basket', [BasketController::class, 'index']);
+Route::get('/basket/register', [BasketController::class, 'create'])->middleware('auth');
+Route::post('/basket/register', [BasketController::class, 'store'])->middleware('auth');
+Route::get('/basket/formulir', [BasketController::class, 'formulir'])->middleware('auth')->name('basket.formulir');
+Route::post('/basket/formulir', [BasketController::class, 'storeFormulir'])->middleware('auth');
+
+Route::get('/bulutangkis', [BulutangkisController::class, 'index']);
+Route::get('/bulutangkis-ganda/register', [BulutangkisController::class, 'createGanda'])->middleware('auth');
+Route::post('/bulutangkis-ganda/register', [BulutangkisController::class, 'storeGanda'])->middleware('auth');
+Route::get('/bulutangkis-tunggal/register', [BulutangkisController::class, 'createTunggal'])->middleware('auth');
+Route::post('/bulutangkis-tunggal/register', [BulutangkisController::class, 'storeTunggal'])->middleware('auth');
+Route::get('/bulutangkis/formulir', [BulutangkisController::class, 'formulir'])->name('bulutangkis.formulir');
+Route::post('/bulutangkis/formulir', [BulutangkisController::class, 'storeFormulir']);
 
 Route::prefix($this->urlAdmin)->group(function () {
     Route::prefix('team')->group(function () {

@@ -8,6 +8,10 @@ use App\Models\User;
 
 class FotografiController extends Controller
 {
+    public function index()
+    {
+        return view('user.fotografi.index');
+    }
     public function create()
     {
         $isRegister = User::where('id', '=', auth()->user()->id)->first();
@@ -37,7 +41,7 @@ class FotografiController extends Controller
             'gender1' => 'required',
         ]);
         try {
-            $user['id_cabor'] = $request->id_cabor;
+            $user['id_cabor'] = 6;
             $user['nama_team'] = $request->nama_team;
             $user['universitas'] = $request->universitas;
             $user['link_team'] = $request->link_team;
@@ -53,6 +57,35 @@ class FotografiController extends Controller
             $player1['hp'] = $request->hp1;
             $player1['gender'] = $request->gender1;
             Player::create($player1);
+
+            return redirect()->route("dashboard")->with('message', 'Data berhasil ditambahkan');
+        } catch (\Throwable $th) {
+            return redirect()->back()->with('message', 'Data gagal ditambahkan');
+        }
+    }
+
+    public function formulir()
+    {
+        $user = auth()->user();
+        $anggotas = Player::where('id_leader', $user->id)->get();
+
+        $data = [
+            'user' => $user,
+            'anggotas' => $anggotas
+        ];
+
+        return view('user.formulir', $data);
+    }
+
+    public function storeFormulir(Request $request)
+    {
+        $request->validate([
+            'link_team' => 'required|regex:(drive.google.com)',
+        ]);
+        try {
+            
+            $user['link_team'] = $request->link_team;
+            User::where('id', auth()->user()->id)->update($user);
 
             return redirect()->route("dashboard")->with('message', 'Data berhasil ditambahkan');
         } catch (\Throwable $th) {

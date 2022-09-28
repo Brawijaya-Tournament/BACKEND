@@ -8,6 +8,10 @@ use App\Models\User;
 
 class BulutangkisController extends Controller
 {
+    public function index()
+    {
+        return view('user.bulutangkis.index');
+    }
     public function createGanda()
     {
         $isRegister = User::where('id', '=', auth()->user()->id)->first();
@@ -16,40 +20,37 @@ class BulutangkisController extends Controller
             return redirect('/dashboard')->with('message', 'Anda sudah melakukan registrasi!');
         }
 
-        return view('user.bulutangkis.create');
+        return view('user.bulutangkis.createganda');
     }
 
     public function storeGanda(Request $request)
     {
         $request->validate([
-            'id_cabor' => 'required',
             'nama_team' => 'required',
             'universitas' => 'required',
-            'link_team' => 'required|regex:(drive.google.com)',
 
             'nama1' => 'required',
-            'nim1' => 'required|unique:players',
+            'nim1' => 'required',
             'fakultas1' => 'required',
             'angkatan1' => 'required',
             'link_gdrive1' => 'required|regex:(drive.google.com)',
-            'email1' => 'required|unique:players|email',
+            'email1' => 'required|email',
             'hp1' => 'required',
             'gender1' => 'required',
 
             'nama2' => 'required',
-            'nim2' => 'required|unique:players',
+            'nim2' => 'required',
             'fakultas2' => 'required',
             'angkatan2' => 'required',
             'link_gdrive2' => 'required|regex:(drive.google.com)',
-            'email2' => 'required|unique:players|email',
+            'email2' => 'required|email',
             'hp2' => 'required',
             'gender2' => 'required',
         ]);
         try {
-            $user['id_cabor'] = $request->id_cabor;
+            $user['id_cabor'] = 1;
             $user['nama_team'] = $request->nama_team;
             $user['universitas'] = $request->universitas;
-            $user['link_team'] = $request->link_team;
             User::where('id', auth()->user()->id)->update($user);
 
             $player1['nama'] = $request->nama1;
@@ -92,26 +93,27 @@ class BulutangkisController extends Controller
 
     public function storeTunggal(Request $request)
     {
+        // dd($request);
         $request->validate([
-            'id_cabor' => 'required',
             'nama_team' => 'required',
             'universitas' => 'required',
-            'link_team' => 'required|regex:(drive.google.com)',
+            // 'link_team' => 'required|regex:(drive.google.com)',
 
             'nama1' => 'required',
-            'nim1' => 'required|unique:players',
+            'nim1' => 'required',
             'fakultas1' => 'required',
             'angkatan1' => 'required',
             'link_gdrive1' => 'required|regex:(drive.google.com)',
-            'email1' => 'required|unique:players|email',
+            'email1' => 'required|email',
             'hp1' => 'required',
             'gender1' => 'required',
         ]);
+        // dd($request);
         try {
-            $user['id_cabor'] = $request->id_cabor;
+            $user['id_cabor'] = 1;
             $user['nama_team'] = $request->nama_team;
             $user['universitas'] = $request->universitas;
-            $user['link_team'] = $request->link_team;
+            // $user['link_team'] = $request->link_team;
             User::where('id', auth()->user()->id)->update($user);
 
             $player1['nama'] = $request->nama1;
@@ -124,6 +126,37 @@ class BulutangkisController extends Controller
             $player1['hp'] = $request->hp1;
             $player1['gender'] = $request->gender1;
             Player::create($player1);
+            return redirect()->route("bulutangkis.formulir")->with('message', 'Data berhasil ditambahkan');
+        } catch (\Throwable $th) {
+            return redirect()->back()->with('message', 'Data gagal ditambahkan');
+        }
+    }
+
+    public function formulir()
+    {
+        $user = auth()->user();
+        $anggotas = Player::where('id_leader', $user->id)->get();
+
+        // dd($anggotas);
+
+        $data = [
+            'user' => $user,
+            'anggotas' => $anggotas
+        ];
+
+        return view('user.formulir', $data);
+    }
+
+    public function storeFormulir(Request $request)
+    {
+        $request->validate([
+            'link_team' => 'required|regex:(drive.google.com)',
+        ]);
+        try {
+            
+            $user['link_team'] = $request->link_team;
+            User::where('id', auth()->user()->id)->update($user);
+
             return redirect()->route("dashboard")->with('message', 'Data berhasil ditambahkan');
         } catch (\Throwable $th) {
             return redirect()->back()->with('message', 'Data gagal ditambahkan');

@@ -27,7 +27,7 @@
                         </div>
                         <div class="form-group">
                             <label for="exampleFormControlInput">Perunggu</label>
-                            <input type="text" name="perunggu" class="form-control" id="perunggu" placeholder="Perunggu" value="{{ old('perunggu', $klasemens->emas) }}">
+                            <input type="text" name="perunggu" class="form-control" id="perunggu" placeholder="Perunggu" value="{{ old('perunggu', $klasemens->perunggu) }}">
                         </div>
                         <button type="submit" name = "simpan" class="btn btn-primary">Simpan</button>
                     </form>
