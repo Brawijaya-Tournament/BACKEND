@@ -227,7 +227,7 @@ class BasketController extends Controller
                 Player::create($player12);
             }
 
-            return redirect()->route("dashboard")->with('message', 'Data berhasil ditambahkan');
+            return redirect()->route("basket.formulir")->with('message', 'Data berhasil ditambahkan');
         } catch (\Throwable $th) {
             return redirect()->back()->with('message', 'Data gagal ditambahkan');
         }
