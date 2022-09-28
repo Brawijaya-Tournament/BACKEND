@@ -28,6 +28,11 @@
                                 Lupa Kata Sandi ?
                             </a> --}}
                         </div>
+                        @if(session()->has('message'))
+                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                          {{ session('message') }}
+                        </div>
+                        @endif
                         <button type="submit"
                         class="inline-block mx-5 w-10/12 lg:mx-12 lg:w-9/12 px-12 py-3 bg-primary2 text-secondary2 font-poppins font-bold text-lg leading-5 rounded-xl shadow-md hover:bg-primary3 hover:shadow-lg focus:bg-primary3 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primary3 active:shadow-lg transition duration-150 ease-in-out"
                         data-mdb-ripple="true"
