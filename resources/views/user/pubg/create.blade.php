@@ -8,7 +8,7 @@
                 <div class="grid-2 md:grid-3 col-span-2 p-10 mb-20">
                     <div class="flex items-center ">
                         <i class="fa-solid fa-angle-left text-white text-2xl"></i>
-                        <p class="text-white font-bold text-2xl px-3">PENDAFTARAN PUBG</p>
+                        <p class="text-white font-bold text-2xl px-3">PENDAFTARAN PUBG MOBILE</p>
                     </div>
                     @if(session()->has('message'))
                     <div class="alert alert-success alert-dismissible fade show" role="alert">

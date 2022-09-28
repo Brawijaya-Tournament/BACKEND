@@ -75,6 +75,7 @@ class PubgController extends Controller
             // 'nickname4' => 'required',
 
         ]);
+
         try {
             $user['id_cabor'] = 5;
             $user['nama_team'] = $request->nama_team;
@@ -155,8 +156,21 @@ class PubgController extends Controller
     public function storeFormulir(Request $request)
     {
         $request->validate([
-            'link_team' => 'required|regex:(drive.google.com)',
+            'nama_team' => 'required',
+            'universitas' => 'required',
+
+            'nama1' => 'required',
+            'nim1' => 'required',
+            'fakultas1' => 'required',
+            'angkatan1' => 'required',
+            'link_gdrive1' => 'required|regex:(drive.google.com)',
+            'email1' => 'required|email',
+            'hp1' => 'required',
+            'gender1' => 'required',
+            'id_game1' => 'required',
+            'nickname1' => 'required',
         ]);
+        
         try {
             $user['link_team'] = $request->link_team;
 

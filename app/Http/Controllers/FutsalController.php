@@ -253,7 +253,7 @@ class FutsalController extends Controller
                 Player::create($player14);
             }
 
-            return redirect()->route("dashboard")->with('message', 'Data berhasil ditambahkan');
+            return redirect()->route("futsal.formulir")->with('message', 'Data berhasil ditambahkan');
         } catch (\Throwable $th) {
             return redirect()->back()->with('message', 'Data gagal ditambahkan');
         }
