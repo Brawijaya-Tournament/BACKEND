@@ -11,22 +11,12 @@
                         <p class="text-white font-bold text-2xl px-3">PENDAFTARAN FOTOGRAFI</p>
                     </div>
                  <!-- form informasi tim -->
-                 <form method="post" action="/bulutangkis-tunggal/register" class="mb-5" enctype="multipart/form-data">
+                 <form method="post" action="/fotografi/register" class="mb-5" enctype="multipart/form-data">
                     @csrf
                     <div class="flex-auto justify-between">
                         <p class="pt-4 font-bold pb-2 text-lg text-secondary2">INFORMASI PESERTA</p>
                         <hr class="mb-5">
                         <div class="md:flex justify-between">
-                            <div class="font-poppins text-secondary2 px-1 lg:px-2 lg:w-full ">
-                                <label
-                                    class="space-x-9 w-11/12 block mb-2 text-base font-medium text-secondary2 leading-5 font-poppins"
-                                    for="grid-first-name">
-                                    Nama Tim
-                                </label>
-                                <input
-                                    class="appearance-none block w-full bg-primary1 text-secondary2 border border-secondary2 rounded-lg py-3 px-4 mb-3 leading-5 focus:outline-none"
-                                    id="grid-first-name" type="text" placeholder="Masukkan nama tim" name="nama_team">
-                            </div>
                             <div class="font-poppins text-secondary2 px-1 md:px-5 lg:px-2 lg:w-full">
                                 <label
                                     class="space-x-9 w-full block mb-2 text-base font-medium text-secondary2 leading-5 font-poppins"

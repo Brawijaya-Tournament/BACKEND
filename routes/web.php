@@ -68,6 +68,8 @@ Route::post('/solo-vocal/formulir', [SoloVocalController::class, 'storeFormulir'
 Route::get('/modern-dance', [ModernDanceController::class, 'index']);
 Route::get('/modern-dance/register', [ModernDanceController::class, 'create'])->middleware('auth');
 Route::post('/modern-dance/register', [ModernDanceController::class, 'store'])->middleware('auth');
+Route::get('/modern-dance/formulir', [ModernDanceController::class, 'formulir'])->name('modern-dance.formulir');
+Route::post('/modern-dance/formulir', [ModernDanceController::class, 'storeFormulir']);
 
 Route::get('/fotografi', [FotografiController::class, 'index']);
 Route::get('/fotografi/register', [FotografiController::class, 'create'])->middleware('auth');

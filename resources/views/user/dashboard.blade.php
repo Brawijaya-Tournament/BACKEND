@@ -329,7 +329,7 @@
                         @if($user->id_cabor != null && $user->link_team == null && $user->id_cabor == 8)
                         <p class="text-primary2 text-base leading-4 font-poppins font-normal mb-6">
                             Telah mendaftar dan formulir belum dikirim.
-                          </p>
+                        </p>
                           <div class="flex justify-between items-center">
                             <button type="button" class=" inline-block px-7 py-3 bg-primary2 text-secondary2 font-poppins font-bold text-lg leading-5 rounded-xl shadow-md hover:bg-secondary2 hover:text-primary2 hover:shadow-lg focus:bg-primary3 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primary2 active:shadow-lg transition duration-150 ease-in-out"><a href="/modern-dance/formulir">Lihat Formulir</a></button>
                             <button type="button" class=" inline-block px-4 py-3 border-2 border-red2 text-red2 font-poppins font-bold text-lg leading-5 rounded-xl shadow-md hover:bg-red2 hover:text-natural7 hover:shadow-lg focus:bg-primary3 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-red3 active:shadow-lg transition duration-150 ease-in-out">
@@ -347,7 +347,7 @@
                           @endif
                           @if($user->id_cabor == null)
                           <div class="flex justify-center mt-5">
-                              <button type="button" class=" inline-block px-7 py-3 bg-primary2 text-secondary2 font-poppins font-bold text-lg leading-5 rounded-xl shadow-md hover:bg-secondary2 hover:text-primary2 hover:shadow-lg focus:bg-primary3 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primary2 active:shadow-lg transition duration-150 ease-in-out">Daftar Sekarang</button>
+                              <button type="button" class=" inline-block px-7 py-3 bg-primary2 text-secondary2 font-poppins font-bold text-lg leading-5 rounded-xl shadow-md hover:bg-secondary2 hover:text-primary2 hover:shadow-lg focus:bg-primary3 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primary2 active:shadow-lg transition duration-150 ease-in-out"><a href="/modern-dance/register">Daftar Sekarang</a></button>
                           </div>
                           @endif
                       </div>

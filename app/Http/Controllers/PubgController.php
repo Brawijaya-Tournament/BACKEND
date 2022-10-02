@@ -52,32 +52,32 @@ class PubgController extends Controller
             'id_game2' => 'required',
             'nickname2' => 'required',
 
-            // 'nama3' => 'required',
-            // 'nim3' => 'required',
-            // 'fakultas3' => 'required',
-            // 'angkatan3' => 'required',
-            // 'link_gdrive3' => 'required|regex:(drive.google.com)',
-            // 'email3' => 'required|email',
-            // 'hp3' => 'required',
-            // 'gender3' => 'required',
-            // 'id_game3' => 'required',
-            // 'nickname3' => 'required',
+            'nama3' => 'required',
+            'nim3' => 'required',
+            'fakultas3' => 'required',
+            'angkatan3' => 'required',
+            'link_gdrive3' => 'required|regex:(drive.google.com)',
+            'email3' => 'required|email',
+            'hp3' => 'required',
+            'gender3' => 'required',
+            'id_game3' => 'required',
+            'nickname3' => 'required',
 
-            // 'nama4' => 'required',
-            // 'nim4' => 'required',
-            // 'fakultas4' => 'required',
-            // 'angkatan4' => 'required',
-            // 'link_gdrive4' => 'required|regex:(drive.google.com)',
-            // 'email4' => 'required|email',
-            // 'hp4' => 'required',
-            // 'gender4' => 'required',
-            // 'id_game4' => 'required',
-            // 'nickname4' => 'required',
+            'nama4' => 'required',
+            'nim4' => 'required',
+            'fakultas4' => 'required',
+            'angkatan4' => 'required',
+            'link_gdrive4' => 'required|regex:(drive.google.com)',
+            'email4' => 'required|email',
+            'hp4' => 'required',
+            'gender4' => 'required',
+            'id_game4' => 'required',
+            'nickname4' => 'required',
 
         ]);
 
         try {
-            $user['id_cabor'] = 5;
+            $user['id_cabor'] = 4;
             $user['nama_team'] = $request->nama_team;
             $user['universitas'] = $request->universitas;
             User::where('id', auth()->user()->id)->update($user);
@@ -108,31 +108,31 @@ class PubgController extends Controller
             $player2['nickname'] = $request->nickname2;
             Player::create($player2);
 
-            // $player3['nama'] = $request->nama3;
-            // $player3['nim']= $request->nim3;
-            // $player3['id_leader'] = auth()->user()->id;
-            // $player3['fakultas'] = $request->fakultas3;
-            // $player3['angkatan'] = $request->angkatan3;
-            // $player3['link_gdrive'] = $request->link_gdrive3;
-            // $player3['email'] = $request->email3;
-            // $player3['hp'] = $request->hp3;
-            // $player3['gender'] = $request->gender3;
-            // $player3['id_game'] = $request->id_game3;
-            // $player3['nickname'] = $request->nickname3;
-            // Player::create($player3);
+            $player3['nama'] = $request->nama3;
+            $player3['nim']= $request->nim3;
+            $player3['id_leader'] = auth()->user()->id;
+            $player3['fakultas'] = $request->fakultas3;
+            $player3['angkatan'] = $request->angkatan3;
+            $player3['link_gdrive'] = $request->link_gdrive3;
+            $player3['email'] = $request->email3;
+            $player3['hp'] = $request->hp3;
+            $player3['gender'] = $request->gender3;
+            $player3['id_game'] = $request->id_game3;
+            $player3['nickname'] = $request->nickname3;
+            Player::create($player3);
 
-            // $player4['nama'] = $request->nama4;
-            // $player4['nim']= $request->nim4;
-            // $player4['id_leader'] = auth()->user()->id;
-            // $player4['fakultas'] = $request->fakultas4;
-            // $player4['angkatan'] = $request->angkatan4;
-            // $player4['link_gdrive'] = $request->link_gdrive4;
-            // $player4['email'] = $request->email4;
-            // $player4['hp'] = $request->hp4;
-            // $player4['gender'] = $request->gender4;
-            // $player4['id_game'] = $request->id_game4;
-            // $player4['nickname'] = $request->nickname4;
-            // Player::create($player4);
+            $player4['nama'] = $request->nama4;
+            $player4['nim']= $request->nim4;
+            $player4['id_leader'] = auth()->user()->id;
+            $player4['fakultas'] = $request->fakultas4;
+            $player4['angkatan'] = $request->angkatan4;
+            $player4['link_gdrive'] = $request->link_gdrive4;
+            $player4['email'] = $request->email4;
+            $player4['hp'] = $request->hp4;
+            $player4['gender'] = $request->gender4;
+            $player4['id_game'] = $request->id_game4;
+            $player4['nickname'] = $request->nickname4;
+            Player::create($player4);
 
             return redirect()->route("pubg.formulir")->with('message', 'Data berhasil ditambahkan');
         } catch (\Throwable $th) {
@@ -140,7 +140,7 @@ class PubgController extends Controller
         }
     }
 
-        public function formulir()
+    public function formulir()
     {
         $user = auth()->user();
         $anggotas = Player::where('id_leader', $user->id)->get();
@@ -156,21 +156,8 @@ class PubgController extends Controller
     public function storeFormulir(Request $request)
     {
         $request->validate([
-            'nama_team' => 'required',
-            'universitas' => 'required',
-
-            'nama1' => 'required',
-            'nim1' => 'required',
-            'fakultas1' => 'required',
-            'angkatan1' => 'required',
-            'link_gdrive1' => 'required|regex:(drive.google.com)',
-            'email1' => 'required|email',
-            'hp1' => 'required',
-            'gender1' => 'required',
-            'id_game1' => 'required',
-            'nickname1' => 'required',
+            'link_team' => 'required|regex:(drive.google.com)',
         ]);
-        
         try {
             $user['link_team'] = $request->link_team;
 

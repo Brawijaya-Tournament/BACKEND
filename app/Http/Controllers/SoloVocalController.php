@@ -26,11 +26,8 @@ class SoloVocalController extends Controller
 
     public function store(Request $request)
     {
-        // dd($request);
         $request->validate([
-            'nama_team' => 'required',
             'universitas' => 'required',
-            // 'link_team' => 'required|regex:(drive.google.com)',
 
             'nama1' => 'required',
             'nim1' => 'required',
@@ -41,12 +38,10 @@ class SoloVocalController extends Controller
             'hp1' => 'required',
             'gender1' => 'required',
         ]);
-        // dd($request);
+
         try {
             $user['id_cabor'] = 7;
-            $user['nama_team'] = $request->nama_team;
             $user['universitas'] = $request->universitas;
-            // $user['link_team'] = $request->link_team;
             User::where('id', auth()->user()->id)->update($user);
 
             $player1['nama'] = $request->nama1;
@@ -59,7 +54,7 @@ class SoloVocalController extends Controller
             $player1['hp'] = $request->hp1;
             $player1['gender'] = $request->gender1;
             Player::create($player1);
-            return redirect()->route("solo-vocal.formulir")->with('message', 'Data berhasil ditambahkan');
+            return redirect()->route("dashboard")->with('message', 'Data berhasil ditambahkan');
         } catch (\Throwable $th) {
             return redirect()->back()->with('message', 'Data gagal ditambahkan');
         }

@@ -134,8 +134,8 @@
                             <div class="m-10">
                                 <p class="text-lg text-secondary2  font-bold">UPLOAD BERKAS TIM</p> 
                                 <hr class="mt-2 text-secondary2">
-                                <p class="text-[20px] text-secondary2  py-4 font-bold">Bukti Transfer Biaya Pendaftaran*</p> 
-                                <input
+                                <p class="text-[20px] text-secondary2  pt-4 font-bold">Upload Link Berkas Official dan Bukti Transfer Biaya Pendaftaran*</p> 
+                            <p class="text-sm font-bold text-white py-2">Form Official bisa didownload <a href="https://bit.ly/FORMOFFICIALBT22" class="text-secondary2">di sini</a> <span>, khusus untuk cabor olahraga</span> </p>                                <input
                                     class="appearance-none block w-full bg-primary1 text-secondary2 border border-secondary2 rounded-lg py-3 px-4 mb-3 leading-5 focus:outline-none"
                                     id="grid-first-name" value="" type="text" placeholder="Masukkan link" name="link_team">
                                 <p class="text-sm text-white pt-10">Catatan</p>
@@ -150,8 +150,8 @@
                 <!-- grid content peserta -->
                 <div class="grid-2 md:grid-3 col-span-2 p-10 mb-20">
                     <div class="flex items-center ">
-                        <i class="fa-solid fa-angle-left text-white text-2xl"></i>
-                        <p class="text-white font-bold text-2xl px-3"> BASKET</p>
+                        <!-- <i class="fa-solid fa-angle-left text-white text-2xl"></i> -->
+                        <!-- <p class="text-white font-bold text-2xl px-3"> BASKET</p> -->
                     </div>
                     <!-- tabel player -->
                     <div class="official pt-5">
@@ -161,13 +161,13 @@
                             <tr class=" ">
                                 <td class="bg-secondary2 text-primary1 font-bold text-center py-2 text-lg">NO</td>
                                 <td class="bg-secondary2 border-none font-bold text-center py-2 text-lg">NAMA</td>
-                                <td class="bg-secondary2 text-primary1 font-bold text-center py-2 text-lg">DETAIL</td>
+                                <!-- <td class="bg-secondary2 text-primary1 font-bold text-center py-2 text-lg">DETAIL</td> -->
                             </tr>
                             @foreach ($anggotas as $anggota)  
                             <tr class="">
                                 <td class="text-center font-poppins text-lg text-white py-2">{{ $loop->index + 1 }}</td>
                                 <td class=" border-2 border-secondary2 font-poppins text-lg text-white py-2">{{ $anggota->nama }}</td>
-                                <td class="text-center font-poppins text-primary1 py-2"><button class="bg-secondary2 text-sm px-4 font-bold rounded-md py-2">Lihat</button></td>
+                                <!-- <td class="text-center font-poppins text-primary1 py-2"><button class="bg-secondary2 text-sm px-4 font-bold rounded-md py-2">Lihat</button></td> -->
                             </tr>
                             @endforeach
                         </table>

@@ -8,15 +8,31 @@
                 <div class="grid-2 md:grid-3 col-span-2 p-10 mb-20">
                     <div class="flex items-center ">
                         <i class="fa-solid fa-angle-left text-white text-2xl"></i>
-                        <p class="text-white font-bold text-2xl px-3">PENDAFTARAN SOLO VOCAL</p>
+                        <p class="text-white font-bold text-2xl px-3">PENDAFTARAN MODERN DANCE</p>
                     </div>
+                    @if(session()->has('message'))
+                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                      {{ session('message') }}
+                      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                    @endif
                  <!-- form informasi tim -->
-                 <form method="post" action="/solo-vocal/register" class="mb-5" enctype="multipart/form-data">
+                 <form method="post" action="/modern-dance/register" class="mb-5" enctype="multipart/form-data">
                     @csrf
                     <div class="flex-auto justify-between">
                         <p class="pt-4 font-bold pb-2 text-lg text-secondary2">INFORMASI TIM</p>
                         <hr class="mb-5">
                         <div class="md:flex justify-between">
+                            <div class="font-poppins text-secondary2 px-1 lg:px-2 lg:w-full ">
+                                <label
+                                    class="space-x-9 w-11/12 block mb-2 text-base font-medium text-secondary2 leading-5 font-poppins"
+                                    for="grid-first-name">
+                                    Nama Tim
+                                </label>
+                                <input
+                                    class="appearance-none block w-full bg-primary1 text-secondary2 border border-secondary2 rounded-lg py-3 px-4 mb-3 leading-5 focus:outline-none"
+                                    id="grid-first-name" type="text" placeholder="Masukkan nama tim" name="nama_team">
+                            </div>
                             <div class="font-poppins text-secondary2 px-1 md:px-5 lg:px-2 lg:w-full">
                                 <label
                                     class="space-x-9 w-full block mb-2 text-base font-medium text-secondary2 leading-5 font-poppins"
@@ -31,18 +47,19 @@
                     </div>
                     <!-- form ifnromasi official  -->
                     <div class="official pt-5">
-                        <p class="pt-4 font-bold pb-2 text-lg text-secondary2">INFORMASI PESERTA</p>
+                        <p class="pt-4 font-bold pb-2 text-lg text-secondary2">INFORMASI PEMAIN (WAJIB ISI 4 PEMAIN)</p>
                         <hr class="mb-5">
                         <!-- row1 -->
+
                         {{-- Looping tabel --}}
-                        @for($i = 1; $i <= 1; $i++)
+                        @for($i = 1; $i <= 12; $i++)
                         <div class="md:flex justify-between">
                             <!-- nama -->
                             <div class="font-poppins text-secondary2 px-1 lg:px-2 lg:w-full ">
                                 <label
                                     class="space-x-9 w-11/12 block mb-2 text-base font-medium text-secondary2 leading-5 font-poppins"
                                     for="grid-first-name">
-                                    Nama
+                                    Nama {{ $i }}
                                 </label>
                                 <input
                                     class="appearance-none block w-full bg-primary1 text-secondary2 border border-secondary2 rounded-lg py-3 px-4 mb-3 leading-5 focus:outline-none"
@@ -160,7 +177,12 @@
                             </div>
                         </form>
                 </div>
+
+                
+                
+
                 </div>
+                
             </div>
         </div>
     </section>

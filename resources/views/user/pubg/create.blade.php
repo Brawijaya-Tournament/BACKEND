@@ -17,7 +17,7 @@
                     </div>
                     @endif
                  <!-- form informasi tim -->
-                 <form method="post" action="/mobilelegends/register" class="mb-5" enctype="multipart/form-data">
+                 <form method="post" action="/pubg/register" class="mb-5" enctype="multipart/form-data">
                     @csrf
                     <div class="flex-auto justify-between">
                         <p class="pt-4 font-bold pb-2 text-lg text-secondary2">INFORMASI TIM</p>
@@ -52,7 +52,7 @@
                         <!-- row1 -->
 
                         {{-- Looping tabel --}}
-                        @for($i = 1; $i <= 2; $i++)
+                        @for($i = 1; $i <= 4; $i++)
                         <div class="md:flex justify-between">
                             <!-- nama -->
                             <div class="font-poppins text-secondary2 px-1 lg:px-2 lg:w-full ">
