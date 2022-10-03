@@ -12,7 +12,8 @@ class PubgController extends Controller
     {
         return view('user.pubg.index');
     }
-    public function createTeam()
+    
+    public function create()
     {
         $isRegister = User::where('id', '=', auth()->user()->id)->first();
 
@@ -23,7 +24,7 @@ class PubgController extends Controller
         return view('user.pubg.create');
     }
 
-    public function storeTeam(Request $request)
+    public function store(Request $request)
     {
         $request->validate([
             'nama_team' => 'required',
@@ -72,10 +73,11 @@ class PubgController extends Controller
             'gender4' => 'required',
             'id_game4' => 'required',
             'nickname4' => 'required',
+
         ]);
 
         try {
-            $user['id_cabor'] = 5;
+            $user['id_cabor'] = 4;
             $user['nama_team'] = $request->nama_team;
             $user['universitas'] = $request->universitas;
             User::where('id', auth()->user()->id)->update($user);
@@ -132,59 +134,34 @@ class PubgController extends Controller
             $player4['nickname'] = $request->nickname4;
             Player::create($player4);
 
-            return redirect()->route("dashboard")->with('message', 'Data berhasil ditambahkan');
+            return redirect()->route("pubg.formulir")->with('message', 'Data berhasil ditambahkan');
         } catch (\Throwable $th) {
             return redirect()->back()->with('message', 'Data gagal ditambahkan');
         }
     }
 
-    public function createSolo()
+    public function formulir()
     {
-        $isRegister = User::where('id', '=', auth()->user()->id)->first();
+        $user = auth()->user();
+        $anggotas = Player::where('id_leader', $user->id)->get();
 
-        if($isRegister->nama_team != null){
-            return redirect('/dashboard')->with('message', 'Anda sudah melakukan registrasi!');
-        }
+        $data = [
+            'user' => $user,
+            'anggotas' => $anggotas
+        ];
 
-        return view('user.pubg.create');
+        return view('user.formulir', $data);
     }
 
-    public function storeSolo(Request $request)
+    public function storeFormulir(Request $request)
     {
         $request->validate([
-            'nama_team' => 'required',
-            'universitas' => 'required',
-
-            'nama1' => 'required',
-            'nim1' => 'required',
-            'fakultas1' => 'required',
-            'angkatan1' => 'required',
-            'link_gdrive1' => 'required|regex:(drive.google.com)',
-            'email1' => 'required|email',
-            'hp1' => 'required',
-            'gender1' => 'required',
-            'id_game1' => 'required',
-            'nickname1' => 'required',
+            'link_team' => 'required|regex:(drive.google.com)',
         ]);
-        
         try {
-            $user['id_cabor'] = 5;
-            $user['nama_team'] = $request->nama_team;
-            $user['universitas'] = $request->universitas;
-            User::where('id', auth()->user()->id)->update($user);
+            $user['link_team'] = $request->link_team;
 
-            $player1['nama'] = $request->nama1;
-            $player1['nim']= $request->nim1;
-            $player1['id_leader'] = auth()->user()->id;
-            $player1['fakultas'] = $request->fakultas1;
-            $player1['angkatan'] = $request->angkatan1;
-            $player1['link_gdrive'] = $request->link_gdrive1;
-            $player1['email'] = $request->email1;
-            $player1['hp'] = $request->hp1;
-            $player1['gender'] = $request->gender1;
-            $player1['id_game'] = $request->id_game1;
-            $player1['nickname'] = $request->nickname1;
-            Player::create($player1);
+            User::where('id', auth()->user()->id)->update($user);
 
             return redirect()->route("dashboard")->with('message', 'Data berhasil ditambahkan');
         } catch (\Throwable $th) {

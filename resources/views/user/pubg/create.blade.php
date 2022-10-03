@@ -17,7 +17,7 @@
                     </div>
                     @endif
                  <!-- form informasi tim -->
-                 <form method="post" action="/mobilelegends/register" class="mb-5" enctype="multipart/form-data">
+                 <form method="post" action="/pubg/register" class="mb-5" enctype="multipart/form-data">
                     @csrf
                     <div class="flex-auto justify-between">
                         <p class="pt-4 font-bold pb-2 text-lg text-secondary2">INFORMASI TIM</p>
@@ -47,7 +47,7 @@
                     </div>
                     <!-- form ifnromasi official  -->
                     <div class="official pt-5">
-                        <p class="pt-4 font-bold pb-2 text-lg text-secondary2">INFORMASI PEMAIN (WAJIB ISI 5)</p>
+                        <p class="pt-4 font-bold pb-2 text-lg text-secondary2">INFORMASI PEMAIN (4 PEMAIN)</p>
                         <hr class="mb-5">
                         <!-- row1 -->
 
@@ -195,7 +195,7 @@
                                 </div>
                                 <div class="md:w-[45%] w-full py-5 md:py-0 flex md:justify-end items-center md:pl-40">
                                     <button class="px-10 py-2 font-bold text-primary2 bg-secondary2 rounded-xl font-poppins" type="submit">
-                                        Simpan&Lanjut
+                                        Simpan & Lanjut
                                     </button>
                                 </div>
                             </div>
