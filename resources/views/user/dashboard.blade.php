@@ -21,7 +21,7 @@
     <nav class="bg-primary2 px-10 sm:px-4 py-2.5 shadow-lg ">
         <div class="container flex flex-wrap justify-between items-center mx-auto">
             <!-- logo -->
-            <a href="/" class="flex items-center ml-10">
+            <a href="/dashboard" class="flex items-center ml-10">
                 <img src="img/logoNavbar.svg" class="mr-3 h-16 sm:h-9" alt="Brawijaya Tournament Logo">
                 <img src="img/bt.svg" alt="" class="hidden mr-3 sm:flex md:h-10" srcset="">
             </a>
@@ -69,9 +69,13 @@
                     <img src="./img/IconWarn.svg" alt="">
                     <a href="#" class="block  px-4 rounded">LAPOR KENDALA</a>
                 </div>
-                <button class="bg-secondary1 w-full rounded-md py-2 my-4 md:hidden ">
+                {{-- <button class="bg-secondary1 w-full rounded-md py-2 my-4 md:hidden ">
                     <a href="#" class="block  px-4 rounded text-center font-semibold">KELUAR</a>
-                </button>
+                </button> --}}
+                <form action="/logout" method="post">
+                  @csrf
+                  <button type="submit" class="bg-secondary1 w-full rounded-md py-2 my-4 md:hidden block  px-4 rounded text-center font-semibold">Keluar</button>
+                </form>
                
                 </nav>
             </div>
@@ -381,7 +385,7 @@
                 <div class="">
                     <h6 class="uppercase font-bold mb-4 flex text-base font-poppins leading-5 justify-center md:justify-start">Akses</h6>
                     <p class="mb-1">
-                        <a href="#!" class="text-primary2 font-poppins font-normal text-sm leading-4">Beranda</a>
+                        <a href="/dashboard" class="text-primary2 font-poppins font-normal text-sm leading-4">Beranda</a>
                     </p>
                     <p class="mb-1">
                         <a href="#!" class="text-primary2 font-poppins font-normal text-sm leading-4">Kompetisi</a>
@@ -443,7 +447,7 @@
         <!-- copyright -->
         <div class="text-center p-6 bg-primary2">
             <span class="font-poppins text-sm leading-4 font-normal text-secondary2">© 2022</span>
-            <a class="text-secondary2 font-bold font-poppins text-sm leading-4" href="#">Brawijaya Tournament</a>
+            <a class="text-secondary2 font-bold font-poppins text-sm leading-4" href="/dashboard">Brawijaya Tournament</a>
             <span class="font-poppins text-sm leading-4 font-normal text-secondary2">All rights reserved</span>
         </div>
     </footer>
