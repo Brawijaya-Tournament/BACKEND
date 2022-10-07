@@ -30,8 +30,13 @@
                                     Nama Tim
                                 </label>
                                 <input
-                                    class="appearance-none block w-full bg-primary1 text-secondary2 border border-secondary2 rounded-lg py-3 px-4 mb-3 leading-5 focus:outline-none"
-                                    id="grid-first-name" type="text" placeholder="Masukkan nama tim" name="nama_team">
+                                    class="appearance-none block w-full bg-primary1 text-secondary2 border border-secondary2 rounded-lg py-3 px-4 mb-3 leading-5 focus:outline-none @error('nama_team') is-invalid @enderror"
+                                    id="grid-first-name" type="text" placeholder="Masukkan nama tim" name="nama_team" value="{{ old('nama_team') }}">
+                                @error('nama_team')
+                                    <div class="invalid-feedback">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
                             </div>
                             <div class="font-poppins text-secondary2 px-1 md:px-5 lg:px-2 lg:w-full">
                                 <label
@@ -41,7 +46,12 @@
                                 </label>
                                 <input type="text"
                                     class="appearance-none block w-full bg-primary1 text-secondary2 border border-secondary2 rounded-lg py-3 px-4 mb-3 leading-5 focus:outline-none "
-                                    id="grid-last-name place" placeholder="Masukkan asal universitas" name="universitas">
+                                    id="grid-last-name place" placeholder="Masukkan asal universitas" name="universitas" value="{{ old('universitas') }}">
+                                @error('universitas')
+                                    <div class="invalid-feedback">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
                             </div>
                         </div>
                     </div>
@@ -63,7 +73,12 @@
                                 </label>
                                 <input
                                     class="appearance-none block w-full bg-primary1 text-secondary2 border border-secondary2 rounded-lg py-3 px-4 mb-3 leading-5 focus:outline-none"
-                                    id="grid-first-name" type="text" placeholder="Masukkan nama" name="{{ "nama" . $i }}">
+                                    id="grid-first-name" type="text" placeholder="Masukkan nama" name="{{ "nama" . $i }}" value="{{ old('nama' . $i) }}">
+                                @error('nama' . $i)
+                                    <div class="invalid-feedback">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
                             </div>
                             <!-- No HandPhone -->
                             <div class="font-poppins text-secondary2 px-1 md:px-5 lg:px-2 lg:w-full">
@@ -71,7 +86,12 @@
                                     for="link_berkas">Nomor HandPhone</label>
                                     <input type="text"
                                     class="appearance-none  block w-full bg-primary1 text-secondary2 border border-secondary2 rounded-lg py-3 px-4 mb-3 leading-5 focus:outline-none"
-                                    id="grid-last-name place" placeholder="Masukkan nomor handphone" name="{{ "hp" . $i }}">
+                                    id="grid-last-name place" placeholder="Masukkan nomor handphone" name="{{ "hp" . $i }}" value="{{ old('hp' . $i) }}">
+                                @error('hp' . $i)
+                                    <div class="invalid-feedback">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
                             </div>
                         </div>
                         <!-- row2 -->
@@ -86,7 +106,7 @@
                                 <div class="relative">
                                     <select
                                         class="w-full mb-2 bg-primary1 border border-secondary2 text-secondary2 py-2.5 px-4 pr-8 rounded-lg leading-tight focus:outline-none focus:bg-primary1 focus:border-secondary2"
-                                        id="grid-state" name="{{ "gender" . $i }}">
+                                        id="grid-state" name="{{ "gender" . $i }}" value="{{ old('gender' . $i) }}">
                                         <option value="Laki-laki">Laki-laki</option>
                                         <option value="Perempuan">Perempuan</option>
                                     </select>
@@ -101,7 +121,12 @@
                                 </label>
                                 <input type="text"
                                     class="appearance-none block w-full bg-primary1 text-secondary2 border border-secondary2 rounded-lg py-3 px-4 mb-3 leading-5 focus:outline-none "
-                                    id="grid-last-name place" placeholder="Masukkan fakultas" name="{{ "fakultas" . $i }}">
+                                    id="grid-last-name place" placeholder="Masukkan fakultas" name="{{ "fakultas" . $i }}" value="{{ old('fakultas' . $i) }}">
+                                @error('fakultas' . $i)
+                                    <div class="invalid-feedback">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
                             </div>
                         </div>
                         <div class="md:flex justify-between">
@@ -114,7 +139,12 @@
                                 </label>
                                 <input
                                     class="appearance-none block w-full bg-primary1 text-secondary2 border border-secondary2 rounded-lg py-3 px-4 mb-3 leading-5 focus:outline-none"
-                                    id="grid-first-name" type="text" placeholder="Masukkan email" name="{{ "email" . $i }}">
+                                    id="grid-first-name" type="text" placeholder="Masukkan email" name="{{ "email" . $i }}" value="{{ old('email' . $i) }}">
+                                @error('email' . $i)
+                                    <div class="invalid-feedback">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
                             </div>
                             <!-- angkatan -->
                             <div class="font-poppins text-secondary2 px-1 md:px-5 lg:px-2 lg:w-full">
@@ -125,7 +155,12 @@
                                 </label>
                                 <input type="text"
                                     class="appearance-none  block w-full bg-primary1 text-secondary2 border border-secondary2 rounded-lg py-3 px-4 mb-3 leading-5 focus:outline-none"
-                                    id="grid-last-name place" placeholder="Masukkan angkatan" name="{{ "angkatan" . $i }}">
+                                    id="grid-last-name place" placeholder="Masukkan angkatan" name="{{ "angkatan" . $i }}" value="{{ old('angkatan' . $i) }}">
+                                @error('angkatan' . $i)
+                                    <div class="invalid-feedback">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
                             </div>
                         </div>
                         <div class="md:flex justify-between">
@@ -138,7 +173,12 @@
                                 </label>
                                 <input
                                     class="appearance-none block w-full bg-primary1 text-secondary2 border border-secondary2 rounded-lg py-3 px-4 mb-3 leading-5 focus:outline-none"
-                                    id="grid-first-name" value="" type="text" placeholder="Masukkan Nim" name="{{ "nim" . $i }}">
+                                    id="grid-first-name" value="" type="text" placeholder="Masukkan Nim" name="{{ "nim" . $i }}" value="{{ old('nim' . $i) }}">
+                                @error('nim' . $i)
+                                    <div class="invalid-feedback">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
                             </div>
                             <!-- berkas -->
                             <div class="font-poppins text-secondary2 px-1 md:px-5 lg:px-2 lg:w-full">
@@ -149,7 +189,12 @@
                                 </label>
                                 <input type="text"
                                     class="appearance-none block w-full bg-primary1 text-secondary2 border border-secondary2 rounded-lg py-3 px-4 mb-3 leading-5 focus:outline-none "
-                                    id="grid-last-name place" placeholder="Masukkan link gdrive" name="{{ "link_gdrive" . $i }}">
+                                    id="grid-last-name place" placeholder="Masukkan link gdrive" name="{{ "link_gdrive" . $i }}" value="{{ old('link_gdrive' . $i) }}">
+                                @error('link_gdrive' . $i)
+                                    <div class="invalid-feedback">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
                             </div>
                         </div>
                         <div class="md:flex justify-between">
@@ -162,7 +207,12 @@
                                 </label>
                                 <input
                                     class="appearance-none block w-full bg-primary1 text-secondary2 border border-secondary2 rounded-lg py-3 px-4 mb-3 leading-5 focus:outline-none"
-                                    id="grid-first-name" value="" type="text" placeholder="Masukkan ID Game" name="{{ "id_game" . $i }}">
+                                    id="grid-first-name" value="" type="text" placeholder="Masukkan ID Game" name="{{ "id_game" . $i }}" value="{{ old('id_game' . $i) }}">
+                                @error('id_game' . $i)
+                                    <div class="invalid-feedback">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
                             </div>
                             <!-- nickname -->
                             <div class="font-poppins text-secondary2 px-1 md:px-5 lg:px-2 lg:w-full">
@@ -173,7 +223,12 @@
                                 </label>
                                 <input type="text"
                                     class="appearance-none block w-full bg-primary1 text-secondary2 border border-secondary2 rounded-lg py-3 px-4 mb-3 leading-5 focus:outline-none "
-                                    id="grid-last-name place" placeholder="Masukkan nickname" name="{{ "nickname" . $i }}">
+                                    id="grid-last-name place" placeholder="Masukkan nickname" name="{{ "nickname" . $i }}" value="{{ old('nickname' . $i) }}">
+                                @error('nickname' . $i)
+                                    <div class="invalid-feedback">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
                             </div>
                         </div>
                         <br>

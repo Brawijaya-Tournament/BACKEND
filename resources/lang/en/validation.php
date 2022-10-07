@@ -130,8 +130,417 @@ return [
     */
 
     'custom' => [
-        'attribute-name' => [
-            'rule-name' => 'custom-message',
+        'nama_team' => [
+            'required' => 'Tolong dong isi nama team nyaa',
+        ],
+        'universitas' => [
+            'required' => 'Tolong dong isi nama universitas nyaa',
+        ],
+        'nickname1' => [
+            'required' => 'Tolong dong isi nickname anggota nyaa',
+        ],
+        'nama1' => [
+            'required' => 'Tolong dong isi nama nyaa',
+        ],
+        'nim1' => [
+            'required' => 'Tolong dong isi nim anggota nyaa',
+        ],
+        'fakultas1' => [
+            'required' => 'Tolong dong isi nama fakultas nyaa',
+        ],
+        'angkatan1' => [
+            'required' => 'Tolong dong isi tahun angkatan nyaa',
+        ],
+        'link_gdrive1' => [
+            'required' => 'Tolong dong isi link drive anggota nyaa',
+            'regex' => 'Berkas harus dalam bentuk link google drive',
+        ],
+        'email1' => [
+            'required' => 'Tolong dong isi email anggota nyaa',
+            'email' => 'Ada yang ngga beres nih email nya',
+        ],
+        'hp1' => [
+            'required' => 'Tolong dong isi no hp anggota nyaa',
+        ],
+        'gender1' => [
+            'required' => 'Tolong dong isi jenis kelamin anggota nyaa',
+        ],
+        'id_game1' => [
+            'required' => 'Tolong dong isi id game anggota nyaa',
+        ],
+
+
+        'nickname2' => [
+            'required' => 'Tolong dong isi nickname anggota nyaa',
+        ],
+        'nama2' => [
+            'required' => 'Tolong dong isi nama nyaa',
+        ],
+        'nim2' => [
+            'required' => 'Tolong dong isi nim anggota nyaa',
+        ],
+        'fakultas2' => [
+            'required' => 'Tolong dong isi nama fakultas nyaa',
+        ],
+        'angkatan2' => [
+            'required' => 'Tolong dong isi tahun angkatan nyaa',
+        ],
+        'link_gdrive2' => [
+            'required' => 'Tolong dong isi link drive anggota nyaa',
+            'regex' => 'Berkas harus dalam bentuk link google drive',
+        ],
+        'email2' => [
+            'required' => 'Tolong dong isi email anggota nyaa',
+            'email' => 'Ada yang ngga beres nih email nya',
+        ],
+        'hp2' => [
+            'required' => 'Tolong dong isi no hp anggota nyaa',
+        ],
+        'gender2' => [
+            'required' => 'Tolong dong isi jenis kelamin anggota nyaa',
+        ],
+        'id_game2' => [
+            'required' => 'Tolong dong isi id game anggota nyaa',
+        ],
+
+
+        'nickname3' => [
+            'required' => 'Tolong dong isi nickname anggota nyaa',
+        ],
+        'nama3' => [
+            'required' => 'Tolong dong isi nama nyaa',
+        ],
+        'nim3' => [
+            'required' => 'Tolong dong isi nim anggota nyaa',
+        ],
+        'fakultas3' => [
+            'required' => 'Tolong dong isi nama fakultas nyaa',
+        ],
+        'angkatan3' => [
+            'required' => 'Tolong dong isi tahun angkatan nyaa',
+        ],
+        'link_gdrive3' => [
+            'required' => 'Tolong dong isi link drive anggota nyaa',
+            'regex' => 'Berkas harus dalam bentuk link google drive',
+        ],
+        'email3' => [
+            'required' => 'Tolong dong isi email anggota nyaa',
+            'email' => 'Ada yang ngga beres nih email nya',
+        ],
+        'hp3' => [
+            'required' => 'Tolong dong isi no hp anggota nyaa',
+        ],
+        'gender3' => [
+            'required' => 'Tolong dong isi jenis kelamin anggota nyaa',
+        ],
+        'id_game3' => [
+            'required' => 'Tolong dong isi id game anggota nyaa',
+        ],
+
+
+        'nickname4' => [
+            'required' => 'Tolong dong isi nickname anggota nyaa',
+        ],
+        'nama4' => [
+            'required' => 'Tolong dong isi nama nyaa',
+        ],
+        'nim4' => [
+            'required' => 'Tolong dong isi nim anggota nyaa',
+        ],
+        'fakultas4' => [
+            'required' => 'Tolong dong isi nama fakultas nyaa',
+        ],
+        'angkatan4' => [
+            'required' => 'Tolong dong isi tahun angkatan nyaa',
+        ],
+        'link_gdrive4' => [
+            'required' => 'Tolong dong isi link drive anggota nyaa',
+            'regex' => 'Berkas harus dalam bentuk link google drive',
+        ],
+        'email4' => [
+            'required' => 'Tolong dong isi email anggota nyaa',
+            'email' => 'Ada yang ngga beres nih email nya',
+        ],
+        'hp4' => [
+            'required' => 'Tolong dong isi no hp anggota nyaa',
+        ],
+        'gender4' => [
+            'required' => 'Tolong dong isi jenis kelamin anggota nyaa',
+        ],
+        'id_game4' => [
+            'required' => 'Tolong dong isi id game anggota nyaa',
+        ],
+
+
+        'nickname5' => [
+            'required' => 'Tolong dong isi nickname anggota nyaa',
+        ],
+        'nama5' => [
+            'required' => 'Tolong dong isi nama nyaa',
+        ],
+        'nim5' => [
+            'required' => 'Tolong dong isi nim anggota nyaa',
+        ],
+        'fakultas5' => [
+            'required' => 'Tolong dong isi nama fakultas nyaa',
+        ],
+        'angkatan5' => [
+            'required' => 'Tolong dong isi tahun angkatan nyaa',
+        ],
+        'link_gdrive5' => [
+            'required' => 'Tolong dong isi link drive anggota nyaa',
+            'regex' => 'Berkas harus dalam bentuk link google drive',
+        ],
+        'email5' => [
+            'required' => 'Tolong dong isi email anggota nyaa',
+            'email' => 'Ada yang ngga beres nih email nya',
+        ],
+        'hp5' => [
+            'required' => 'Tolong dong isi no hp anggota nyaa',
+        ],
+        'gender5' => [
+            'required' => 'Tolong dong isi jenis kelamin anggota nyaa',
+        ],
+        'id_game5' => [
+            'required' => 'Tolong dong isi id game anggota nyaa',
+        ],
+
+
+        'nickname6' => [
+            'required' => 'Tolong dong isi nickname anggota nyaa',
+        ],
+        'nama6' => [
+            'required' => 'Tolong dong isi nama nyaa',
+        ],
+        'nim6' => [
+            'required' => 'Tolong dong isi nim anggota nyaa',
+        ],
+        'fakultas6' => [
+            'required' => 'Tolong dong isi nama fakultas nyaa',
+        ],
+        'angkatan6' => [
+            'required' => 'Tolong dong isi tahun angkatan nyaa',
+        ],
+        'link_gdrive6' => [
+            'required' => 'Tolong dong isi link drive anggota nyaa',
+            'regex' => 'Berkas harus dalam bentuk link google drive',
+        ],
+        'email6' => [
+            'required' => 'Tolong dong isi email anggota nyaa',
+            'email' => 'Ada yang ngga beres nih email nya',
+        ],
+        'hp6' => [
+            'required' => 'Tolong dong isi no hp anggota nyaa',
+        ],
+        'gender6' => [
+            'required' => 'Tolong dong isi jenis kelamin anggota nyaa',
+        ],
+        'id_game6' => [
+            'required' => 'Tolong dong isi id game anggota nyaa',
+        ],
+
+
+        'nickname7' => [
+            'required' => 'Tolong dong isi nickname anggota nyaa',
+        ],
+        'nama7' => [
+            'required' => 'Tolong dong isi nama nyaa',
+        ],
+        'nim7' => [
+            'required' => 'Tolong dong isi nim anggota nyaa',
+        ],
+        'fakultas7' => [
+            'required' => 'Tolong dong isi nama fakultas nyaa',
+        ],
+        'angkatan7' => [
+            'required' => 'Tolong dong isi tahun angkatan nyaa',
+        ],
+        'link_gdrive7' => [
+            'required' => 'Tolong dong isi link drive anggota nyaa',
+            'regex' => 'Berkas harus dalam bentuk link google drive',
+        ],
+        'email7' => [
+            'required' => 'Tolong dong isi email anggota nyaa',
+            'email' => 'Ada yang ngga beres nih email nya',
+        ],
+        'hp7' => [
+            'required' => 'Tolong dong isi no hp anggota nyaa',
+        ],
+        'gender7' => [
+            'required' => 'Tolong dong isi jenis kelamin anggota nyaa',
+        ],
+        'id_game7' => [
+            'required' => 'Tolong dong isi id game anggota nyaa',
+        ],
+
+
+        'nickname8' => [
+            'required' => 'Tolong dong isi nickname anggota nyaa',
+        ],
+        'nama8' => [
+            'required' => 'Tolong dong isi nama nyaa',
+        ],
+        'nim8' => [
+            'required' => 'Tolong dong isi nim anggota nyaa',
+        ],
+        'fakultas8' => [
+            'required' => 'Tolong dong isi nama fakultas nyaa',
+        ],
+        'angkatan8' => [
+            'required' => 'Tolong dong isi tahun angkatan nyaa',
+        ],
+        'link_gdrive8' => [
+            'required' => 'Tolong dong isi link drive anggota nyaa',
+            'regex' => 'Berkas harus dalam bentuk link google drive',
+        ],
+        'email8' => [
+            'required' => 'Tolong dong isi email anggota nyaa',
+            'email' => 'Ada yang ngga beres nih email nya',
+        ],
+        'hp8' => [
+            'required' => 'Tolong dong isi no hp anggota nyaa',
+        ],
+        'gender8' => [
+            'required' => 'Tolong dong isi jenis kelamin anggota nyaa',
+        ],
+        'id_game8' => [
+            'required' => 'Tolong dong isi id game anggota nyaa',
+        ],
+
+
+        'nickname9' => [
+            'required' => 'Tolong dong isi nickname anggota nyaa',
+        ],
+        'nama9' => [
+            'required' => 'Tolong dong isi nama nyaa',
+        ],
+        'nim9' => [
+            'required' => 'Tolong dong isi nim anggota nyaa',
+        ],
+        'fakultas9' => [
+            'required' => 'Tolong dong isi nama fakultas nyaa',
+        ],
+        'angkatan9' => [
+            'required' => 'Tolong dong isi tahun angkatan nyaa',
+        ],
+        'link_gdrive9' => [
+            'required' => 'Tolong dong isi link drive anggota nyaa',
+            'regex' => 'Berkas harus dalam bentuk link google drive',
+        ],
+        'email9' => [
+            'required' => 'Tolong dong isi email anggota nyaa',
+            'email' => 'Ada yang ngga beres nih email nya',
+        ],
+        'hp9' => [
+            'required' => 'Tolong dong isi no hp anggota nyaa',
+        ],
+        'gender9' => [
+            'required' => 'Tolong dong isi jenis kelamin anggota nyaa',
+        ],
+        'id_game9' => [
+            'required' => 'Tolong dong isi id game anggota nyaa',
+        ],
+
+
+        'nickname10' => [
+            'required' => 'Tolong dong isi nickname anggota nyaa',
+        ],
+        'nama10' => [
+            'required' => 'Tolong dong isi nama nyaa',
+        ],
+        'nim10' => [
+            'required' => 'Tolong dong isi nim anggota nyaa',
+        ],
+        'fakultas10' => [
+            'required' => 'Tolong dong isi nama fakultas nyaa',
+        ],
+        'angkatan10' => [
+            'required' => 'Tolong dong isi tahun angkatan nyaa',
+        ],
+        'link_gdrive10' => [
+            'required' => 'Tolong dong isi link drive anggota nyaa',
+            'regex' => 'Berkas harus dalam bentuk link google drive',
+        ],
+        'email10' => [
+            'required' => 'Tolong dong isi email anggota nyaa',
+            'email' => 'Ada yang ngga beres nih email nya',
+        ],
+        'hp10' => [
+            'required' => 'Tolong dong isi no hp anggota nyaa',
+        ],
+        'gender10' => [
+            'required' => 'Tolong dong isi jenis kelamin anggota nyaa',
+        ],
+        'id_game10' => [
+            'required' => 'Tolong dong isi id game anggota nyaa',
+        ],
+
+
+        'nickname11' => [
+            'required' => 'Tolong dong isi nickname anggota nyaa',
+        ],
+        'nama11' => [
+            'required' => 'Tolong dong isi nama nyaa',
+        ],
+        'nim11' => [
+            'required' => 'Tolong dong isi nim anggota nyaa',
+        ],
+        'fakultas11' => [
+            'required' => 'Tolong dong isi nama fakultas nyaa',
+        ],
+        'angkatan11' => [
+            'required' => 'Tolong dong isi tahun angkatan nyaa',
+        ],
+        'link_gdrive11' => [
+            'required' => 'Tolong dong isi link drive anggota nyaa',
+            'regex' => 'Berkas harus dalam bentuk link google drive',
+        ],
+        'email11' => [
+            'required' => 'Tolong dong isi email anggota nyaa',
+            'email' => 'Ada yang ngga beres nih email nya',
+        ],
+        'hp11' => [
+            'required' => 'Tolong dong isi no hp anggota nyaa',
+        ],
+        'gender11' => [
+            'required' => 'Tolong dong isi jenis kelamin anggota nyaa',
+        ],
+        'id_game11' => [
+            'required' => 'Tolong dong isi id game anggota nyaa',
+        ],
+
+
+        'nickname12' => [
+            'required' => 'Tolong dong isi nickname anggota nyaa',
+        ],
+        'nama12' => [
+            'required' => 'Tolong dong isi nama nyaa',
+        ],
+        'nim12' => [
+            'required' => 'Tolong dong isi nim anggota nyaa',
+        ],
+        'fakultas12' => [
+            'required' => 'Tolong dong isi nama fakultas nyaa',
+        ],
+        'angkatan12' => [
+            'required' => 'Tolong dong isi tahun angkatan nyaa',
+        ],
+        'link_gdrive12' => [
+            'required' => 'Tolong dong isi link drive anggota nyaa',
+            'regex' => 'Berkas harus dalam bentuk link google drive',
+        ],
+        'email12' => [
+            'required' => 'Tolong dong isi email anggota nyaa',
+            'email' => 'Ada yang ngga beres nih email nya',
+        ],
+        'hp12' => [
+            'required' => 'Tolong dong isi no hp anggota nyaa',
+        ],
+        'gender12' => [
+            'required' => 'Tolong dong isi jenis kelamin anggota nyaa',
+        ],
+        'id_game12' => [
+            'required' => 'Tolong dong isi id game anggota nyaa',
         ],
     ],
 
