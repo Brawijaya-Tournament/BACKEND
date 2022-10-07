@@ -44,7 +44,7 @@
         <header class="topbar" data-navbarbg="skin6">
             <nav class="navbar top-navbar navbar-expand-md navbar-light">
                 <div class="navbar-header" data-logobg="skin6">
-                    <a class="navbar-brand" href="/dashboard">
+                    <a class="navbar-brand" href="/adminbt/team">
                         <b class="logo-icon">
                             {{-- <img src="/assetss/img/logo-icon.png" alt="homepage" class="dark-logo w-75" />
                             <img src="/assetss/img/logo-light-icon.png" alt="homepage" class="light-logo  w-75" /> --}}
