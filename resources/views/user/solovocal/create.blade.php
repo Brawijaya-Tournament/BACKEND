@@ -96,7 +96,7 @@
                                     </select>
                                 </div>
                             </div>
-                            <!-- fakultas -->
+                            <!-- Fakultas -->
                             <div class="font-poppins text-secondary2 px-1 md:px-5 lg:px-2 lg:w-full">
                                 <label
                                     class="space-x-9 w-11/12 block mb-2 text-base font-medium text-secondary2 leading-5 font-poppins"
