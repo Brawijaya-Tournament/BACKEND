@@ -190,7 +190,10 @@
                                             upload link Google Drive yang berisi folder berkas-berkas
                                             tersebut pada tempat yang telah disediakan.
                                         </li>
-                                        <li>Unduh Rulebook <strong>klik disini</strong>.</li>
+                                        <li>Unduh Rulebook
+                                            <a href="https://docs.google.com/file/d/1yocmc-V0reYnkY3bGYGV9oUPrLOPqBKu/edit?filetype=msword"
+                                            target="_blank"><strong>klik disini.</strong></a>
+                                        </li>
                                     </ol>
                                 </div>
                                 <div class="md:w-[45%] w-full py-5 md:py-0 flex md:justify-end items-center md:pl-40">
