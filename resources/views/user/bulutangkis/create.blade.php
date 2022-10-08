@@ -159,6 +159,7 @@
                                             Foto Diri 3x4) dan memasukkannya dalam Google Drive serta
                                             upload link Google Drive yang berisi folder berkas-berkas
                                             tersebut pada tempat yang telah disediakan.
+                                        </li>
                                         <li>Unduh Rulebook
                                             <a href="https://docs.google.com/document/d/1V3OdbZWtShZMpl3imfyEB6bmNcjVLOdQ/edit"
                                             target="_blank"><strong>klik disini.</strong></a>
