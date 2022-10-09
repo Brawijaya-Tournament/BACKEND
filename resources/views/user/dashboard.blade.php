@@ -289,7 +289,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="md:flex py-5 w-2/3">
+                <div class="md:flex py-5 w-full md:w-2/3">
                     <div class="w-full my-5 lg:my-0 ">
                         <div class="rounded-3xl shadow-lg bg-white mx-3 h-auto">
                           <img class=" rounded-t-lg w-60 h-auto block mx-auto" src="img/MASKOT BT SOLO VOCAL.svg" alt=""/>
