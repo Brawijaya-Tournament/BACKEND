@@ -7,7 +7,7 @@
                 <!-- grid content peserta -->
                 <div class="grid-2 md:grid-3 col-span-2 p-10 mb-20">
                     <div class="flex items-center ">
-                        <i class="fa-solid fa-angle-left text-white text-2xl"></i>
+                        <a href="javascript:history.back()"><i class="fa-solid fa-angle-left text-white text-2xl"></i></a>
                         <p class="text-white font-bold text-2xl px-3">PENDAFTARAN SOLO VOCAL</p>
                     </div>
                     @if(session()->has('message'))

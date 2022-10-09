@@ -71,8 +71,8 @@ class MobileLegendsController extends Controller
             'email4' => 'required|email',
             'hp4' => 'required',
             'gender4' => 'required',
-            'id_game5' => 'required',
-            'nickname5' => 'required',
+            'id_game4' => 'required',
+            'nickname4' => 'required',
 
             'nama5' => 'required',
             'nim5' => 'required',
@@ -82,8 +82,8 @@ class MobileLegendsController extends Controller
             'email5' => 'required|email',
             'hp5' => 'required',
             'gender5' => 'required',
-            'id_game6' => 'required',
-            'nickname6' => 'required',
+            'id_game5' => 'required',
+            'nickname5' => 'required',
         ]);
         try {
             $user['id_cabor'] = 5;

@@ -21,9 +21,11 @@ class TeamController extends Controller
     {
         $team = User::where('id', '=', $user->id)->first();
         $players = Player::where('id_leader', '=', $user->id)->get();
+        $jumlah = Player::where('id_leader','=', $user->id)->count();
         return view('admin.team.detail', [
             "team" => $team,
             "players" => $players,
+            "jumlah"=> $jumlah,
         ]);
     }
     public function delete($id = null)
