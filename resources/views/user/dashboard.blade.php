@@ -82,7 +82,6 @@
             <!-- main content -->
             <div class="w-full p-5">
                 <div class="flex items-center ">
-                    <i class="fa-solid fa-angle-left text-white text-2xl"></i>
                     <p class="text-white font-bold text-2xl px-3"> DASHBOARD</p>
                 </div>
                 <div class="md:flex py-5 w-full">
