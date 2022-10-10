@@ -14,20 +14,35 @@
                         @csrf
                         <div class="px-5 lg:px-12 lg:w-full">
                             <label for="nama" class="space-x-9 w-11/12 block mb-2 text-base font-medium text-primary2 leading-5 font-poppins">Nama</label>
-                            <input type="nama" name="nama" id="nama" placeholder="Masukkan nama" class="bg-secondary2 border border-primary2 text-base font-normal text-primary3 leading-5 font-poppins placeholder-primary3 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5" required="">
+                            <input type="nama" name="nama" id="nama" placeholder="Masukkan nama" class="bg-secondary2 border border-primary2 text-base font-normal text-primary3 leading-5 font-poppins placeholder-primary3 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 @error('nama') is-invalid @enderror" required="">
                         </div>
+                        @error('nama')
+                        <div class="invalid-feedback">
+                          {{ $message }}
+                        </div>
+                        @enderror
                         <div class="px-5 lg:px-12 lg:w-full">
                             <label for="email" class="block mb-2 text-base font-medium text-primary2 leading-5 font-poppins">Email</label>
-                            <input type="email" name="email" id="email" placeholder="Masukkan email" class="bg-secondary2 border border-primary2 text-base font-normal text-primary3 leading-5 font-poppins placeholder-primary3 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5" required="">
+                            <input type="email" name="email" id="email" placeholder="Masukkan email" class="bg-secondary2 border border-primary2 text-base font-normal text-primary3 leading-5 font-poppins placeholder-primary3 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 @error('email') is-invalid @enderror" required="">
                         </div>
+                        @error('email')
+                        <div class="invalid-feedback">
+                          {{ $message }}
+                        </div>
+                        @enderror
                         <div class="px-5 lg:px-12 lg:w-full">
                             <label for="password" class="block mb-2 text-base font-medium text-primary2 leading-5 font-poppins">Kata Sandi</label>
                             <input type="password" name="password" id="password" placeholder="Masukkan kata sandi" class="bg-secondary2 border border-primary2 text-base font-normal text-primary3 leading-5 font-poppins placeholder-primary3 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5" required="">
                         </div>
                         <div class="px-5 lg:px-12 lg:w-full">
                             <label for="confirm-password" class="block mb-2 text-base font-medium text-primary2 leading-5 font-poppins">Konfirmasi Kata Sandi</label>
-                            <input type="confirm-password" name="confirm_password" id="confirm-password" placeholder="Masukkan kata sandi" class="bg-secondary2 border border-primary2 text-base font-normal text-primary3 leading-5 font-poppins placeholder-primary3 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5" required="">
+                            <input type="password" name="confirm_password" id="confirm-password" placeholder="Masukkan kata sandi" class="bg-secondary2 border border-primary2 text-base font-normal text-primary3 leading-5 font-poppins placeholder-primary3 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5" required="">
                         </div>
+                        @if(session()->has('message'))
+                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                          {{ session('message') }}
+                        </div>
+                        @endif
                         <div class="flex items-start px-5 lg:px-12 lg:w-full">
                             <label class="inline-flex items-center">
                                 <input type="checkbox" class="form-checkbox h-6 w-6 checkbox-checkbox text-primary2 border border-primary2" checked>

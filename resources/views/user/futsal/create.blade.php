@@ -30,7 +30,7 @@
                                     Nama Tim
                                 </label>
                                 <input
-                                    class="appearance-none block w-full bg-primary1 text-secondary2 border border-secondary2 rounded-lg py-3 px-4 mb-3 leading-5 focus:outline-none"
+                                    class="appearance-none block w-full bg-primary1 text-secondary2 border border-secondary2 rounded-lg py-3 px-4 mb-3 leading-5 focus:outline-none @error('nama_team') is-invalid @enderror"
                                     id="grid-first-name" type="text" placeholder="Masukkan nama tim" name="nama_team" value="{{ old('nama_team') }}">
                                 @error('nama_team')
                                     <div class="invalid-feedback">
@@ -45,7 +45,7 @@
                                     Asal Universitas
                                 </label>
                                 <input type="text"
-                                    class="appearance-none block w-full bg-primary1 text-secondary2 border border-secondary2 rounded-lg py-3 px-4 mb-3 leading-5 focus:outline-none "
+                                    class="appearance-none block w-full bg-primary1 text-secondary2 border border-secondary2 rounded-lg py-3 px-4 mb-3 leading-5 focus:outline-none @error('universitas') is-invalid @enderror"
                                     id="grid-last-name place" placeholder="Masukkan asal universitas" name="universitas" value="{{ old('universitas') }}">
                                 @error('universitas')
                                     <div class="invalid-feedback">
@@ -72,7 +72,7 @@
                                     Nama {{ $i }}
                                 </label>
                                 <input
-                                    class="appearance-none block w-full bg-primary1 text-secondary2 border border-secondary2 rounded-lg py-3 px-4 mb-3 leading-5 focus:outline-none"
+                                    class="appearance-none block w-full bg-primary1 text-secondary2 border border-secondary2 rounded-lg py-3 px-4 mb-3 leading-5 focus:outline-none "
                                     id="grid-first-name" type="text" placeholder="Masukkan nama" name="{{ "nama" . $i }}" value="{{ old('nama' . $i) }}">
                                 @error('nama' . $i)
                                     <div class="invalid-feedback">
