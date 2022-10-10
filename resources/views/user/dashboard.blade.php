@@ -80,6 +80,60 @@
                 </nav>
             </div>
             <!-- main content -->
+            
+            <!-- (Delisya) alert -->
+                    @if(session()->has('message'))
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            {{ session('message') }}
+            <div class="bg-secondary2 flex flex-col rounded-3xl my-40 mx-64 p-2 font-poppins text-primary2">
+                <div class="flex flex-col bg-secondary2">
+                    <!-- close button -->
+                    <div
+                        class="flex flex-auto justify-items-end pt-6 pr-6 rounded-lg justify-end font-poppins text-primary2">
+                        <button type="">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="w-6 h-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                            </svg>
+                        </button>
+                    </div>
+                    <!-- popup detail -->
+    
+                    <div class="flex flex-col font-bold space-y-2 text-center pb-10 px-20">
+    
+                        <br>
+                        <div>
+                            Bagi yang sudah mendaftar, ketua tim/peserta wajib bergabung di group ini sesuai dengan kategori
+                            cabang lomba yg diikuti :
+                        </div>
+                        <div>
+                            <ol class="text-center">
+                                <br>
+                                <li>
+                                    Seni <br>
+                                    <a href="https://line.me/ti/g/MfmHxkRjHa"
+                                        target="_blank"><u>https://line.me/ti/g/MfmHxkRjHa</u> </a>
+                                </li>
+                                <br>
+                                <li>
+                                    Olahraga <br>
+                                    <a href="https://line.me/ti/g/NMa2fo3HW-"
+                                        target="_blank"><u>https://line.me/ti/g/NMa2fo3HW-</u> </a>
+                                </li>
+                                <br>
+                                <li>
+                                    E-Sport <br>
+                                    <a href="https://line.me/ti/g/86I2hGAvdT"
+                                        target="_blank"><u>https://line.me/ti/g/86I2hGAvdT</u></a>
+                                </li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        @endif
+            
             <div class="w-full p-5">
                 <div class="flex items-center ">
                     <p class="text-white font-bold text-2xl px-3"> DASHBOARD</p>
