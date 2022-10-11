@@ -17,6 +17,7 @@ use App\Http\Controllers\admin\PengumumanController as AdminPengumumanController
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\FaqController;
 use App\Http\Controllers\KlasemenController;
+use App\Http\Controllers\SubmissionKaryaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -44,6 +45,8 @@ Route::post('/logout', [LoginController::class, 'logout'])->middleware('auth')->
 
 Route::get('/register', [RegisterController::class, 'index'])->middleware('guest');
 Route::post('/register', [RegisterController::class, 'store']);
+
+Route::get('/submission-karya', [SubmissionKaryaController::class, 'index']);
 
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard')->middleware('auth');
 
