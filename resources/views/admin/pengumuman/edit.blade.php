@@ -14,11 +14,11 @@
                         @method('put')
                         <div class="form-group">
                             <label for="exampleFormControlInput">Judul</label>
-                            <input type="judul" name="judul" class="form-control" id="judul" placeholder="Judul" value="{{ old('title', $pengumumans->judul) }}">
+                            <input type="judul" name="judul" class="form-control" id="judul" placeholder="Judul" value="{{ $pengumumans->judul }}">
                         </div>
                         <div class="form-group">
                             <label for="exampleFormControlTextarea">Isi</label>
-                            <textarea class="form-control" name="isi" id="isi" rows="10">{{ old('isi', $pengumumans->isi) }}</textarea>
+                            <textarea class="form-control" name="isi" id="isi" rows="10">{{ $pengumumans->isi }}</textarea>
                         </div>
                         <button type="submit" name = "simpan" class="btn btn-primary">Simpan</button>
                     </form>
