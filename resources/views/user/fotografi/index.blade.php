@@ -5,13 +5,13 @@
     <!-- section/konten beranda -->
     <section class="pt-44 bg-cover bg-no-repeat bg-center pb-40" style="background-image: url('img/KompetisiBultang.svg');">
         <div class="container md:ml-20 ">
-            <div class="flex">
-                <div class="flex w-1/2 justify-center items-center self-end px-4 md:w-1/2 md:order-2">
-                    <div class=" lg:mt-24 ">
-                        <img src="img/MASKOT BT FOTOGRAFI.svg" alt="Logo BuluTangkis" class="max-w-full mx-auto">
+            <div class="md:flex">
+                <div class="flex w-full justify-center px-4 md:w-1/2 md:order-2">
+                    <div class="">
+                        <img src="img/MASKOT BT FOTOGRAFI.svg" alt="Logo BuluTangkis" class="mx-auto items-center self-center">
                     </div>
                 </div>
-                <div class="w-full self-center px-4 lg:w-1/2">
+                <div class="w-full self-center px-4 lg:w-1/2 md:order-1">
                     <div class="mt-0 lg:mt-20 mb-1 lg:mb-5 flex justify-center md:justify-start">
                         <a href="#" class="font-poppins font-bold text-lg leading-5 text-pink2 bg-transparent border border-pink2 rounded-3xl py-1 px-8 hover:shadow-lg transition duration-300 ease-in-out" style="color:#D7137D;border-color:#D7137D">OLAHRAGA</a>
                     </div>
@@ -22,7 +22,7 @@
                             <a href="/login" class="font-poppins font-bold text-lg leading-5 text-primary2  hover:shadow-lg hover:bg-secondary3 transition duration-300 ease-in-out">Daftar Sekarang</a>
                         </div>
                         <div class=" bg-transparent border border-secondary2 rounded-xl py-3 px-8 text-center">
-                            <a href="https://docs.google.com/file/d/1K7ADEllMXjh9LmoNmpCbvpzaY-N9EdiA/edit?usp=docslist_api&filetype=msword" class="font-poppins font-bold text-lg leading-5 text-secondary2  hover:shadow-lg hover:bg-primary3 transition duration-300 ease-in-out">Download Rulebook</a>
+                            <a href="https://docs.google.com/file/d/1K7ADEllMXjh9LmoNmpCbvpzaY-N9EdiA/edit?usp=docslist_api&filetype=msword" target="_blank" class="font-poppins font-bold text-lg leading-5 text-secondary2  hover:shadow-lg hover:bg-primary3 transition duration-300 ease-in-out">Download Rulebook</a>
                         </div>
                     </div>
                 </div>
