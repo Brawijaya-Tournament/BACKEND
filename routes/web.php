@@ -49,6 +49,7 @@ Route::post('/register', [RegisterController::class, 'store']);
 Route::get('/submission-karya', [SubmissionKaryaController::class, 'index']);
 
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard')->middleware('auth');
+Route::get('/delete', [DashboardController::class, 'delete'])->name('dashboard.delete')->middleware('auth');
 
 Route::get('/mobilelegends', [MobileLegendsController::class, 'index']);
 Route::get('/mobilelegends/register', [MobileLegendsController::class, 'create']);
