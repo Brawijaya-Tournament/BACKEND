@@ -82,10 +82,10 @@
             <!-- main content -->
             
             <!-- (Delisya) alert -->
-                    @if(session()->has('message'))
+        @if(session()->has('message'))
         <div class="alert alert-danger alert-dismissible fade show" role="alert">
             {{ session('message') }}
-            <div class="bg-secondary2 flex flex-col rounded-3xl my-40 mx-64 p-2 font-poppins text-primary2">
+            <div class="bg-secondary2 md:flex md:flex-col rounded-3xl md:my-40 lg:mx-64 md:p-2 font-poppins md:text-primary2">
                 <div class="flex flex-col bg-secondary2">
                     <!-- close button -->
                     <div
@@ -98,36 +98,39 @@
                         </button>
                     </div>
                     <!-- popup detail -->
-    
-                    <div class="flex flex-col font-bold space-y-2 text-center pb-10 px-20">
-    
-                        <br>
+
+                    <div class="md:flex md:flex-col font-bold space-y-2 text-center md:justify-start md:pb-10 md:px-20">
+                        <div class="md:shrink-0">
+                            <br>
                         <div>
-                            Bagi yang sudah mendaftar, ketua tim/peserta wajib bergabung di group ini sesuai dengan kategori
+                            Bagi yang sudah mendaftar, ketua tim/peserta wajib bergabung di group ini sesuai dengan
+                            kategori
                             cabang lomba yg diikuti :
                         </div>
                         <div>
-                            <ol class="text-center">
+                            <ol class="text-center md:justify-start">
                                 <br>
                                 <li>
                                     Seni <br>
                                     <a href="https://line.me/ti/g/MfmHxkRjHa"
-                                        target="_blank"><u>https://line.me/ti/g/MfmHxkRjHa</u> </a>
+                                        target="_blank"><u>Link group seni</u> </a>
                                 </li>
                                 <br>
                                 <li>
                                     Olahraga <br>
                                     <a href="https://line.me/ti/g/NMa2fo3HW-"
-                                        target="_blank"><u>https://line.me/ti/g/NMa2fo3HW-</u> </a>
+                                        target="_blank"><u>Link group olahraga</u> </a>
                                 </li>
                                 <br>
                                 <li>
                                     E-Sport <br>
                                     <a href="https://line.me/ti/g/86I2hGAvdT"
-                                        target="_blank"><u>https://line.me/ti/g/86I2hGAvdT</u></a>
+                                        target="_blank"><u>Link group E-Sport</u></a>
                                 </li>
                             </ol>
                         </div>
+                        </div>
+                        
                     </div>
                 </div>
             </div>
