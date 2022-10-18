@@ -18,6 +18,10 @@ class RedirectIfAuthenticated
      */
     public function handle($request, Closure $next, ...$guards)
     {
+        if(Auth::guard('admin')->check()){
+            return redirect()->route('admin.team');
+        }
+
         $guards = empty($guards) ? [null] : $guards;
 
         foreach ($guards as $guard) {
