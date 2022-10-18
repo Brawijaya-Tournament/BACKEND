@@ -31,16 +31,17 @@
                                 </td>
                                 <td class="border-2 border-secondary2 font-bold text-center py-2 text-lg text-secondary2 leading-5">TOTAL</td>
                             </tr>
-                            <tr class="">                                
+                            @foreach($klasemens as $klasemen)                              
+                            <tr class="">  
                                 <td class="border-1 border-secondary2 font-poppins pl-6 text-lg text-white py-2 flex flex-cols items-start">
-                                    <img src="img/logoUniv.svg" class="w-6 h-6 mr-5">
-                                    Universitas Brawijaya
+                                    {{ $klasemen->nama_univ }}
                                 </td>
-                                <td class="border-2 border-secondary2 text-center font-poppins text-lg text-white py-2">10</td>
-                                <td class="border-2 border-secondary2 text-center font-poppins text-lg text-white py-2">3</td>
-                                <td class="border-2 border-secondary2 text-center font-poppins text-lg text-white py-2">2</td>
-                                <td class="border-2 border-secondary2 text-center font-poppins text-lg text-white py-2">15</td>
+                                <td class="border-2 border-secondary2 text-center font-poppins text-lg text-white py-2">{{ $klasemen->emas }}</td>
+                                <td class="border-2 border-secondary2 text-center font-poppins text-lg text-white py-2">{{ $klasemen->perak }}</td>
+                                <td class="border-2 border-secondary2 text-center font-poppins text-lg text-white py-2">{{ $klasemen->perunggu }}</td>
+                                <td class="border-2 border-secondary2 text-center font-poppins text-lg text-white py-2">{{ $klasemen->emas + $klasemen->perak + $klasemen->perunggu }}</td>
                             </tr>
+                            @endforeach
                         </tbody>
                     </table>
                 </div>

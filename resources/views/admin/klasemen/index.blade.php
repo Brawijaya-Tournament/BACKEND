@@ -28,6 +28,7 @@
                                     <th scope="col">Perak</th>
                                     <th scope="col">Perunggu</th>
                                     <th scope="col">Total</th>
+                                    <th scope="col">Ranking</th>
                                     <th scope="col">Tanggal Update</th>
                                     <th scope="col">Action</th>
                                 </tr>
@@ -43,6 +44,7 @@
                                     <td>{{ $klasemens->perak }}</td>
                                     <td>{{ $klasemens->perunggu }}</td>
                                     <td>{{ ($klasemens->emas) + ($klasemens->perak) + ($klasemens->perunggu) }}</td>
+                                    <td>{{ $klasemens->ranking }}</td>
                                     <td>{{ $klasemens->created_at }}</td>
                                     <td>
                                         <a href="{{ url("adminbt/klasemen/edit/$klasemens->id") }}" id="editData" class="btn btn-xs btn-primary edit" ><i class="mdi mdi-pencil"></i> Edit</a>

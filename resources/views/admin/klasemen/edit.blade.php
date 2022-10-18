@@ -29,6 +29,10 @@
                             <label for="exampleFormControlInput">Perunggu</label>
                             <input type="text" name="perunggu" class="form-control" id="perunggu" placeholder="Perunggu" value="{{ old('perunggu', $klasemens->perunggu) }}">
                         </div>
+                        <div class="form-group">
+                            <label for="exampleFormControlInput">Ranking</label>
+                            <input type="text" name="ranking" class="form-control" id="ranking" placeholder="Ranking" value="{{ old('ranking', $klasemens->ranking) }}">
+                        </div>
                         <button type="submit" name = "simpan" class="btn btn-primary">Simpan</button>
                     </form>
                 </div>

@@ -23,7 +23,8 @@ class KlasemenController extends Controller {
             'nama_univ'=>$request->post('nama_univ'),
             'emas'=>$request->post('emas'),
             'perak'=>$request->post('perak'),
-            'perunggu'=>$request->post('perunggu')
+            'perunggu'=>$request->post('perunggu'),
+            'ranking'=>$request->post('ranking')
         ]);
         return redirect()->route('admin.klasemen');
     }
@@ -52,6 +53,7 @@ class KlasemenController extends Controller {
         $klasemens->emas = $request->input('emas');
         $klasemens->perak = $request->input('perak');
         $klasemens->perunggu = $request->input('perunggu');
+        $klasemens->ranking = $request->input('ranking');
         $klasemens->save();
         return redirect()->route('admin.klasemen');
     }
