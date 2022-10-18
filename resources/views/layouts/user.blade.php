@@ -15,6 +15,7 @@
     <script src="https://unpkg.com/flowbite@1.5.2/dist/flowbite.js"></script>
     <link rel="stylesheet" href="./dist/output.css">
     <link rel="stylesheet" href="owlcarousel/owl.theme.default.min.css">
+    <link rel="icon" href="img/logoNavbar.svg">
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <title>Brawijaya Tournament</title>
 </head>
