@@ -19,6 +19,7 @@ class CreateKlasemensTable extends Migration
             $table->integer('emas');
             $table->integer('perak');
             $table->integer('perunggu');
+            $table->integer('ranking')->default(999);
             $table->timestamps();
         });
     }

@@ -3,7 +3,13 @@ module.exports = {
   content: ['Daftar.html','Masuk.html','Dashboard.html','Kompetisi_Basket.hmtl','Kompetisi_Bultang.hmtl','Kompetisi_Fotografi.hmtl','Kompetisi_Futsal.hmtl','Kompetisi_MobileLegends.hmtl','Kompetisi_ModernDance.hmtl','Kompetisi_PUBG.hmtl','Kompetisi_SoloVocal.hmtl'],
   theme: {
     extend: {
+      backgroundImage: {
+        'mainbg': "url('img/bg-hero.svg')",
+        'coba' :"url('img/juara 1.svg')"
+      },
       colors: {
+        beige:'#FFF2D4',
+        pink:'#090989',
         natural1: '#000000',
         natural2: '#292929',
         natural3: '#4E4E4E',
@@ -13,6 +19,7 @@ module.exports = {
         natural7: '#FFFFFF',
         primary1: '#091C44',
         primary2: '#022051',
+        hijau100 : '#007049',
         primary3: '#353F6C',
         secondary1: '#CF9A26',
         secondary2: '#FDBC28',
@@ -27,7 +34,7 @@ module.exports = {
         pink2: '#D7137D',
         pink3: '#E25191',
         green1: '#0C5D3D',
-        green2: '#007049',
+       
         green3: '#3F8765'
       },
       fontFamily: {
@@ -47,7 +54,6 @@ module.exports = {
     })
   },
   plugins: [
-    require('@tailwindcss/custom-forms'),
-    require('flowbite/plugin')
+    require('@tailwindcss/custom-forms')
   ],
 }

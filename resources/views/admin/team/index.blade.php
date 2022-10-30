@@ -13,6 +13,22 @@
                     <h6 class="card-subtitle">
                         Data Team yang terdaftar di database
                     </h6>
+                    <div class="dropdown show">
+                        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Filter Cabor
+                        </a>
+
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                            <a class="dropdown-item" href="#">Bulu Tangkis</a>
+                            <a class="dropdown-item" href="#">Basket</a>
+                            <a class="dropdown-item" href="#">Futsal</a>
+                            <a class="dropdown-item" href="#">PUBG Mobile</a>
+                            <a class="dropdown-item" href="#">Mobile Legends</a>
+                            <a class="dropdown-item" href="#">Fotografi</a>
+                            <a class="dropdown-item" href="#">Solo Vokal</a>
+                            <a class="dropdown-item" href="#">Modern Dance</a>
+                        </div>
+                    </div> <br>
                     <div class="table-responsive">
                         <table class="table" id="myTable">
                             <thead>
@@ -39,12 +55,13 @@
     <script type="text/javascript" src="https://cdn.datatables.net/v/bs5/dt-1.12.1/datatables.min.js"></script>
     <script>
         $(document).ready(function() {
+            $('.dropdown-toggle').dropdown()
             $('#myTable').DataTable({
                 processing: true,
                 serverSide: true,
                 pageLength: 5,
                 lengthMenu: [5, 10, 20, 50, 100, 200, 500],
-                ajax: '{!! route('admin.team.datatables') !!}',
+                ajax: '{!! route('admin.team.bulutangkis') !!}',
                 columns: [{
                         data: 'nama_team',
                         name: 'users.nama_team'

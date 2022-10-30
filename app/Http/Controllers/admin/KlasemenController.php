@@ -15,45 +15,47 @@ class KlasemenController extends Controller {
     }
 
     public function create(Request $request) {
+        return view('admin.klasemen.create');
+    }
+
+    public function post(Request $request) {
         $simpan = DB::table('klasemens')->insert([
             'nama_univ'=>$request->post('nama_univ'),
             'emas'=>$request->post('emas'),
             'perak'=>$request->post('perak'),
-            'perunggu'=>$request->post('perunggu')
+            'perunggu'=>$request->post('perunggu'),
+            'ranking'=>$request->post('ranking')
         ]);
-
         return redirect()->route('admin.klasemen');
     }
 
     public function delete($id) {
-        $mahasiswa = Klasemen::find($id);
-        $mahasiswa->delete();
-        return redirect()->route('admin.klasemen')->with('success', 'Data berhasil dihapus');
+        if ($id == null) {
+            return redirect()->route('admin.klasemen');
+        }
+        try {
+            $klasemens = Klasemen::find($id);
+            $klasemens->delete();
+            return redirect()->route('admin.klasemen')->with('success', 'Data berhasil dihapus');
+        } catch (\Throwable $th) {
+            return redirect()->back()->with('error', 'Data gagal dihapus');
+        }
     }
 
     public function edit($id) {
-        $klasemen = Klasemen::find($id);
+        $data['klasemens'] = Klasemen::where('id', $id)->first();
+        return view('admin.klasemen.edit', $data);
     }
 
-    // public function datatables(Request $request)
-    // {
-    //     $klasemens=Klasemen::all();
-    //     return DataTables::of($klasemens);
-    //     // return DataTables::of($users)
-    //     //     ->addColumn('action', function ($users) {
-    //     //         $detailButton = '<a href="/adminbt/team/detail/' . $users->id . '" class="btn btn-xs btn-primary"><i class="mdi mdi-account-edit"></i> Detail</a>';
-    //     //         $deleteButton = '<a href="/adminbt/team/delete/' . $users->id . '" class="btn btn-xs btn-danger" onclick="return myFunction()"><i class="mdi mdi-delete"></i> Delete</a>';
-    //     //         return '<div class="">' . $detailButton . '  ' . $deleteButton . '</div>';
-    //     //     })
-    //     //     ->editColumn('created_at', function ($users) {
-    //     //         return $users->created_at;
-    //     //         // return Carbon::parse($users->created_at)->isoFormat('LLL');
-    //     //     })
-    //     //     ->editColumn('updated_at', function ($users) {
-    //     //         return $users->updated_at;
-    //     //         // return Carbon::parse($users->updated_at)->isoFormat('LLL');
-    //     //     })
-    //     //     ->removeColumn('id')->make(true);
-    // }
+    public function update(Request $request, $id) {
+        $klasemens = Klasemen::find($id);
+        $klasemens->nama_univ = $request->input('nama_univ');
+        $klasemens->emas = $request->input('emas');
+        $klasemens->perak = $request->input('perak');
+        $klasemens->perunggu = $request->input('perunggu');
+        $klasemens->ranking = $request->input('ranking');
+        $klasemens->save();
+        return redirect()->route('admin.klasemen');
+    }
 
 }

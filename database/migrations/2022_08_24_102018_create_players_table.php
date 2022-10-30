@@ -15,17 +15,17 @@ class CreatePlayersTable extends Migration
     {
         Schema::create('players', function (Blueprint $table) {
             $table->id();
-            $table->string('nama');
-            $table->string('nim')->unique();
+            $table->string('nama')->nullable();
+            $table->string('nim')->unique()->nullable();
             $table->foreignId('id_leader')->nullable();
-            $table->string('fakultas');
-            $table->string('angkatan');
-            $table->string('link_gdrive');
+            $table->string('fakultas')->nullable();
+            $table->string('angkatan')->nullable();
+            $table->string('link_gdrive')->nullable();
             $table->string('nickname')->nullable();
-            $table->string('email');
-            $table->string('hp');
+            $table->string('email')->nullable();
+            $table->string('hp')->nullable();
             $table->string('id_game')->nullable();
-            $table->string('gender');
+            $table->string('gender')->nullable();
             $table->timestamps();
         });
     }

@@ -44,7 +44,7 @@
         <header class="topbar" data-navbarbg="skin6">
             <nav class="navbar top-navbar navbar-expand-md navbar-light">
                 <div class="navbar-header" data-logobg="skin6">
-                    <a class="navbar-brand" href="/dashboard">
+                    <a class="navbar-brand" href="/adminbt/team">
                         <b class="logo-icon">
                             {{-- <img src="/assetss/img/logo-icon.png" alt="homepage" class="dark-logo w-75" />
                             <img src="/assetss/img/logo-light-icon.png" alt="homepage" class="light-logo  w-75" /> --}}
@@ -133,15 +133,21 @@
                                         class="{{ $value['icon'] }}"></i><span
                                         class="hide-menu">{{ $value['title'] }}</span></a>
                             </li>
-                            {{-- <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                href="{{ route('admin.' . $value['link']) }}" aria-expanded="false"><i
+                            <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
+                                href="{{ route('admin.pengumuman') }}" aria-expanded="false"><i
                                     class="{{ $value['icon'] }}"></i><span
-                                    class="hide-menu">{{ $value['title'] }}</span></a> --}}
+                                    class="hide-menu">Pengumuman</span></a>
+                            </li>
+                            <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
+                                href="{{ route('admin.klasemen') }}" aria-expanded="false"><i
+                                    class="{{ $value['icon'] }}"></i><span
+                                    class="hide-menu">Klasemen</span></a>
+                            </li>
                         </li>
                         @endforeach
                         <li class="text-center p-40 upgrade-btn">
                             <a class="btn d-block w-100 btn-success text-white"
-                                href="{{ route('logout') }}">Log Out</a>
+                                href="{{ route('admin.logout') }}">Log Out</a>
                         </li>
                     </ul>
 

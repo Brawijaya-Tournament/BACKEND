@@ -15,9 +15,9 @@ class CreateCaborsTable extends Migration
     {
         Schema::create('cabors', function (Blueprint $table) {
             $table->id();
-            $table->string('nama');
+            $table->string('nama')->nullable();
             $table->string('gambar')->nullable();
-            $table->string('deskripsi')->nullable();
+            $table->text('deskripsi')->nullable();
             $table->string('link')->nullable();
             $table->timestamps();
         });

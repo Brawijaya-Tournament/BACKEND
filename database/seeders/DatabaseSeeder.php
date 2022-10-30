@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use App\Models\User;
 use App\Models\Cabor;
 use App\Models\Player;
+use App\Models\Admin;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -159,6 +160,19 @@ class DatabaseSeeder extends Seeder
             'hp' => '08212737123',
             'id_game' => '213213123',
             'gender' => 'Laki-Laki',
+        ]);
+
+        Admin::create([
+            'name'     => 'Administrator',
+            'email'    => 'admin1@gmail.com',
+            'role'    => 'admin1',
+            'password' => bcrypt('bt2022'),
+        ]);
+        Admin::create([
+            'name'     => 'Reza Berlian',
+            'email'    => 'rezaberlian4@gmail.com',
+            'role'    => 'admin2',
+            'password' => bcrypt('bt2022'),
         ]);
     }
 }

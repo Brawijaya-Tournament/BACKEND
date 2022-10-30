@@ -33,6 +33,6 @@ class RegisterController extends Controller
 
         User::create($validatedData);
 
-        return redirect('/login')->with('success', 'Registration seccessfull! Please login');
+        return redirect('/login')->with('message', 'Registration seccessfull! Please login');
     }
 }

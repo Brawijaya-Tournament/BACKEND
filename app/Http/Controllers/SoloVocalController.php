@@ -8,7 +8,12 @@ use App\Models\User;
 
 class SoloVocalController extends Controller
 {
-    public function createSolo()
+    public function index()
+    {
+        return view('user.solovocal.index');
+    }
+
+    public function create()
     {
         $isRegister = User::where('id', '=', auth()->user()->id)->first();
 
@@ -16,31 +21,27 @@ class SoloVocalController extends Controller
             return redirect('/dashboard')->with('message', 'Anda sudah melakukan registrasi!');
         }
 
-        return view('user.vocal.create');
+        return view('user.solovocal.create');
     }
 
-    public function storeSolo(Request $request)
+    public function store(Request $request)
     {
         $request->validate([
-            'id_cabor' => 'required',
-            'nama_team' => 'required',
             'universitas' => 'required',
-            'link_team' => 'required|regex:(drive.google.com)',
 
             'nama1' => 'required',
-            'nim1' => 'required|unique:players',
+            'nim1' => 'required',
             'fakultas1' => 'required',
             'angkatan1' => 'required',
             'link_gdrive1' => 'required|regex:(drive.google.com)',
-            'email1' => 'required|unique:players|email',
+            'email1' => 'required|email',
             'hp1' => 'required',
             'gender1' => 'required',
         ]);
+
         try {
-            $user['id_cabor'] = $request->id_cabor;
-            $user['nama_team'] = $request->nama_team;
+            $user['id_cabor'] = 7;
             $user['universitas'] = $request->universitas;
-            $user['link_team'] = $request->link_team;
             User::where('id', auth()->user()->id)->update($user);
 
             $player1['nama'] = $request->nama1;
@@ -53,6 +54,34 @@ class SoloVocalController extends Controller
             $player1['hp'] = $request->hp1;
             $player1['gender'] = $request->gender1;
             Player::create($player1);
+            return redirect()->route("dashboard")->with('message', 'Data berhasil ditambahkan');
+        } catch (\Throwable $th) {
+            return redirect()->back()->with('message', 'Data gagal ditambahkan');
+        }
+    }
+
+    public function formulir()
+    {
+        $user = auth()->user();
+        $anggotas = Player::where('id_leader', $user->id)->get();
+
+        $data = [
+            'user' => $user,
+            'anggotas' => $anggotas
+        ];
+
+        return view('user.formulir', $data);
+    }
+
+    public function storeFormulir(Request $request)
+    {
+        $request->validate([
+            'link_team' => 'required|regex:(drive.google.com)',
+        ]);
+        try {
+            
+            $user['link_team'] = $request->link_team;
+            User::where('id', auth()->user()->id)->update($user);
 
             return redirect()->route("dashboard")->with('message', 'Data berhasil ditambahkan');
         } catch (\Throwable $th) {
