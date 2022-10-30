@@ -56,15 +56,6 @@ class ModernDanceController extends Controller
             'hp3' => 'required',
             'gender3' => 'required',
 
-            'nama4' => 'required',
-            'nim4' => 'required',
-            'fakultas4' => 'required',
-            'angkatan4' => 'required',
-            'link_gdrive4' => 'required|regex:(drive.google.com)',
-            'email4' => 'required|email',
-            'hp4' => 'required',
-            'gender4' => 'required',
-
         ]);
         try {
             $user['id_cabor'] = 8;
@@ -105,16 +96,18 @@ class ModernDanceController extends Controller
             $player3['gender'] = $request->gender3;
             Player::create($player3);
 
-            $player4['nama'] = $request->nama4;
-            $player4['nim']= $request->nim4;
-            $player4['id_leader'] = auth()->user()->id;
-            $player4['fakultas'] = $request->fakultas4;
-            $player4['angkatan'] = $request->angkatan4;
-            $player4['link_gdrive'] = $request->link_gdrive4;
-            $player4['email'] = $request->email4;
-            $player4['hp'] = $request->hp4;
-            $player4['gender'] = $request->gender4;
-            Player::create($player4);
+            if($request->nama4){
+                $player4['nama'] = $request->nama4;
+                $player4['nim']= $request->nim4;
+                $player4['id_leader'] = auth()->user()->id;
+                $player4['fakultas'] = $request->fakultas4;
+                $player4['angkatan'] = $request->angkatan4;
+                $player4['link_gdrive'] = $request->link_gdrive4;
+                $player4['email'] = $request->email4;
+                $player4['hp'] = $request->hp4;
+                $player4['gender'] = $request->gender4;
+                Player::create($player4);
+            }
 
             if($request->nama5){
                 $player5['nama'] = $request->nama5;

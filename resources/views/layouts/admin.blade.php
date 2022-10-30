@@ -147,7 +147,7 @@
                         @endforeach
                         <li class="text-center p-40 upgrade-btn">
                             <a class="btn d-block w-100 btn-success text-white"
-                                href="{{ route('logout') }}">Log Out</a>
+                                href="{{ route('admin.logout') }}">Log Out</a>
                         </li>
                     </ul>
 

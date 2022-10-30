@@ -14,6 +14,7 @@ use App\Http\Controllers\SoloVocalController;
 use App\Http\Controllers\admin\TeamController as AdminTeamController;
 use App\Http\Controllers\admin\KlasemenController as AdminKlasemenController;
 use App\Http\Controllers\admin\PengumumanController as AdminPengumumanController;
+use App\Http\Controllers\admin\LoginController as AdminLoginController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\FaqController;
 use App\Http\Controllers\KlasemenController;
@@ -102,30 +103,38 @@ Route::get('/bulutangkis/formulir', [BulutangkisController::class, 'formulir'])-
 Route::post('/bulutangkis/formulir', [BulutangkisController::class, 'storeFormulir']);
 
 Route::prefix($this->urlAdmin)->group(function () {
-    Route::prefix('team')->group(function () {
-        Route::get('/', [AdminTeamController::class, 'index'])->name('admin.team');
-        Route::get('/detail/{user:id}', [AdminTeamController::class, 'detail'])->name('admin.team.detail');
-        Route::get('/edit/{user:id}', [AdminTeamController::class, 'edit'])->name('admin.team.edit');
-        Route::put('/edit/{user:id}', [AdminTeamController::class, 'update'])->name('admin.team.store');
-        Route::get('/delete/{user:id}', [AdminTeamController::class, 'delete'])->name('admin.team.delete');
-        Route::delete('/delete/{user:id}', [AdminTeamController::class, 'destroy'])->name('admin.team.destroy');
-        Route::get('/getuserdata', [AdminTeamController::class, 'datatables'])->name('admin.team.datatables');
-    });
-    Route::prefix('klasemen')->group(function () {
-        Route::get('/', [AdminKlasemenController::class, 'index'])->name('admin.klasemen');
-        Route::get('/create', [AdminKlasemenController::class, 'create'])->name('admin.klasemen.create');
-        Route::post('/create', [AdminKlasemenController::class, 'post'])->name('admin.klasemen.post');
-        Route::get('/edit/{klasemen:id}', [AdminKlasemenController::class, 'edit'])->name('admin.klasemen.edit');
-        Route::put('/update/{klasemen:id}', [AdminKlasemenController::class, 'update'])->name('admin.klasemen.store');
-        Route::get('/delete/{klasemen:id}', [AdminKlasemenController::class, 'delete'])->name('admin.klasemen.delete');
-    });
-    Route::prefix('pengumuman')->group(function () {
-        Route::get('/', [AdminPengumumanController::class, 'index'])->name('admin.pengumuman');
-        Route::get('/create', [AdminPengumumanController::class, 'create'])->name('admin.pengumuman.create');
-        Route::post('/create', [AdminPengumumanController::class, 'post'])->name('admin.pengumuman.post');
-        Route::get('/read/{pengumuman:id}', [AdminPengumumanController::class, 'read'])->name('admin.pengumuman.read');
-        Route::get('/edit/{pengumuman:id}', [AdminPengumumanController::class, 'edit'])->name('admin.pengumuman.edit');
-        Route::put('/update/{pengumuman:id}', [AdminPengumumanController::class, 'update'])->name('admin.pengumuman.store');
-        Route::get('/delete/{pengumuman:id}', [AdminPengumumanController::class, 'delete'])->name('admin.pengumuman.delete');
+    Route::get('/login', [AdminLoginController::class, 'formLogin'])->name('admin.login');
+    Route::post('/login', [AdminLoginController::class, 'login']);
+
+    Route::middleware(['auth:admin'])->group(function () {
+        Route::get('/logout', [AdminLoginController::class, 'logout'])->name('admin.logout');
+        
+        Route::prefix('team')->group(function () {
+            Route::get('/', [AdminTeamController::class, 'index'])->name('admin.team');
+            Route::get('/detail/{user:id}', [AdminTeamController::class, 'detail'])->name('admin.team.detail');
+            Route::get('/edit/{user:id}', [AdminTeamController::class, 'edit'])->name('admin.team.edit');
+            Route::put('/edit/{user:id}', [AdminTeamController::class, 'update'])->name('admin.team.store');
+            Route::get('/delete/{user:id}', [AdminTeamController::class, 'delete'])->name('admin.team.delete');
+            Route::delete('/delete/{user:id}', [AdminTeamController::class, 'destroy'])->name('admin.team.destroy');
+            Route::get('/getuserdata', [AdminTeamController::class, 'datatables'])->name('admin.team.datatables');
+            // Route::get('/pubg', [AdminTeamController::class, 'pubg'])->name('admin.team.pubg');
+        });
+        Route::prefix('klasemen')->group(function () {
+            Route::get('/', [AdminKlasemenController::class, 'index'])->name('admin.klasemen');
+            Route::get('/create', [AdminKlasemenController::class, 'create'])->name('admin.klasemen.create');
+            Route::post('/create', [AdminKlasemenController::class, 'post'])->name('admin.klasemen.post');
+            Route::get('/edit/{klasemen:id}', [AdminKlasemenController::class, 'edit'])->name('admin.klasemen.edit');
+            Route::put('/update/{klasemen:id}', [AdminKlasemenController::class, 'update'])->name('admin.klasemen.store');
+            Route::get('/delete/{klasemen:id}', [AdminKlasemenController::class, 'delete'])->name('admin.klasemen.delete');
+        });
+        Route::prefix('pengumuman')->group(function () {
+            Route::get('/', [AdminPengumumanController::class, 'index'])->name('admin.pengumuman');
+            Route::get('/create', [AdminPengumumanController::class, 'create'])->name('admin.pengumuman.create');
+            Route::post('/create', [AdminPengumumanController::class, 'post'])->name('admin.pengumuman.post');
+            Route::get('/read/{pengumuman:id}', [AdminPengumumanController::class, 'read'])->name('admin.pengumuman.read');
+            Route::get('/edit/{pengumuman:id}', [AdminPengumumanController::class, 'edit'])->name('admin.pengumuman.edit');
+            Route::put('/update/{pengumuman:id}', [AdminPengumumanController::class, 'update'])->name('admin.pengumuman.store');
+            Route::get('/delete/{pengumuman:id}', [AdminPengumumanController::class, 'delete'])->name('admin.pengumuman.delete');
+        });
     });
 });
